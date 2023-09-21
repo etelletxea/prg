@@ -489,6 +489,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#primitivos" class="md-nav__link">
     Primitivos
   </a>
@@ -2229,6 +2236,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#primitivos" class="md-nav__link">
     Primitivos
   </a>
@@ -2320,11 +2334,23 @@
 
 
 <h1 id="tipos-de-datos">💾 Tipos de datos</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Un   ordenador  está  compuesto  fundamentalmente  por  circuitos  electrónicos  digitales.Los datos circulan por estos circuitos en forma de impulsos eléctricos.</p>
+<p>De forma muy simplificada podemos decir que por un circuito pasa o no pasa corrientey esto lo podemos representar con dos dígitos: 0 y 1.</p>
+<p>Todos los datos e información que contiene un ordenador, están representados de forma interna mediante secuencias de ceros y unos. Un sistema de representación que utiliza solamente dos símbolos ( 0 , 1 ) se llama sistema binario. Por tanto, los datos tal y como los expresamos de forma natural se deben codificar de forma interna en binario para que puedan ser tratados por el ordenador.</p>
+<p>El sistema binario utiliza solamente dos dígitos ( 0 y 1 ) llamados bits. </p>
+<p>Utilizando 2 bits podemos representar 4 valores: 00, 01, 10, 11.</p>
+<p>Utilizando 3 bits podemos representar 8 valores: 000, 001, 010, 011, 100, 101, 110, 111.</p>
+<p>Utilizando 4 bits podemos representar 16 valores: 0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111.</p>
+<p>En general, utilizandon bits podremos representar 2n valores. Ocho bits forman un byte. El byte es la unidad básica de medida de la información. Un byte es la cantidad más pequeña de información que el ordenador puede manejar. </p>
+<p>Con un byte se pueden representar 28= 256 caracteres.En el interior del ordenador los datos se transmiten y almacenan en grupos de bytes llamados palabras.La longitud de palabra depende de cada tipo de ordenador: 8, 16, 32, 64.</p>
+<p><img alt="Java" src="../../img/ud1/tipodatos.png" /></p>
 <p>Un tipo de datos es un conjunto de valores y un conjunto de operaciones definidas en ellos.
 Se pueden clasificar en primitivos y objetos.
 <img alt="Java" src="../../img/primitives.png" /></p>
 <h2 id="primitivos">Primitivos</h2>
-<p>Los primitivos son los más básicos y fundamentales, vienen integrados en Java. Especifican el tipo de valor almacenado en una variable y el tamaño de la memoria. Hay 8 tipos primitivos de datos integrados en el lenguaje Java. Estos incluyen: int, byte, short, long, float, double, boolean y char.</p>
+<p>Los primitivos son los más básicos y fundamentales, vienen integrados en Java. Especifican el tipo de valor almacenado en una variable y el tamaño de la memoria. Hay 8 tipos primitivos de datos integrados en el lenguaje Java. Estos incluyen: int, byte, short, long, float, double, boolean y char.
+<img alt="Java" src="../../img/ud1/datosprimitivos.png" /></p>
 <table>
 <thead>
 <tr>
@@ -2405,7 +2431,7 @@ Se pueden clasificar en primitivos y objetos.
 <h3 id="boolean">boolean</h3>
 <p>solo permite almacenar dos posibles valores que son <em>true</em> o <em>false</em>. Tiene la finalidad de facilitar el trabajo con valores "verdadero/falso" (booleanos), resultantes por regla general de evaluar expresiones.</p>
 <p>Este tipo de datos representa un bit de información, pero su "tamaño" no es algo que esté definido con precisión.</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isMyNamePatri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isAlive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 </code></pre></div>
 <hr />
 <h2 id="wrapper-classes-clases-contenedores">Wrapper classes (clases contenedores)</h2>
