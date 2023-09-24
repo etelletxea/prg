@@ -660,6 +660,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api-de-java" class="md-nav__link">
+    API de Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sintaxis-de-las-expresiones-matematicas" class="md-nav__link">
     Sintaxis de las expresiones matemáticas
   </a>
@@ -2406,6 +2413,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api-de-java" class="md-nav__link">
+    API de Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sintaxis-de-las-expresiones-matematicas" class="md-nav__link">
     Sintaxis de las expresiones matemáticas
   </a>
@@ -2741,6 +2755,13 @@ Los operadores condicionales son:</p>
 <p class="admonition-title">Otros operadores</p>
 <p>Existen más operadores que no se han mencionado en el curso. Si se desea consultar todos los operadores de Java se pueden ver en su documentación oficial. <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html">More information</a></p>
 </div>
+<h2 id="api-de-java">API de Java</h2>
+<p>Una de las ventajas de los lenguajes modernos es que se dispone de herramientas que resuelve muchos de los algoritmos necesarios para solucionar un problema. En Java, a estas herramientas disponibles para el programador se les llama API de Java y se encuentran organizadas en paquetes, donde cada paquete contiene un conjunto de clases relacionadas.</p>
+<p>La API de Java es extensa y diversa, lo que permite a los desarrolladores aprovechar una amplia gama de funcionalidades sin tener que implementar todo desde cero. Los programadores pueden importar los paquetes y clases necesarios en sus programas y utilizar los métodos y atributos proporcionados por la API para realizar tareas específicas.</p>
+<p>Por ejmplo, ya hemos utilizado la clase System para la salida por teclado. 
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Iremos aprendiendo la API de Java poco a poco. En la siguiente sección podemos ver la clase <strong>Math</strong> del paquete java.lang</p>
 <h2 id="sintaxis-de-las-expresiones-matematicas">Sintaxis de las expresiones matemáticas</h2>
 <table>
 <thead>
@@ -2793,6 +2814,42 @@ Los operadores condicionales son:</p>
 </tr>
 </tbody>
 </table>
+<p>Algunos ejemplos</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploMath</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Calcular el valor absoluto de un número</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">numeroNegativo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">10.5</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">valorAbsoluto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">numeroNegativo</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor absoluto de &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numeroNegativo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; es &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">valorAbsoluto</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Calcular la raíz cuadrada de un número</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25.0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">raizCuadrada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">numero</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La raíz cuadrada de &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; es &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">raizCuadrada</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Calcular el valor máximo entre dos números</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maximo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor máximo entre &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; y &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; es &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">maximo</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Calcular el valor mínimo entre dos números</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">minimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor mínimo entre &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; y &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; es &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">minimo</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Calcular un número elevado a una potencia</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">exponente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">resultadoPotencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">exponente</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; elevado a la &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">exponente</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; es igual a &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultadoPotencia</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Generar un número aleatorio entre 0.0 (inclusive) y 1.0 (exclusivo)</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">numeroAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Número aleatorio: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numeroAleatorio</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La clase <strong>Math</strong> es parte del paquete <strong>java.lang</strong>, que se importa automáticamente en todos los programas de Java sin necesidad de una declaración de importación explícita</p>
 
 
   
