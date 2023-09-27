@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -255,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -588,14 +578,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2159,60 +2149,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#funciones-y-efectos" class="md-nav__link">
-    Funciones y efectos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aplicar-estilo-a-los-controles-de-la-interfaz-de-usuario-con-css" class="md-nav__link">
-    Aplicar estilo a los controles de la interfaz de usuario con CSS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#graficos-charts" class="md-nav__link">
-    Gráficos (Charts)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preferred-size-tamano-preferido" class="md-nav__link">
-    Preferred Size (tamaño preferido)
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2221,62 +2157,60 @@
                   
 
 
-<h1 id="ui-controls-user-interface-controls">UI Controls (User Interface Controls)</h1>
+<h1 id="ui-controls-user-interface-controls">UI Controls (User Interface Controls)<a class="headerlink" href="#ui-controls-user-interface-controls" title="Permanent link">&para;</a></h1>
 <p>Los controles de la interfaz de usuario de JavaFX disponibles a través de la API de JavaFX se crean mediante el uso de nodos en el gráfico de escena. Pueden aprovechar al máximo las funciones visualmente ricas de la plataforma JavaFX y son portátiles entre diferentes plataformas. JavaFX CSS permite la creación de temas y estilos a los diferentes ontroles de la interfaz de usuario.</p>
 <p><img alt="JavaFx" src="../../img/ud8/1ui.png" /></p>
 <p>Las clases para construir controles de interfaz de usuario residen en el paquete <code>javafx.scene.control</code> de la API de JavaFX.</p>
 <p>La lista de controles de IU incluye componentes de IU típicos que puede reconocer de su desarrollo anterior de aplicaciones cliente en Java. Sin embargo, el SDK de JavaFX presenta nuevos controles de interfaz de usuario de Java, como <code>TitledPane</code>, <code>ColorPicker</code> y <code>Pagination</code> entre otros.</p>
 <p>Podemos obtener información detallada sobre todos los controles de interfaz de usuario de JavaFX disponibles en <a href="https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/index.html">Documentación JavaFX UI</a> y en la <a href="https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/package-summary.html">documentación de la API</a> para el paquete javafx.scene.control.</p>
-<h2 id="funciones-y-efectos">Funciones y efectos</h2>
+<h2 id="funciones-y-efectos">Funciones y efectos<a class="headerlink" href="#funciones-y-efectos" title="Permanent link">&para;</a></h2>
 <p>Dado que los controles de la interfaz de usuario del paquete javafx.scene.control son extensiones de la clase Node, se pueden integrar con la representación, la animación, las transformaciones y las transiciones animadas del gráfico de escena.</p>
 <p>Considere la tarea de crear un botón, aplicarle un reflejo y animar el botón alterando su opacidad de su valor máximo a su valor mínimo.</p>
 <p>La siguiente figura muestra tres estados del botón a través de la línea de tiempo de la animación. La imagen de la izquierda muestra el botón cuando su opacidad se establece en 1,0, la imagen central muestra la opacidad establecida en 0,8 y la imagen de la derecha muestra la opacidad establecida en 0,5.</p>
 <p><img alt="JavaFx" src="../../img/ud8/2ui.png" /></p>
 <p>El siguiente ejemplo crea e inicia una línea de tiempo indefinida, donde dentro de un cuadro de 600 milisegundos, la opacidad del botón cambia de su valor predeterminado (1,0) a 0,0.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Button</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">();</span>
-<span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="na">setFont</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Font</span><span class="p">(</span><span class="s">&quot;Tahoma&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">));</span>
-<span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="na">setEffect</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Reflection</span><span class="p">());</span>
-
-<span class="kd">final</span><span class="w"> </span><span class="n">Timeline</span><span class="w"> </span><span class="n">timeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Timeline</span><span class="p">();</span>
-<span class="n">timeline</span><span class="p">.</span><span class="na">setCycleCount</span><span class="p">(</span><span class="n">Timeline</span><span class="p">.</span><span class="na">INDEFINITE</span><span class="p">);</span>
-<span class="n">timeline</span><span class="p">.</span><span class="na">setAutoReverse</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-<span class="kd">final</span><span class="w"> </span><span class="n">KeyValue</span><span class="w"> </span><span class="n">kv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KeyValue</span><span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="na">opacityProperty</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="kd">final</span><span class="w"> </span><span class="n">KeyFrame</span><span class="w"> </span><span class="n">kf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KeyFrame</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">millis</span><span class="p">(</span><span class="mi">600</span><span class="p">),</span><span class="w"> </span><span class="n">kv</span><span class="p">);</span>
-<span class="n">timeline</span><span class="p">.</span><span class="na">getKeyFrames</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="n">kf</span><span class="p">);</span>
-<span class="n">timeline</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">Button</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="na">setFont</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Font</span><span class="p">(</span><span class="s">&quot;Tahoma&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="na">setEffect</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Reflection</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kd">final</span><span class="w"> </span><span class="n">Timeline</span><span class="w"> </span><span class="n">timeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Timeline</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">timeline</span><span class="p">.</span><span class="na">setCycleCount</span><span class="p">(</span><span class="n">Timeline</span><span class="p">.</span><span class="na">INDEFINITE</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">timeline</span><span class="p">.</span><span class="na">setAutoReverse</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="kd">final</span><span class="w"> </span><span class="n">KeyValue</span><span class="w"> </span><span class="n">kv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KeyValue</span><span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="na">opacityProperty</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="kd">final</span><span class="w"> </span><span class="n">KeyFrame</span><span class="w"> </span><span class="n">kf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KeyFrame</span><span class="p">(</span><span class="n">Duration</span><span class="p">.</span><span class="na">millis</span><span class="p">(</span><span class="mi">600</span><span class="p">),</span><span class="w"> </span><span class="n">kv</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">timeline</span><span class="p">.</span><span class="na">getKeyFrames</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="n">kf</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="n">timeline</span><span class="p">.</span><span class="na">play</span><span class="p">();</span>
 </code></pre></div>
 <p>Podemos aplicar otros efectos visuales disponibles en el paquete <code>javafx.scene.effect</code>, como sombra, iluminación o desenfoque de movimiento.</p>
-<h2 id="aplicar-estilo-a-los-controles-de-la-interfaz-de-usuario-con-css">Aplicar estilo a los controles de la interfaz de usuario con CSS</h2>
+<h2 id="aplicar-estilo-a-los-controles-de-la-interfaz-de-usuario-con-css">Aplicar estilo a los controles de la interfaz de usuario con CSS<a class="headerlink" href="#aplicar-estilo-a-los-controles-de-la-interfaz-de-usuario-con-css" title="Permanent link">&para;</a></h2>
 <p>Podemos personalizar el aspecto de los controles de la interfaz de usuario definiendo sus propias hojas de estilo en cascada (CSS). Usar CSS en aplicaciones JavaFX es muy similar a usar CSS en HTML, porque cada caso se basa en la misma especificación de CSS. El estado visual de un control se define mediante el archivo .css, como se muestra en el ejemplo.</p>
-<div class="highlight"><pre><span></span><code><span class="c">/*controlStyle.css */</span>
-
-<span class="p">.</span><span class="nc">scene</span><span class="p">{</span>
-<span class="w">    </span><span class="nv">-fx-font</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">pt</span><span class="w"> </span><span class="s2">&quot;Cambria Bold&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">-fx-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#e79423</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">-fx-background</span><span class="p">:</span><span class="w"> </span><span class="mh">#67644e</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">button</span><span class="p">{</span>
-<span class="w">    </span><span class="nv">-fx-text-fill</span><span class="p">:</span><span class="w"> </span><span class="mh">#006464</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">-fx-background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#e79423</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">-fx-border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">-fx-background-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">-fx-padding</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c">/*controlStyle.css */</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">.</span><span class="nc">scene</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="nv">-fx-font</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">pt</span><span class="w"> </span><span class="s2">&quot;Cambria Bold&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nv">-fx-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#e79423</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="nv">-fx-background</span><span class="p">:</span><span class="w"> </span><span class="mh">#67644e</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">.</span><span class="nc">button</span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nv">-fx-text-fill</span><span class="p">:</span><span class="w"> </span><span class="mh">#006464</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="nv">-fx-background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#e79423</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="nv">-fx-border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="nv">-fx-background-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nv">-fx-padding</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">();</span>
-<span class="n">scene</span><span class="p">.</span><span class="na">getStylesheets</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;uicontrolssample/controlStyle.css&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">scene</span><span class="p">.</span><span class="na">getStylesheets</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;uicontrolssample/controlStyle.css&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>Además, también podemos definir el estilo de un control directamente en el código de la aplicación utilizando el método <code>setStyle()</code>.</p>
-<h2 id="graficos-charts">Gráficos (Charts)</h2>
+<h2 id="graficos-charts">Gráficos (Charts)<a class="headerlink" href="#graficos-charts" title="Permanent link">&para;</a></h2>
 <p>Además de los elementos típicos de una interfaz de usuario, JavaFX proporciona gráficos predefinidos en el paquete <code>javafx.scene.chart</code>. Actualmente se admiten los siguientes tipos de gráficos: gráfico de áreas, gráfico de barras, gráfico de burbujas, gráfico de líneas, gráfico circular y gráfico de dispersión. Un gráfico puede contener varias series de datos.</p>
-<h2 id="preferred-size-tamano-preferido">Preferred Size (tamaño preferido)</h2>
+<h2 id="preferred-size-tamano-preferido">Preferred Size (tamaño preferido)<a class="headerlink" href="#preferred-size-tamano-preferido" title="Permanent link">&para;</a></h2>
 <p>Cada control calcula su preferred size en función de su contenido, es decir, el alto y el ancho del control cuando se muestra.</p>
 <p>Por ejemplo, en el caso de un button se redimensionará a si mismo de forma que haya espacio suficiente para mostrar su contenido, en su caso el texto.</p>
 
-
-  
 
 
 
@@ -2309,6 +2243,18 @@
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2318,7 +2264,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

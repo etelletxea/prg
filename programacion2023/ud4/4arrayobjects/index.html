@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -255,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -588,14 +578,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2152,53 +2142,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#array-de-strings" class="md-nav__link">
-    Array de Strings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#argumentos-de-linea-de-comandos" class="md-nav__link">
-    Argumentos de línea de comandos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#espacio-de-memoria-en-arrays-de-objetos" class="md-nav__link">
-    Espacio de memoria en arrays de objetos
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2207,32 +2150,32 @@
                   
 
 
-<h1 id="array-de-objetos">Array de objetos</h1>
+<h1 id="array-de-objetos">Array de objetos<a class="headerlink" href="#array-de-objetos" title="Permanent link">&para;</a></h1>
 <p>Una característica importante de los arrays, es que todos los elementos deben ser del mismo tipo.</p>
 <p>Hasta ahora, hemos estudiado arrays con elementos de tipos primitivos. Sin embargo, también se puede crear arrays con elementos de cualquier tipo de datos, incluidas las referencias a objetos.</p>
 <p>Recordemos que, cuando hacemos <code>String str;</code>, se declara una variable llamada <code>str</code> que almacena la referencia a un objeto de tipo String, pero el objeto todavía no ha sido creado.</p>
 <p>Un objeto existe solo después de haber sido construido. Los objetos se construyen solo mientras se ejecuta un programa cuando se invoca <strong>el constructor</strong>.</p>
 <p>Una vez construido, se accede a un objeto siguiendo una referencia al objeto. A menudo, la referencia se mantiene en una variable de referencia como <code>str</code>.</p>
 <p>En el siguiente ejemplo, se declara una variable de referencia, se construye un objeto y luego la referencia al objeto se coloca en la variable de referencia:</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w">             </span><span class="c1">// declara una variable de tipo referencia</span>
-<span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">   </span><span class="c1">// construye el objeto y </span>
-<span class="w">                        </span><span class="c1">// almacena su referencia</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w">             </span><span class="c1">// declara una variable de tipo referencia</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">   </span><span class="c1">// construye el objeto y </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                        </span><span class="c1">// almacena su referencia</span>
 </code></pre></div>
 <p><img alt="Arrays" src="../../img/ud4/4referencearray.png" /></p>
-<h2 id="array-de-strings">Array de Strings</h2>
+<h2 id="array-de-strings">Array de Strings<a class="headerlink" href="#array-de-strings" title="Permanent link">&para;</a></h2>
 <p>Para declarar un array de Strings ser realizaría de la siguiente forma:</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
-
-<span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
-<span class="n">array</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span>
-<span class="p">...</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">array</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">...</span>
 </code></pre></div>
 <p><img alt="Arrays" src="../../img/ud4/4arraystrings.png" /></p>
 <p>Cada objeto String del ejemplo es un String normal. Nada en él ha cambiado porque su referencia se mantiene en el array. Cada cadena puede tener cualquier número de caracteres.</p>
-<h2 id="argumentos-de-linea-de-comandos">Argumentos de línea de comandos</h2>
+<h2 id="argumentos-de-linea-de-comandos">Argumentos de línea de comandos<a class="headerlink" href="#argumentos-de-linea-de-comandos" title="Permanent link">&para;</a></h2>
 <p>Como ya sabemos el método <code>main</code> recibe un array de Strings como parámetro:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>Es decir, main recibe una referencia a un array de referencias de String. Este array es construido por el sistema Java justo antes de que <code>main()</code> obtenga el control. Los elementos que contiene el array son cadenas de texto que se pasan en la línea de comando que inicia el programa. Por ejemplo, digamos que un programa se inicia con esta línea de comando:</p>
 <blockquote>
@@ -2242,12 +2185,10 @@
 <p>Por tanto <code>args[0]</code> contendrá cadena1 y <code>args[1]</code> cadena2.</p>
 <p>Puede haber cualquier número de argumentos en la línea de comandos. Los argumentos son siempre cadenas de caracteres. Cada argumento está separado del resto por espacios.</p>
 <p>A veces, se quieren enviar número por línea de comandos. Por tanto necesitaremos convertir las cadenas de dígitos en números. Para ello, utilizaremos el método <code>Integer.parseInt(String)</code> o <code>Double.parseDouble(String)</code>.</p>
-<h2 id="espacio-de-memoria-en-arrays-de-objetos">Espacio de memoria en arrays de objetos</h2>
+<h2 id="espacio-de-memoria-en-arrays-de-objetos">Espacio de memoria en arrays de objetos<a class="headerlink" href="#espacio-de-memoria-en-arrays-de-objetos" title="Permanent link">&para;</a></h2>
 <p>Como hemos comentado, en arrays de objetos, Java almacena solo la referencia al objeto en el propio array, en lugar de todo el objeto. Esto conserva la memoria, ya que las referencias requieren solo <strong>4 bytes</strong> cada una, mientras que cada objeto puede requerir cientos de bytes.</p>
 <p>Ejemplo, para un array de 15 enteros, sabiendo que cada entero requiere 4 bytes de almacenamiento, se almacenará 60 bytes contiguos de memoria.</p>
 
-
-  
 
 
 
@@ -2280,6 +2221,18 @@
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2289,7 +2242,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

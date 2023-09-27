@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -255,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -588,14 +578,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2145,46 +2135,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#clases-genericas" class="md-nav__link">
-    🦄 Clases genéricas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#metodos-genericos" class="md-nav__link">
-    🦄 Métodos genéricos
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2193,59 +2143,59 @@
                   
 
 
-<h1 id="genericos">🦄 Genéricos</h1>
+<h1 id="genericos">🦄 Genéricos<a class="headerlink" href="#genericos" title="Permanent link">&para;</a></h1>
 <p>Antes de Java 5 cuando introducíamos objetos en una colección estos se guardaban como objetos de tipo <code>Object</code>, aprovechando el polimorfismo para poder introducir cualquier tipo de objeto en la colección. Esto nos obligaba a hacer un casting al tipo original al obtener los elementos de la colección.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejemplo</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span><span class="w">  </span>
-<span class="w">    </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">);</span><span class="w">  </span>
-
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cadena</span><span class="p">);</span><span class="w">  </span>
-<span class="w">  </span><span class="p">}</span><span class="w">  </span>
-<span class="p">}</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejemplo</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span><span class="w">  </span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cadena</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="8 "></span><span class="w">  </span><span class="p">}</span><span class="w">  </span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span><span class="w"> </span>
 </code></pre></div>
 <p>Esta forma de trabajar no solo nos ocasiona tener que escribir más código innecesariamente, sino que es propenso a errores porque carecemos de un sistema de comprobación de tipos. Si introdujeramos un objeto de tipo incorrecto el programa compilaría pero lanzaría una excepción en tiempo de ejecución al intentar convertir el objeto en <code>String</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejemplo</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span><span class="w">  </span>
-<span class="w">    </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">22</span><span class="p">);</span><span class="w">  </span>
-
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cadena</span><span class="p">);</span><span class="w">  </span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span>
-<span class="p">}</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejemplo</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span><span class="w">  </span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">22</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cadena</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="8 "></span><span class="w">  </span><span class="p">}</span><span class="w"> </span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span><span class="w"> </span>
 </code></pre></div>
 <p>Desde Java 5 contamos con una característica llamada generics que puede solventar esta clase de problemas. Los generics son una mejora al sistema de tipos que nos permite programar abstrayéndonos de los tipos de datos.</p>
 <p><strong>Genéricos</strong> significa <strong>tipos parametrizados</strong>. La idea es permitir que <strong><em>el tipo</em></strong> (<code>Integer</code>, <code>String</code>, etc., y tipos definidos por el usuario) <strong>sea un parámetro</strong> para métodos, clases e interfaces. Utilizando Generics, es posible crear clases que trabajen con diferentes tipos de datos. Una entidad como clase, interfaz o método que opera en un tipo parametrizado es una entidad genérica.</p>
 <p>Gracias a los generics podemos especificar el tipo de objeto que introduciremos en la colección, de forma que el compilador conozca el tipo de objeto que vamos a utilizar, evitándonos así el casting. Además, gracias a esta información, el compilador podrá comprobar el tipo de los objetos que introducimos, y lanzar un error en tiempo de compilación si se intenta introducir un objeto de un tipo incompatible, en lugar de que se produzca una excepción en tiempo de ejecución.</p>
-<p>Para utilizar generics con nuestras colecciones tan solo tenemos que indicar el tipo entre <strong>el operador Diamond &lt;&gt;</strong> a la hora de crearla. A estas clases a las que podemos pasar un tipo como <ins class="critic">«parámetro»</ins> se les llama <strong>clases parametrizadas, clases genéricas o simplemente genéricas (generics)</strong>.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejemplo</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">  </span>
-<span class="w">    </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">);</span><span class="w">  </span>
-
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cadena</span><span class="p">);</span><span class="w">  </span>
-<span class="w">  </span><span class="p">}</span><span class="w">  </span>
-<span class="p">}</span><span class="w"> </span>
+<p>Para utilizar generics con nuestras colecciones tan solo tenemos que indicar el tipo entre <strong>el operador Diamond &lt;&gt;</strong> a la hora de crearla. A estas clases a las que podemos pasar un tipo como {++«parámetro»++} se les llama <strong>clases parametrizadas, clases genéricas o simplemente genéricas (generics)</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejemplo</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">  </span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">cadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cadena</span><span class="p">);</span><span class="w">  </span>
+<span class="linenos" data-linenos="8 "></span><span class="w">  </span><span class="p">}</span><span class="w">  </span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span><span class="w"> </span>
 </code></pre></div>
 <p>El código anterior no compilaría, si intentáramos insertar en la lista un número <code>lista.add(14);</code>, nos daría un error de compilación de tipos.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Algo a tener en cuenta es que el tipo parámetro debe ser una clase; no podemos utilizar tipos primitivos.</strong></p>
 </div>
-<h2 id="clases-genericas">🦄 Clases genéricas</h2>
+<h2 id="clases-genericas">🦄 Clases genéricas<a class="headerlink" href="#clases-genericas" title="Permanent link">&para;</a></h2>
 <p>Al crear una clase que utiliza o contiene algún atributo genérico, me obliga a añadir este tipo de genérico en la definición de clase. <strong>Por convención se suele utilizar una sola letra mayúscula para el tipo genérico</strong>.</p>
 <p>Es decir, si mi clase tiene un atributo <code>T elemento</code> genérico que no sé qué tipo de dato va a ser, entero, double, float.... le pongo una letra y con esto le digo que ese atributo es de tipo genérico, puede ser cualquier tipo de dato.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">elemento</span><span class="p">;</span>
-
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">elemento</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">elemento</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elemento</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">elemento</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">elemento</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">elemento</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elemento</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Según las convenciones los nombres de los parámetros de tipo usados comúnmente son los siguientes:</p>
 <ul>
@@ -2257,31 +2207,29 @@
 <li>S, U, V etc: para segundos, terceros y cuartos tipos.</li>
 </ul>
 <p>En el momento de la instanciación de un tipo genérico indicaremos el argumento para el tipo, en este caso Box contendrá una referencia a un tipo Integer.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">//Las dos formas son válidas:</span>
-<span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integerBox1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integerBox2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-
-<span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">textoBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//Las dos formas son válidas:</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integerBox1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integerBox2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">textoBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 </code></pre></div>
 <p>Estamos creando objetos de la clase <code>Box</code>, tanto de tipo Integer como String.</p>
 <p>A veces querremos limitar los tipos que pueden ser usados empleando lo que se denomina <strong>bounded type</strong>. Con \&lt;T extends Number> el tipo T debe extender la clase Number.
 Java permite múltiples límites o bounded type: <code>&lt;T extends B1 &amp; B2 &amp; B3&gt;</code>.
 <code>Box</code> es una clase y <code>B1</code> y <code>B2</code> son interfaces. Primero siempre debe ir la clase y luego las interfaces.
 Recuerda que Java NO permite la herencia múltiple, por tanto, SOLO se puede extender de una clase, pero puede implementar varias interfaces en la declaración del bounded type.</p>
-<h2 id="metodos-genericos">🦄 Métodos genéricos</h2>
+<h2 id="metodos-genericos">🦄 Métodos genéricos<a class="headerlink" href="#metodos-genericos" title="Permanent link">&para;</a></h2>
 <p>Al igual que ocurre con las clases, si me creo un método genérico, es decir, que recibe tipos de datos genéricos <strong><em>únicos que no están definidos en la clase</em></strong>, tengo que especificar en la signatura del método esos genéricos:</p>
 <blockquote>
 <p>Ejemplo</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">executeFunction</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="n">function</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">:</span><span class="w"> </span><span class="n">lista</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">function</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">executeFunction</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="n">function</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">:</span><span class="w"> </span><span class="n">lista</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">function</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">  </span><span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
 </code></pre></div>
 
-
-  
 
 
 
@@ -2314,6 +2262,18 @@ Recuerda que Java NO permite la herencia múltiple, por tanto, SOLO se puede ext
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2323,7 +2283,7 @@ Recuerda que Java NO permite la herencia múltiple, por tanto, SOLO se puede ext
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

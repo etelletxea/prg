@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -255,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -588,14 +578,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2152,53 +2142,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#metodos-predicate" class="md-nav__link">
-    Métodos Predicate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supplier" class="md-nav__link">
-    Supplier
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consumer" class="md-nav__link">
-    Consumer
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2207,28 +2150,28 @@
                   
 
 
-<h1 id="predicate">Predicate</h1>
+<h1 id="predicate">Predicate<a class="headerlink" href="#predicate" title="Permanent link">&para;</a></h1>
 <p><strong>Predicate</strong> es una interfaz funcional que se encuentra en el paquete <code>java.util.function</code>. Mejora la capacidad de administración del código, ayuda a realizar pruebas unitarias por separado.</p>
 <p>Se utiliza en expresiones lambda para comprobar si una condición dada es verdadera o falsa.</p>
 <p>En lugar de pasar un booleano con valor true or false,  pasas una referencia de tipo Predicate para determinar de manera dinámica si una condición dada es verdadera, o falsa.</p>
 <p>Esta es la estructura de la interfaz <code>Predicate</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@FunctionalInterface</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Predicate</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nd">@FunctionalInterface</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Predicate</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Como vemos la interfaz <code>Predicate</code> utiliza los genéricos para poder decirle que tipo concreto vamos a utilizar.</p>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploPredicate</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">checker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&quot;M&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">checker</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;Miguel&quot;</span><span class="p">));</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploPredicate</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">checker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&quot;M&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">checker</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;Miguel&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Hemos creado un objeto <code>Predicate</code> de tipo <code>String</code>. Le damos cuerpo al método <code>test</code> con una expresión lambda que se le pasa un argumento y devuelve un booleano.</p>
-<h2 id="metodos-predicate">Métodos Predicate</h2>
+<h2 id="metodos-predicate">Métodos Predicate<a class="headerlink" href="#metodos-predicate" title="Permanent link">&para;</a></h2>
 <p>La interfaz <code>Predicate</code> contiene algunos métodos como:</p>
 <ul>
 <li><code>isEqual(Object targetRef)</code>: Devuelve un predicado que prueba si dos argumentos son iguales.</li>
@@ -2237,78 +2180,76 @@
 <li><code>negate()</code>: Devuelve un predicado que representa la negación lógica de este predicado.</li>
 </ul>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">greaterThan10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lessThan20</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">greaterThan10</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">lessThan20</span><span class="p">).</span><span class="na">test</span><span class="p">(</span><span class="mi">15</span><span class="p">));</span>
-
-<span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">greaterThanTen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lowerThanTwenty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">resul</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greaterThanTen</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">lowerThanTwenty</span><span class="p">).</span><span class="na">test</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="c1">//true</span>
-<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">resul2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greaterThanTen</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">lowerThanTwenty</span><span class="p">).</span><span class="na">negate</span><span class="p">().</span><span class="na">test</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="c1">//false</span>
-
-<span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">i</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Predicate</span><span class="p">.</span><span class="na">isEqual</span><span class="p">(</span><span class="s">&quot;asdf&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;java&quot;</span><span class="p">));</span><span class="c1">//false</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">greaterThan10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lessThan20</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">greaterThan10</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">lessThan20</span><span class="p">).</span><span class="na">test</span><span class="p">(</span><span class="mi">15</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">greaterThanTen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lowerThanTwenty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">resul</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greaterThanTen</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">lowerThanTwenty</span><span class="p">).</span><span class="na">test</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">resul2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greaterThanTen</span><span class="p">.</span><span class="na">and</span><span class="p">(</span><span class="n">lowerThanTwenty</span><span class="p">).</span><span class="na">negate</span><span class="p">().</span><span class="na">test</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="c1">//false</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">i</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Predicate</span><span class="p">.</span><span class="na">isEqual</span><span class="p">(</span><span class="s">&quot;asdf&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;java&quot;</span><span class="p">));</span><span class="c1">//false</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Debido al uso extendido de <code>Predicate</code> se han añadido las interfaces funcionales <code>IntPredicate</code> cuando queremos trabajar con predicados de tipo entero, <code>DoublePredicate</code> y <code>LongPredicate</code>. También tenemos la interfaz <code>BiPredicate</code> que es un caso especial de <code>Predicate</code> y recibe dos parámetros en vez de uno.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">IntPredicate</span><span class="w"> </span><span class="n">predicate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">12345</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-<span class="w">    </span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">predicate</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="mi">12345</span><span class="p">));</span>
-
-<span class="w">    </span><span class="n">IntPredicate</span><span class="w"> </span><span class="n">intPredicate1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="na">negate</span><span class="p">();</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">intPredicate1</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="mi">12345</span><span class="p">));</span>
-
-<span class="w">    </span><span class="n">BiPredicate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">filtroLongitud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<span class="w">    </span><span class="p">};</span>
-
-<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filter</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;java&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="n">IntPredicate</span><span class="w"> </span><span class="n">predicate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">12345</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">};</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">predicate</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="mi">12345</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">IntPredicate</span><span class="w"> </span><span class="n">intPredicate1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="na">negate</span><span class="p">();</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">intPredicate1</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="mi">12345</span><span class="p">));</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="n">BiPredicate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">filtroLongitud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">};</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filter</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;java&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
 </code></pre></div>
-<h2 id="supplier">Supplier</h2>
+<h2 id="supplier">Supplier<a class="headerlink" href="#supplier" title="Permanent link">&para;</a></h2>
 <p><code>Supplier</code> es otra interfaz funcional dentro del paquete <code>java.util.function</code> que nos provee del método abstracto <code>**get**</code>, sin argumentos que devuelve un tipo de dato.</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@FunctionalInterface</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Supplier</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="nf">get</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nd">@FunctionalInterface</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Supplier</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="nf">get</span><span class="p">();</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Esta interfaz también se utiliza con expresiones lambda que no tienen parámetros pero devuelven un resultado:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
-<span class="w">    </span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">su</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">su</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
 </code></pre></div>
 <p>Al igual que ocurría en los predicados con los <code>Supplier</code> también disponemos de las clases <code>IntSupplier</code>, <code>DoubleSupplier</code>, <code>LongSupplier</code> y <code>BooleanSupplier</code>.</p>
-<h2 id="consumer">Consumer</h2>
+<h2 id="consumer">Consumer<a class="headerlink" href="#consumer" title="Permanent link">&para;</a></h2>
 <p><code>Consumer</code> es otra interfaz funcional dentro del paquete <code>java.util.function</code> que provee un método que recibe un solo parámetro de tipo genérico y no devuelve nada.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Consumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">accept</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Consumer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">accept</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>La expresión lambda asignada a un objeto de tipo <code>Consumer</code> se usa para definir su método <code>**accept(T t)**</code> que eventualmente aplica la operación dada en su argumento. Los <code>Consumer</code> son útiles cuando no necesitan devolver ningún valor, ya que se espera que operen a través de efectos secundarios.</p>
 <p>Existen también las interfaces <code>IntConsumer</code>, <code>LongConsumer</code> y <code>DoubleConsumer</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<span class="n">numero</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">numero</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 </code></pre></div>
 <p><code>BiConsumer</code> es un caso especial de las expresiones <code>Consumer</code>, son aquellas que reciben dos valores como parámetro y no devuelven resultado.</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@FunctionalInterface</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">accept</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="w"> </span><span class="n">u</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nd">@FunctionalInterface</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">BiConsumer</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">accept</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="w"> </span><span class="n">u</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">biConsumer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
-<span class="n">biConsumer</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; puntos&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">biConsumer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">biConsumer</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; puntos&quot;</span><span class="p">);</span>
 </code></pre></div>
 
-
-  
 
 
 
@@ -2341,6 +2282,18 @@
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2350,7 +2303,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -257,14 +247,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -638,14 +628,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2145,46 +2135,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#salida-de-la-informacion" class="md-nav__link">
-    Salida de la información
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrada-de-la-informacion-javautilscanner" class="md-nav__link">
-    Entrada de la información java.util.Scanner
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2193,71 +2143,69 @@
                   
 
 
-<h1 id="programacion-de-la-consola-entrada-y-salida-de-informacion-io-inputoutput">💾 Programación de la consola: entrada y salida de información (I/O input/output)</h1>
+<h1 id="programacion-de-la-consola-entrada-y-salida-de-informacion-io-inputoutput">💾 Programación de la consola: entrada y salida de información (I/O input/output)<a class="headerlink" href="#programacion-de-la-consola-entrada-y-salida-de-informacion-io-inputoutput" title="Permanent link">&para;</a></h1>
 <p>Java viene con una biblioteca de clases que se puede usar para realizar tareas comunes. La biblioteca de clases de Java está organizada en un conjunto de paquetes, donde cada paquete contiene una colección de clases relacionadas.</p>
 <p>En esta sección presentamos las clases System y Scanner que se utilizan para imprimir la salida y leer la entrada de un programa.</p>
 <p>El tipo más simple de interfaz de usuario es la interfaz de línea de comandos, en la que la entrada se toma de la línea de comandos a través del teclado y la salida se muestra en la consola. Algunas aplicaciones Java utilizan este tipo de interfaz otros usan interfaz gráfica como veremos más adelante.</p>
 <p><img alt="Java" src="../../img/io.png" /></p>
 <p><img alt="Java" src="../../img/u1stream.png" /></p>
-<h2 id="salida-de-la-informacion">Salida de la información</h2>
+<h2 id="salida-de-la-informacion">Salida de la información<a class="headerlink" href="#salida-de-la-informacion" title="Permanent link">&para;</a></h2>
 <p>En Java, cualquier origen o destino de I/O se considera un flujo de bytes o caracteres. Para realizar la salida, insertamos bytes o caracteres en la secuencia. Para realizar la entrada, extraemos bytes o caracteres del flujo (stream).
 Incluso los caracteres introducidos en un teclado, si se consideran como una secuencia de pulsaciones de teclas, se pueden representar como un stream.</p>
 <p>En Java, la I/O se maneja a través de métodos que pertenecen a clases contenidas en el paquete java.io. Ya hemos visto cómo se usa el método de salida println() para enviar una cadena a la consola. Por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>imprime el texto <em>Hola mundo</em> por la consola.</p>
 <p>Los objetos <strong>System.out</strong> y <strong>System.err</strong> se pueden usar para escribir la salida en la consola. Como sugiere su nombre, el flujo de errores se usa principalmente para mensajes de error, mientras que el flujo de salida se usa para otras salidas impresas.</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fallo al abrir el fichero&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fallo al abrir el fichero&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>De manera similar, como sugiere su nombre, el objeto System.in se puede usar para manejar la entrada, que se trata en el siguiente punto.</p>
 <p>La única diferencia entre los métodos <em>print()</em> y <em>println()</em> es que println() también imprimirá un retorno de carro y un avance de línea después de imprimir sus datos, lo que permitirá que la salida posterior se imprima en una nueva línea. Por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Hola&quot;</span><span class="p">);</span>
-<span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;mundo&quot;</span><span class="p">):</span>
-<span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Texto con salto de línea&quot;</span><span class="p">);</span>
-<span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;adiós&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Hola&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;mundo&quot;</span><span class="p">):</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Texto con salto de línea&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;adiós&quot;</span><span class="p">);</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="w">   </span>HolamundoTexto<span class="w"> </span>con<span class="w"> </span>salto<span class="w"> </span>de<span class="w"> </span>línea
-<span class="w">   </span>adiós
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span>HolamundoTexto<span class="w"> </span>con<span class="w"> </span>salto<span class="w"> </span>de<span class="w"> </span>línea
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span>adiós
 </code></pre></div>
-<h2 id="entrada-de-la-informacion-javautilscanner">Entrada de la información <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html">java.util.Scanner</a></h2>
+<h2 id="entrada-de-la-informacion-javautilscanner">Entrada de la información <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html">java.util.Scanner</a><a class="headerlink" href="#entrada-de-la-informacion-javautilscanner" title="Permanent link">&para;</a></h2>
 <p>Se ha agregado la clase <em>Scanner</em> al paquete java.util que permite la entrada de teclado sin forzar el programador para manejar las excepciones.
 La clase <em>Scanner</em> está diseñada para ser una forma muy flexible de reconocer fragmentos de datos que se ajustan a patrones específicos de cualquier flujo de entrada.</p>
 <p>Para usar la clase Scanner para la entrada de teclado, debemos crear una instancia de Scanner y asociarla con System.in. La clase tiene un constructor para este propósito, por lo que la declaración</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
 </code></pre></div>
 <p>declara y crea una instancia de un objeto que se puede utilizar para la entrada del teclado. Después de crear un objeto Scanner, podemos hacer una llamada a nextInt(), nextDouble(), o next() para leer, respectivamente, un entero, un número real, o String del teclado.</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un número: &quot;</span><span class="p">);</span>
-<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="c1">//Read the integer</span>
-<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El número introducido es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
-<span class="w">   </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">      </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un número: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="c1">//Read the integer</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El número introducido es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">   </span><span class="p">}</span>
 </code></pre></div>
 <p>Cuando se ejecuta el método <em>nextInt()</em>, no se ejecutan más declaraciones hasta que el método devuelve un valor int. Normalmente, esto no sucede hasta que el usuario ha escrito los dígitos de un número entero y presiona la tecla Intro o Intro.</p>
 <p>Para leer un String utilizamos el método <em>next()</em>.</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce una palabra: &quot;</span><span class="p">);</span>
-<span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
-<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-<span class="w">   </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">      </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce una palabra: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">   </span><span class="p">}</span>
 </code></pre></div>
 <p>Un objeto <em>Scanner</em> tiene un conjunto de cadenas de caracteres que separan o delimitan los fragmentos de datos que está buscando. De forma predeterminada, este conjunto de delimitadores consta de cualquier secuencia no vacía de caracteres en blanco, es decir, los caracteres de espacio, tabulación, retorno y nueva línea. Esto permitirá al usuario ingresar varios números enteros separados por espacios antes de presionar la tecla Enter. En código sería:</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce dos números: &quot;</span><span class="p">);</span>
-<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce dos números: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
 </code></pre></div>
 <p>Los espacios en blanco como delimitadores también significan que el método <em>next()</em> no puede devolver una cadena vacía ni puede devolver una cadena que contenga espacios. Por ejemplo, considere el código:</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un texto separado por espacio en blanco: &quot;</span><span class="p">);</span>
-<span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un texto separado por espacio en blanco: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
 </code></pre></div>
 <p>Si se escribe "Hola mundo" y se presiona la tecla enter, la cadena str almacenará sólo "Hola".</p>
 <p>Para que un objeto <em>Scanner</em> lea cadenas que contienen espacios, debemos usar el método <em>nextLine()</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
 </code></pre></div>
 
-
-  
 
 
 
@@ -2290,6 +2238,18 @@ La clase <em>Scanner</em> está diseñada para ser una forma muy flexible de rec
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2299,7 +2259,7 @@ La clase <em>Scanner</em> está diseñada para ser una forma muy flexible de rec
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

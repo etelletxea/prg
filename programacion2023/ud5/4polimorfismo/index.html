@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -255,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -588,14 +578,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2138,39 +2128,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#importante" class="md-nav__link">
-    Importante
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2179,128 +2136,126 @@
                   
 
 
-<h1 id="polimorfismo">Polimorfismo</h1>
+<h1 id="polimorfismo">Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permanent link">&para;</a></h1>
 <p>El <strong>Polimorfismo</strong> es uno de los 4 pilares de la programación orientada a objetos (POO) junto con la Abstracción, Encapsulación y Herencia. Para entender que es el polimorfismo <em>es muy importante que tengáis bastante claro el concepto de la Herencia</em>.</p>
 <p>Polimorfismo significa "que tiene muchas formas", es la capacidad que tienen los objetos de una clase en ofrecer respuesta distinta e independiente en función de los parámetros (diferentes implementaciones) utilizados durante su invocación.</p>
 <p>Veamos un ejemplo para entender de forma más clara cómo funciona el polimorfismo.</p>
 <p>Crearemos unas clases que heredan de la clase padre <code>Pelicula</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Pelicula</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Pelicula</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">titulo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">titulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;No hay trama&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Spiderman</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Spiderman</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;Spiderman&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Un hombre que le muerde una araña y adquiere sus poderes.&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Batman</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Batman</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;Batman&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Un hombre que le muerde un murciélago y adquiere sus poderes.&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Zombieland</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Zombieland</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;Zombieland&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Un puñado de humanos convertidos en zombies tratan de hacerse con el mundo&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">StarWars</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">StarWars</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;StarWars&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Las fuerzas imperiales tratan de hacerse con control del mundo&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">PeliRandom</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PeliRandom</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;PeliRandom&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Pelicula</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Pelicula</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">titulo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">titulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;No hay trama&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="kd">class</span> <span class="nc">Spiderman</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Spiderman</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;Spiderman&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Un hombre que le muerde una araña y adquiere sus poderes.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="kd">class</span> <span class="nc">Batman</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Batman</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;Batman&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="30 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="31 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Un hombre que le muerde un murciélago y adquiere sus poderes.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="33 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="34 "></span>
+<span class="linenos" data-linenos="35 "></span><span class="kd">class</span> <span class="nc">Zombieland</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="36 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Zombieland</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="37 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;Zombieland&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="38 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="39 "></span>
+<span class="linenos" data-linenos="40 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="41 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="42 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Un puñado de humanos convertidos en zombies tratan de hacerse con el mundo&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="43 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="44 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="45 "></span>
+<span class="linenos" data-linenos="46 "></span><span class="kd">class</span> <span class="nc">StarWars</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="47 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">StarWars</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="48 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;StarWars&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="49 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="50 "></span>
+<span class="linenos" data-linenos="51 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="52 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">trama</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="53 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Las fuerzas imperiales tratan de hacerse con control del mundo&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="54 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="55 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="56 "></span>
+<span class="linenos" data-linenos="57 "></span><span class="kd">class</span> <span class="nc">PeliRandom</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="58 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PeliRandom</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="59 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;PeliRandom&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="60 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="61 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Ahora vamos a crear un método estático que nos va a devolver un objeto de tipo <code>Pelicula</code> en la clase <code>Main</code>, es decir, nos devolverá una película de manera aleatoria:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="nf">peliculaAleatoria</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">//genera un número aleatorio entre 1 - 5</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numero</span><span class="p">);</span>
-<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Spiderman</span><span class="p">();</span>
-<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Batman</span><span class="p">();</span>
-<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Zombieland</span><span class="p">();</span>
-<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StarWars</span><span class="p">();</span>
-<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PeliRandom</span><span class="p">();</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Pelicula</span><span class="w"> </span><span class="nf">peliculaAleatoria</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">//genera un número aleatorio entre 1 - 5</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numero</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Spiderman</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Batman</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Zombieland</span><span class="p">();</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StarWars</span><span class="p">();</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PeliRandom</span><span class="p">();</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>Gracias a la herencia, podemos devolver un tipo de la clase padre <code>Pelicula</code> aunque en realidad hayamos creado un objeto de una clase hija.</p>
 <p>Ahora vamos a ver el polimorfismo, para ello vamos a crear un bucle en el main de la siguiente forma:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Pelicula</span><span class="w"> </span><span class="n">pelicula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">peliculaAleatoria</span><span class="p">();</span>
-<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pelicula &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pelicula</span><span class="p">.</span><span class="na">getTitulo</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; \n&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pelicula</span><span class="p">.</span><span class="na">trama</span><span class="p">());</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">            </span><span class="n">Pelicula</span><span class="w"> </span><span class="n">pelicula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">peliculaAleatoria</span><span class="p">();</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pelicula &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pelicula</span><span class="p">.</span><span class="na">getTitulo</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; \n&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pelicula</span><span class="p">.</span><span class="na">trama</span><span class="p">());</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>Gracias al polimorfismo tenemos la capacidad de llamar al método <code>trama</code> con el mismo tipo de objeto, en este caso de tipo <code>Pelicula</code> y obtener diferentes resultados, ya que Java automáticamente ve qué tipo de hijo es e imprime el correspondiente método <code>trama</code>. Para el caso de que no se haya sobreescrito el método llamará al de la clase padre
 Es decir, dependiendo del tipo de objeto invocado se realizan acciones diferentes, teniendo en cuenta, que todas las clases heredan de <code>Pelicula</code> eso es el <strong>polimorfismo</strong>.</p>
-<h2 id="importante">Importante</h2>
+<h2 id="importante">Importante<a class="headerlink" href="#importante" title="Permanent link">&para;</a></h2>
 <p>Una variable puede contener una referencia a un objeto cuya clase es descendiente de la clase de la variable.
 Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">//La variable a es una referencia a un objeto Perro que es descendiente de Animal. </span>
-<span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Perro</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="c1">//La variable a es una referencia a un objeto Perro que es descendiente de Animal. </span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Perro</span><span class="p">();</span>
 </code></pre></div>
 <p>Un descendiente de una clase es un hijo de esa clase, o un hijo de un hijo de esa clase, y así sucesivamente. Los hermanos no son descendientes entre sí.</p>
 <p><strong>NO podemos asignar un objeto de referencia de padre a una variable de clase hijo</strong> (Perro p = new Animal()). Si queremos convertir un padre en hijo, la variable tiene que ser creada de tipo hijo.
 Si queremos convertir un hijo en padre tendremos que hacer un Upcasting, y al revés tendríamos un Downcasting:</p>
 <p><img alt="Polimorfismo" src="../../img/ud5/1polimor.png" /></p>
 <p>Ejemplo</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">//NO SE PUEDE HACER</span>
-<span class="w">    </span><span class="n">Perro</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">();</span><span class="w"> </span><span class="c1">//no compila</span>
-<span class="w">    </span><span class="n">Perro</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Perro</span><span class="p">)</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">();</span><span class="w"> </span><span class="c1">// compila pero da error de ejecución</span>
-
-<span class="w">    </span><span class="c1">//DOWNCASTING, convertir padre en hijo</span>
-<span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Perro</span><span class="p">();</span>
-<span class="w">    </span><span class="n">Perro</span><span class="w"> </span><span class="n">pe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Perro</span><span class="p">)</span><span class="n">a</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">//UPCASTING, convertir hijo en padre</span>
-<span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Animal</span><span class="p">)</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Perro</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="c1">//NO SE PUEDE HACER</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">Perro</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">();</span><span class="w"> </span><span class="c1">//no compila</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">Perro</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Perro</span><span class="p">)</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">();</span><span class="w"> </span><span class="c1">// compila pero da error de ejecución</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="c1">//DOWNCASTING, convertir padre en hijo</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Perro</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">Perro</span><span class="w"> </span><span class="n">pe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Perro</span><span class="p">)</span><span class="n">a</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="c1">//UPCASTING, convertir hijo en padre</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Animal</span><span class="p">)</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Perro</span><span class="p">();</span>
 </code></pre></div>
 
-
-  
 
 
 
@@ -2333,6 +2288,18 @@ Si queremos convertir un hijo en padre tendremos que hacer un Upcasting, y al re
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2342,7 +2309,7 @@ Si queremos convertir un hijo en padre tendremos que hacer un Upcasting, y al re
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

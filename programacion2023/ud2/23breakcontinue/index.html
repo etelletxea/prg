@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -255,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -590,14 +580,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2154,53 +2144,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#break" class="md-nav__link">
-    BREAK
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#break-etiquetado" class="md-nav__link">
-    Break etiquetado
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue" class="md-nav__link">
-    CONTINUE
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2209,73 +2152,71 @@
                   
 
 
-<h1 id="break-y-continue">Break y continue</h1>
+<h1 id="break-y-continue">Break y continue<a class="headerlink" href="#break-y-continue" title="Permanent link">&para;</a></h1>
 <p>Las sentencias break y continue son las sentencias de salto que se utilizan para omitir algunas sentencias dentro del bucle o terminar el bucle inmediatamente sin comprobar la condición. Estas instrucciones se pueden usar dentro de cualquier bucle, como for, while, do-while.</p>
-<h2 id="break">BREAK</h2>
+<h2 id="break">BREAK<a class="headerlink" href="#break" title="Permanent link">&para;</a></h2>
 <p>Ya se ha visto la instrucción break utilizada en un capítulo anterior de este tutorial. En concreto en la estructura switch.</p>
 <p>La sentencia <strong>break</strong> en java se usa para terminar el bucle inmediatamente.</p>
 <p>Cuando se encuentra una sentencia break dentro de un bucle, la iteración del bucle se detiene ahí y el control vuelve a la primera sentencia <strong>después</strong> del bucle, es decir, la primera sentencia que se encuentra al salir del bucle.</p>
 <p>Básicamente, las instrucciones break se utilizan en situaciones en las que no estamos seguros del número real de iteraciones del bucle o queremos terminar el bucle en función de alguna condición.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fuera del bucle for&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fuera del bucle for&quot;</span><span class="p">);</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nl">Output</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span>
-<span class="n">Fuera</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">bucle</span><span class="w"> </span><span class="k">for</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nl">Output</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Fuera</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">bucle</span><span class="w"> </span><span class="k">for</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>En el caso de bucles anidados, la instrucción break termina el bucle más interno.</p>
 </div>
-<h2 id="break-etiquetado">Break etiquetado</h2>
+<h2 id="break-etiquetado">Break etiquetado<a class="headerlink" href="#break-etiquetado" title="Permanent link">&para;</a></h2>
 <p>Hasta ahora, hemos utilizado la sentencia break sin etiquetar. Sin embargo, hay otra forma de utilizar break en Java conocido como break etiquetado (labeled break).</p>
 <p><img alt="Java" src="../../img/ud22labelbreak.png" /></p>
 <p>En la imagen se ha utilizado un break etiquetado con el identificador <strong><em>label</em></strong> para especificar el bucle exterior. Observa cómo se usa la declaración break con etiqueta.</p>
 <p>La sentencia break está terminando la sentencia etiquetada (es decir, el bucle externo). Luego, el control del programa salta a la sentencia justo después de la etiquetada.</p>
 <p>De esta forma, podríamos utilizar la sentencia break etiquetada para terminar el bucle más externo como se ve en el siguiente ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">        </span><span class="c1">//el primer bucle es etiquetado como primero</span>
-<span class="w">        </span><span class="n">primero</span><span class="p">:</span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">            </span><span class="c1">// el segundo bucle como segundo</span>
-<span class="w">            </span><span class="n">segundo</span><span class="p">:</span>
-<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;i = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;; j = &quot;</span><span class="w"> </span><span class="o">+</span><span class="n">j</span><span class="p">);</span>
-
-<span class="w">                </span><span class="c1">// se realiza un break del primer bucle</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-<span class="w">                    </span><span class="k">break</span><span class="w"> </span><span class="n">primero</span><span class="p">;</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="c1">//el primer bucle es etiquetado como primero</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">primero</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="c1">// el segundo bucle como segundo</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">segundo</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;i = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;; j = &quot;</span><span class="w"> </span><span class="o">+</span><span class="n">j</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="w">                </span><span class="c1">// se realiza un break del primer bucle</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">                    </span><span class="k">break</span><span class="w"> </span><span class="n">primero</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">            </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Output
-i = 1; j = 1
-i = 1; j = 2
-i = 2; j = 1
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Output
+<span class="linenos" data-linenos="2 "></span>i = 1; j = 1
+<span class="linenos" data-linenos="3 "></span>i = 1; j = 2
+<span class="linenos" data-linenos="4 "></span>i = 2; j = 1
 </code></pre></div>
-<h2 id="continue">CONTINUE</h2>
+<h2 id="continue">CONTINUE<a class="headerlink" href="#continue" title="Permanent link">&para;</a></h2>
 <p>La instrucción <strong>continue</strong> en Java se usa para omitir la iteración actual de un bucle y continuar con la siguiente iteración del bucle.</p>
 <p>Podemos usar la instrucción continue dentro de cualquier tipo de bucle, como el bucle for, while y do-while.</p>
 <p>Básicamente, las sentencias continue se utilizan en situaciones en las que queremos continuar el ciclo pero no queremos la sentencia restante después de la sentencia continue.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
-
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nl">Output</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nl">Output</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span>
 </code></pre></div>
 
-
-  
 
 
 
@@ -2308,6 +2249,18 @@ i = 2; j = 1
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2317,7 +2270,7 @@ i = 2; j = 1
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

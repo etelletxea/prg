@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -255,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -588,14 +578,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2159,60 +2149,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#referencias-a-metodos-estaticos" class="md-nav__link">
-    Referencias a métodos estáticos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencia-a-metodos-con-parametro" class="md-nav__link">
-    Referencia a métodos con parámetro
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencia-a-metodos-de-instancia" class="md-nav__link">
-    Referencia a métodos de instancia
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencias-a-constructores" class="md-nav__link">
-    Referencias a constructores
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2221,27 +2157,27 @@
                   
 
 
-<h1 id="referencia-a-metodos-en-expresiones-lambda">Referencia a métodos en expresiones lambda</h1>
+<h1 id="referencia-a-metodos-en-expresiones-lambda">Referencia a métodos en expresiones lambda<a class="headerlink" href="#referencia-a-metodos-en-expresiones-lambda" title="Permanent link">&para;</a></h1>
 <p><strong>Una referencia a métodos</strong> o <em>métodos referenciados</em> proporciona una forma de referirse a un método sin ejecutarlo. Se relaciona con expresiones lambda porque también requiere un contexto de tipo de objetivo que consiste en una interfaz funcional compatible.</p>
 <p>En el caso de que todo lo que haga la expresión lambda sea <strong>llamar a otro método con los parámetros pasados ​​a la expresión lambda</strong>, la implementación de Java lambda proporciona una forma más corta de expresar la llamada al método, que es usando <strong>::</strong>.</p>
 <p>Veamos un ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Impresora</span><span class="p">{</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimir</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Impresora</span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimir</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Si usáramos lambda sin referencias a métodos, lo haríamos de la siguiente forma:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Impresora</span><span class="w"> </span><span class="n">impresora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Impresora</span><span class="w"> </span><span class="n">impresora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
 </code></pre></div>
-<p>Dado que todo lo que hace el cuerpo lambda es reenviar el parámetro String al método System.out.println(), podemos reemplazar la declaración lambda anterior con una referencia de método utilizando <ins class="critic">::</ins>. De forma que quedaría:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Impresora</span><span class="w"> </span><span class="n">impresora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">;</span>
+<p>Dado que todo lo que hace el cuerpo lambda es reenviar el parámetro String al método System.out.println(), podemos reemplazar la declaración lambda anterior con una referencia de método utilizando {++::++}. De forma que quedaría:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Impresora</span><span class="w"> </span><span class="n">impresora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Andrea&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Luisa&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Diego&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Paúl&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Dario&quot;</span><span class="p">);</span>
-<span class="n">names</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Andrea&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Luisa&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Diego&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Paúl&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Dario&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="7 "></span><span class="n">names</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
 </code></pre></div>
 <p>Observa los dos puntos dobles <strong>::</strong> . Estos le indican al compilador de Java que se trata de <strong>una referencia de método</strong>. El método al que se hace referencia es lo que viene después de los dos puntos dobles. Cualquier clase u objeto que posea el método al que se hace referencia viene antes de los dos puntos dobles.</p>
 <p>Podemos hacer referencia a los siguientes tipos de métodos:</p>
@@ -2251,95 +2187,93 @@
 <li>Método de instancia</li>
 <li>Constructor</li>
 </ul>
-<h2 id="referencias-a-metodos-estaticos">Referencias a métodos estáticos</h2>
+<h2 id="referencias-a-metodos-estaticos">Referencias a métodos estáticos<a class="headerlink" href="#referencias-a-metodos-estaticos" title="Permanent link">&para;</a></h2>
 <p>Los métodos más fáciles de referenciar son los métodos estáticos. Veamos un ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Finder</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyClass</span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">doFind</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">){</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">lastIndexOf</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Finder</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyClass</span><span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">doFind</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">){</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">lastIndexOf</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
 </code></pre></div>
 <p>La referencia al método estático <code>doFind</code> se haría con:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Finder</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyClass</span><span class="p">::</span><span class="n">doFind</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Finder</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyClass</span><span class="p">::</span><span class="n">doFind</span><span class="p">;</span>
 </code></pre></div>
 <p>Dado que los parámetros de los métodos <code>Finder.find()</code> y <code>MyClass.doFind()</code> coinciden, es posible crear una expresión lambda que implemente <code>Finder.find()</code> y haga referencia al método <code>MyClass.doFind()</code>.</p>
-<h2 id="referencia-a-metodos-con-parametro">Referencia a métodos con parámetro</h2>
+<h2 id="referencia-a-metodos-con-parametro">Referencia a métodos con parámetro<a class="headerlink" href="#referencia-a-metodos-con-parametro" title="Permanent link">&para;</a></h2>
 <p>También puede hacer referencia a un método con parámetros de objeto de la clase al método que se llama.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Finder</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">MyClass</span><span class="w"> </span><span class="n">mc</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">MyClass</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">//dentro del main</span>
-<span class="c1">//Aunque es un método de instancia, no estático</span>
-<span class="c1">//podemos llamarlo con la clase porque en la interfaz</span>
-<span class="c1">//está añadido un parámetro de tipo MyClass</span>
-<span class="n">Finder</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyClass</span><span class="p">::</span><span class="n">check</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Finder</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">MyClass</span><span class="w"> </span><span class="n">mc</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="kd">class</span> <span class="nc">MyClass</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="c1">//dentro del main</span>
+<span class="linenos" data-linenos="12 "></span><span class="c1">//Aunque es un método de instancia, no estático</span>
+<span class="linenos" data-linenos="13 "></span><span class="c1">//podemos llamarlo con la clase porque en la interfaz</span>
+<span class="linenos" data-linenos="14 "></span><span class="c1">//está añadido un parámetro de tipo MyClass</span>
+<span class="linenos" data-linenos="15 "></span><span class="n">Finder</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyClass</span><span class="p">::</span><span class="n">check</span><span class="p">;</span>
 </code></pre></div>
 <p>Si quisiéramos hacerlo con una expresión lambda sin usar referencia de métodos que llama a String.indexOf() para buscar sería:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Finder</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Finder</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span>
 </code></pre></div>
 <p>Su equivalente utilizando referencia de métodos con parámetro de objeto en la expresión lambda sería:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Finder</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">::</span><span class="n">indexOf</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">finder</span><span class="p">.</span><span class="na">find</span><span class="p">(</span><span class="s">&quot;Hola&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Finder</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">::</span><span class="n">indexOf</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">finder</span><span class="p">.</span><span class="na">find</span><span class="p">(</span><span class="s">&quot;Hola&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>Observe cómo la versión abreviada hace referencia a un solo método. El compilador de Java intentará hacer coincidir el método al que se hace referencia con el primer tipo de parámetro, utilizando el segundo tipo de parámetro como parámetro del método al que se hace referencia.</p>
-<h2 id="referencia-a-metodos-de-instancia">Referencia a métodos de instancia</h2>
+<h2 id="referencia-a-metodos-de-instancia">Referencia a métodos de instancia<a class="headerlink" href="#referencia-a-metodos-de-instancia" title="Permanent link">&para;</a></h2>
 <p>En tercer lugar, también es posible hacer referencia a un método de instancia desde una definición lambda.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Deserializer</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">deserialize</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">v1</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Deserializer</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">deserialize</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">v1</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Esta interfaz representa un componente que es capaz de "deserializar" un String en un int.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StringConverter</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">convertToInt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">v1</span><span class="p">){</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">v1</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StringConverter</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">convertToInt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">v1</span><span class="p">){</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">v1</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
 </code></pre></div>
 <p>El método <code>convertToInt()</code> tiene la misma signatura que el método <code>deserialize()</code> del método de la interfaz <code>Deserializer</code>. Por eso, podemos crear una instancia de StringConverter y hacer referencia a su método convertToInt() desde una expresión lambda de Java.</p>
-<div class="highlight"><pre><span></span><code><span class="n">StringConverter</span><span class="w"> </span><span class="n">stringConverter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringConverter</span><span class="p">();</span>
-<span class="n">Deserializador</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringConverter</span><span class="p">::</span><span class="n">convertToInt</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">StringConverter</span><span class="w"> </span><span class="n">stringConverter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringConverter</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Deserializador</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringConverter</span><span class="p">::</span><span class="n">convertToInt</span><span class="p">;</span>
 </code></pre></div>
 <p>La expresión lambda creada por la segunda de las dos líneas hace referencia al método convertToInt de la instancia de StringConverter creada en la primera línea.</p>
-<h2 id="referencias-a-constructores">Referencias a constructores</h2>
+<h2 id="referencias-a-constructores">Referencias a constructores<a class="headerlink" href="#referencias-a-constructores" title="Permanent link">&para;</a></h2>
 <p>Finalmente, es posible hacer referencia a un constructor de una clase. Para ello, se escribe el nombre de la clase seguido de <strong>::new</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">--</span><span class="w"> </span><span class="n">Nomenclatura</span>
-<span class="nl">MiClase</span><span class="p">::</span><span class="k">new</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">--</span><span class="w"> </span><span class="n">Nomenclatura</span>
+<span class="linenos" data-linenos="2 "></span><span class="nl">MiClase</span><span class="p">::</span><span class="k">new</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Usuario</span><span class="o">&gt;</span><span class="w"> </span><span class="n">usu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Usuario</span><span class="p">::</span><span class="k">new</span><span class="p">;</span>
-<span class="c1">//Construye un objeto de tipo usuario que es devuelto por método get();</span>
-<span class="n">Usuario</span><span class="w"> </span><span class="n">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">usu</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Usuario</span><span class="o">&gt;</span><span class="w"> </span><span class="n">usu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Usuario</span><span class="p">::</span><span class="k">new</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">//Construye un objeto de tipo usuario que es devuelto por método get();</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Usuario</span><span class="w"> </span><span class="n">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">usu</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
 </code></pre></div>
 <p>Veamos otro ejemplo utilizando <code>BiFunction</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Pruebas</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">BiFunction</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Usuario</span><span class="o">&gt;</span><span class="w"> </span><span class="n">crearUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Usuario</span><span class="p">::</span><span class="k">new</span><span class="p">;</span>
-<span class="w">        </span><span class="n">Usuario</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">crearUsuario</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="s">&quot;Patricia&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-<span class="kd">class</span> <span class="nc">Usuario</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Usuario</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Pruebas</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">BiFunction</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Usuario</span><span class="o">&gt;</span><span class="w"> </span><span class="n">crearUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Usuario</span><span class="p">::</span><span class="k">new</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">Usuario</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">crearUsuario</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="s">&quot;Patricia&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kd">class</span> <span class="nc">Usuario</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Usuario</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
 </code></pre></div>
 
-
-  
 
 
 
@@ -2372,6 +2306,18 @@
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2381,7 +2327,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

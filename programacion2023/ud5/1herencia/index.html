@@ -45,18 +45,6 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTWMZYNBPC"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTWMZYNBPC",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTWMZYNBPC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -209,7 +197,9 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Programación" class="md-nav__button md-logo" aria-label="Programación" data-md-component="logo">
       
@@ -255,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          💾 Elementos de un programa informático
+          💾 UD01-Elementos de un programa informático
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -588,14 +578,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          🖲️ Estructuras básicas de control
+          🖲️ UD02-Estructuras básicas de control
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2181,80 +2171,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#herencia-simple" class="md-nav__link">
-    Herencia simple
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sintaxis-herencia-en-java-extends" class="md-nav__link">
-    Sintaxis herencia en Java - extends
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ejemplo-clase-animal" class="md-nav__link">
-    Ejemplo clase Animal
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#super-keyword" class="md-nav__link">
-    Super keyword
-  </a>
-  
-    <nav class="md-nav" aria-label="Super keyword">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#probar-funcionamiento" class="md-nav__link">
-    Probar funcionamiento
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sobreescribir-metodos-de-la-clase-padre-en-los-hijos" class="md-nav__link">
-    Sobreescribir métodos de la clase padre en los hijos
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -2263,7 +2179,7 @@
                   
 
 
-<h1 id="herencia">Herencia</h1>
+<h1 id="herencia">Herencia<a class="headerlink" href="#herencia" title="Permanent link">&para;</a></h1>
 <p>Cuando tenemos una clase con una serie de características  y nuestro programa se actualiza o amplia, tal vez se necesita de una clase con unas características similares, como por ejemplo, Ordenador, posee un ram, cpu, tamaño de disco, etc.</p>
 <p>Si ahora queremos añadir la clase Tablet Android en nuestro sistema, como posee todas esas características de ordenador además de algunas específicas, copiaríamos todo lo que hay en ordenador y agregaríamos lo que fuera específico para Tablet. Lo mismo tendríamos que realizar si añadiéramos Pórtatil Mac. Como te habrás dado cuenta, este proceso genera mucho código repetido. Y arreglar un error en él puede ser también complicado. Para ello utilizamos la herencia.</p>
 <p>¿Cómo se relacionan las clases entre sí? En Java, y en cualquier otro lenguaje orientado a objetos, las clases se organizan en una <strong>jerarquía de clases</strong>. Una jerarquía de clases es como un árbol al revés. En lo más alto de la jerarquía se encuentra la clase más general, en Java, la clase <code>Object</code>. Las clases debajo de <code>Object</code> en la jerarquía se conocen como sus <strong>subclases</strong>. Dado que todos los objetos que usamos en nuestros programas pertenecen a una clase u otra, esto es como decir que todos los objetos son <code>Object</code>.</p>
@@ -2296,53 +2212,53 @@ Por lo tanto, la clase <code>Rey</code> tiene ciertas características particula
 <p><img alt="Arrays" src="../../img/ud5/2herencia.png" /></p>
 <p>En los diagramas, la flecha apunta del hijo al padre y muestra la relación "es-un". La flecha apunta a la clase principal de la clase secundaria. La imagen se puede leer como "un rey es una pieza de ajedrez".</p>
 <p>Como vemos, una jerarquía de clases representa una especialización de clases a medida que avanza de arriba hacia abajo. La clase más general, <code>PiezaAjedrez</code>, está en la parte superior de la jerarquía. Sus atributos y métodos se transmiten (heredan) sus subclases. Sin embargo, además de los atributos y métodos que heredan de sus superclases, las subclases definen sus propios atributos y métodos especiales. Cada una de las subclases, Peón, Alfil, etc., representa algún tipo de especialización de la superclase.</p>
-<h2 id="herencia-simple">Herencia simple</h2>
+<h2 id="herencia-simple">Herencia simple<a class="headerlink" href="#herencia-simple" title="Permanent link">&para;</a></h2>
 <p>En Java, (a diferencia de los humanos) los hijos heredan características de un solo padre. A esto se le llama <strong>herencia simple</strong>. Aunque algunos lenguajes de programación permiten que una clase hija herede de más de una clase padre. A esto se le llama <strong>herencia múltiple</strong>. Con la herencia múltiple, a veces es difícil saber qué padre contribuyó con qué características al hijo. Java evita estos problemas mediante el uso de herencia simple.</p>
 <p>Una clase padre puede tener múltiples hijos.</p>
 <p><strong>La herencia es entre clases, no entre objetos.</strong></p>
-<h2 id="sintaxis-herencia-en-java-extends">Sintaxis herencia en Java - <em>extends</em></h2>
+<h2 id="sintaxis-herencia-en-java-extends">Sintaxis herencia en Java - <em>extends</em><a class="headerlink" href="#sintaxis-herencia-en-java-extends" title="Permanent link">&para;</a></h2>
 <p>La sintaxis para heredar de una superclase es:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Child</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// los nuevos miembros y constructores de la clase hija van aquí</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Child</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Parent</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="c1">// los nuevos miembros y constructores de la clase hija van aquí</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Los miembros (variables y métodos) de la clase padre se incluyen automáticamente en el hijo por herencia. Si se quieren agregar miembros adicionales en la clase hija se hace en su definición de clase.</p>
-<mark class="critic block">
+<p>{==</p>
 <p>Las clases declaradas como <code>final</code> no pueden ser extendidas.</p>
-</mark>
-<h2 id="ejemplo-clase-animal">Ejemplo clase Animal</h2>
+<p>==}</p>
+<h2 id="ejemplo-clase-animal">Ejemplo clase Animal<a class="headerlink" href="#ejemplo-clase-animal" title="Permanent link">&para;</a></h2>
 <p>Vamos a crear una clase base <code>Animal</code> que tendrá una serie de características comunes para todos los animales como puede ser, nombre, peso, tamaño, etc.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Animal</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="c1">//getters y setters</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Animal</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="c1">//getters y setters</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Ahora queremos crear un tipo de animal <code>Dog</code> que contendrá todas las características (atributos y métodos) de la clase <code>Animal</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Cuando creamos una subclase, necesitamos llamar al constructor de la superclase para inicializarla, ya que hereda de ella. Así que tendremos que crear el constructor en la clase <code>Dog</code> que llame dentro al constructor de la superclase (<code>Animal</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Al crear una clase hija <code>Dog</code> que hereda de la clase padre <code>Animal</code>, lo que estamos haciendo es heredar todo su comportamiento (atributos y métodos) y además nos permite añadir atributos específicos y únicos para esa clase hija que son particulares de los perros y no comunes o aplicables a todos los animales.</p>
 <hr />
-<h2 id="super-keyword"><em>Super</em> keyword</h2>
+<h2 id="super-keyword"><em>Super</em> keyword<a class="headerlink" href="#super-keyword" title="Permanent link">&para;</a></h2>
 <p>La palabra reservada <code>super</code> se utiliza para llamar al constructor de la clase de la que estamos heredando, es decir, llamar a la clase padre o superclase. En nuestro caso, para invocar al constructor de la superclase <code>Animal</code>.
 Esto nos permite inicializar la clase <code>Animal</code>, ya que <code>Dog</code> es una clase derivada que se basa en ella.</p>
 <p>La primera línea dentro del constructor de la clase hija debe ser la llamada al constructor padre con <code>super()</code>.
@@ -2354,152 +2270,152 @@ Si el padre no tiene un constructor sin argumentos, entonces provoca un error.</
 </div>
 <hr />
 <p>En la clase hija vamos a crear algunos campos específicos para los perros como ojos, piernas, etc. Porque recuerda que no todos los animales tienen piernas u ojos pero si todos los perros.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Además de los campos que se necesitan para crear un objeto <code>Animal</code>, también hay que inicializar los campos propios de la clase <code>Dog</code> en el constructor:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
 </code></pre></div>
 <p>En la clase base, vamos a añadir comportamiento, que será común para todos los animales, comer y moverse:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Animal</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">//código</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">//código</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Animal</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="c1">//código</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="c1">//código</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Al hacer esto, y crearlos como <code>public</code> (<code>protected</code> también serviría), significa que ahora están disponibles en la clase <code>Dog</code> automáticamente. Es decir, el método <code>eat</code> y <code>move</code> se hereda a la clase <code>Dog</code>.</p>
-<h3 id="probar-funcionamiento">Probar funcionamiento</h3>
+<h3 id="probar-funcionamiento">Probar funcionamiento<a class="headerlink" href="#probar-funcionamiento" title="Permanent link">&para;</a></h3>
 <p>Vamos a probar cómo funciona la herencia, para ello creamos un clase <code>Main</code> con un método <code>main</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;Maxi&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;Maxi&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Vemos que crear un animal no tiene mucho sentido, puesto que no sabemos mucho sobre él. Cuando creamos un perro, podemos ser más específicos en nuestra definición y dar valores relativos solo para perros.
 Además, desde perro tenemos acceso a los métodos definidos en la clase padre (<code>Animal</code>) como públicos o protected. Por ejemplo, <code>dog.eat()</code> invocará al método comer que se encuentra en la clase padre, ya que la clase <code>Dog</code> no tiene ningún método <code>eat</code>.</p>
-<h2 id="sobreescribir-metodos-de-la-clase-padre-en-los-hijos">Sobreescribir métodos de la clase padre en los hijos</h2>
+<h2 id="sobreescribir-metodos-de-la-clase-padre-en-los-hijos">Sobreescribir métodos de la clase padre en los hijos<a class="headerlink" href="#sobreescribir-metodos-de-la-clase-padre-en-los-hijos" title="Permanent link">&para;</a></h2>
 <p>La herencia nos aporta la opción de la <strong>sobreescritura</strong> de métodos. Es decir, redefinir los métodos de una clase padre en las clases hijas.</p>
 <p>Por ejemplo, en la clase <code>Dog</code> podemos sobreescribir el método <code>eat()</code> con una funcionalidad más específica.</p>
-<p>El IntelliJ nos ofrece un atajo para sobreescritura de métodos. Botón derecho --&gt; Generate...</p>
+<p>El IntelliJ nos ofrece un atajo para sobreescritura de métodos. Botón derecho &rarr; Generate...</p>
 <p><img alt="Arrays" src="../../img/ud5/1intellij.png" /></p>
 <p><img alt="Arrays" src="../../img/ud5/2intellij.png" /></p>
 <p>IntelliJ nos muestra todos los métodos que están en la clase <code>Animal</code> y podemos sobreescribir:</p>
 <p><img alt="Arrays" src="../../img/ud5/3intellij.png" /></p>
 <p>Si seleccionamos el método <code>eat()</code>, tenemos:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span><span class="c1">//Código que se crea automáticamente y llama al método eat de la clase padre</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span><span class="c1">//Código que se crea automáticamente y llama al método eat de la clase padre</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Ahora la clase hija <code>Dog</code> tiene su propio método <code>eat()</code> con código específico para esta clase.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="c1">//Método privado solo de la clase Dog</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">chew</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog eat&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">chew</span><span class="p">();</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">//Método privado solo de la clase Dog</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">chew</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog eat&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">chew</span><span class="p">();</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span><span class="p">}</span>
 </code></pre></div>
 <p>En términos de sobreescritura, debemos de llevar cuidado con el método que se invoca:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="c1">//Método privado solo de la clase Dog</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">chew</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nd">@Override</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog eat&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="n">chew</span><span class="p">();</span>
-<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">walk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">move</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">//Método privado solo de la clase Dog</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">chew</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog eat&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">chew</span><span class="p">();</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">walk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">move</span><span class="p">();</span>
+<span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="29 "></span>
+<span class="linenos" data-linenos="30 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Si no sobreescribimos el método <code>move()</code> en la clase <code>Dog</code>, cuando lo invocamos dentro del método <code>walk()</code> se llamaría al método de la clase <code>Animal</code>.</p>
 <div class="admonition warning warning">
@@ -2507,8 +2423,6 @@ Además, desde perro tenemos acceso a los métodos definidos en la clase padre (
 <p><strong>Los métodos estáticos</strong> se heredan pero no se pueden sobreescribir.</p>
 </div>
 
-
-  
 
 
 
@@ -2541,6 +2455,18 @@ Además, desde perro tenemos acceso a los métodos definidos en la clase padre (
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<ja.lopez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2550,7 +2476,7 @@ Además, desde perro tenemos acceso a los métodos definidos en la clase padre (
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "toc.integrate", "content.code.copy", "content.code.annotate", "navitagion.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
