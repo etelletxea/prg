@@ -221,7 +221,7 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        🔥 Inicio
+        00- Inicio
       </a>
     </li>
   
@@ -2227,7 +2227,8 @@
 <li><strong>Polimorfismo</strong>: posibilita que una misma operación pueda realizar tareas diferentes, dependiendo del tipo de objeto sobre el cual se ha invocado.</li>
 </ul>
 <p><img alt="Java" src="../../img/Object-Oriented-Programming.png" /></p>
-<p>Por ejemplo, en un juego como Minecraft, en los que se utilizan bloques  para construir un mundo, los bloques de diferente tipo tienen muchas características comunes, como que son apilables, tienen las mismas dimensiones,...pero pueden tener diferentes texturas o se comportan diferente al tocarlo el personaje, o pueden explotar. De esta forma, mediante la POO podemos crear una clase base con las características comunes y crear clases que hereden de la base con sus características individuales.</p>
+<p><strong>Por ejemplo</strong>, en un juego como Minecraft, en los que se utilizan bloques  para construir un mundo, los bloques de diferente tipo tienen muchas características comunes, como que son apilables, tienen las mismas dimensiones, posición en el mundo...pero pueden tener diferentes texturas o se comportan diferente al tocarlo el personaje, como que pueden explotar. </p>
+<p>De esta forma, mediante la POO podemos crear una clase base con las características comunes(dimensión, posición en el mundo, acción_dibujar) y crear clases que hereden de la base con sus características individuales(potencia_explosión, soporte...) y reescribir aquellas acciones que lo personalizan, como puede ser <em>accion_dibujar</em>, cada tipo de bloque se dibujará de forma diferente, por lo que cada clase tendrá que describir como hacerlo.</p>
 <p><img alt="Java" src="../../img/ud1/poo.png" /></p>
 <h2 id="concepto-de-objeto">Concepto de objeto<a class="headerlink" href="#concepto-de-objeto" title="Permanent link">&para;</a></h2>
 <p>Entonces, ¿qué es un objeto? Al igual que en el mundo real, un objeto es cualquier cosa. Un objeto puede ser una cosa física, como un coche, o una cosa mental, como una idea. Puede ser algo natural, como un animal, o algo artificial hecho por el hombre, como un cajero automático. Un programa que administra un cajero automático involucraría cuentas bancarias y objetos de cliente. Un programa de ajedrez involucraría un objeto tablero y objetos piezas de ajedrez.</p>
@@ -2239,7 +2240,7 @@
 <p>A veces nos referimos a la colección de atributos y valores de un objeto como su <strong>estado</strong>.</p>
 <h3 id="acciones-o-metodos">Acciones o Métodos<a class="headerlink" href="#acciones-o-metodos" title="Permanent link">&para;</a></h3>
 <p>Además de sus atributos o propiedades, los objetos también tienen acciones o comportamientos característicos. Como ya dijimos, los objetos en los programas son dinámicos. Hacen cosas o les hacen cosas.</p>
-<p>Por ejemplo, en un programa de ajedrez, ChessPieces tiene la capacidad de moveTo () a una nueva posición en el tablero de ajedrez. De manera similar, cuando un cliente presiona el botón "Saldo actual" en un cajero automático, esto le está diciendo al cajero automático que informe () el saldo bancario actual del cliente. (Observe cómo usamos paréntesis para distinguir acciones de objetos y atributos).</p>
+<p><strong>Por ejemplo</strong>, en un programa de ajedrez, ChessPieces tiene la capacidad de moveTo () a una nueva posición en el tablero de ajedrez. De manera similar, cuando un cliente presiona el botón "Saldo actual" en un cajero automático, esto le está diciendo al cajero automático que informe () el saldo bancario actual del cliente. (Observe cómo usamos paréntesis para distinguir acciones de objetos y atributos).</p>
 <p>Las acciones asociadas con un objeto se pueden utilizar para enviar mensajes a los objetos y recuperar información de los objetos. Un mensaje es el paso de información o datos de un objeto a otro.
 En este ejemplo, le decimos a peón1: Pieza de ajedrez que se mueva a (3,4).</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="n">chessPiece</span><span class="p">.</span><span class="na">move</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>

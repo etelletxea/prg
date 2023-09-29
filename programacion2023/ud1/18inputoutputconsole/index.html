@@ -221,7 +221,7 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        🔥 Inicio
+        00- Inicio
       </a>
     </li>
   
@@ -577,6 +577,13 @@
         <li class="md-nav__item">
   <a href="#entrada-de-la-informacion-javautilscanner" class="md-nav__link">
     Entrada de la información java.util.Scanner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limpiar-el-buffer-de-entrada" class="md-nav__link">
+    Limpiar el buffer de entrada
   </a>
   
 </li>
@@ -2175,36 +2182,79 @@ La clase <em>Scanner</em> está diseñada para ser una forma muy flexible de rec
 <p>Para usar la clase Scanner para la entrada de teclado, debemos crear una instancia de Scanner y asociarla con System.in. La clase tiene un constructor para este propósito, por lo que la declaración</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
 </code></pre></div>
-<p>declara y crea una instancia de un objeto que se puede utilizar para la entrada del teclado. Después de crear un objeto Scanner, podemos hacer una llamada a nextInt(), nextDouble(), o next() para leer, respectivamente, un entero, un número real, o String del teclado.</p>
+<p>declara y crea una instancia de un objeto que se puede utilizar para la entrada del teclado. Después de crear un objeto Scanner, podemos hacer una llamada a:</p>
+<ul>
+<li>nextByte()  para leer un dato de tipo byte.</li>
+<li>nextShort()  para leer un dato de tipo short.</li>
+<li>nextInt()  para leer un dato de tipo int.</li>
+<li>nextLong()  para leer un dato de tipo long. </li>
+<li>nextFloat()  para leer un dato de tipo float. </li>
+<li>nextDouble()  para leer un dato de tipo double. </li>
+<li>nextBoolean()  para leer un dato de tipo boolean.</li>
+<li>nextLine()  para leer un String hasta encontrar un salto de línea.</li>
+<li>next()  para leer un String hasta el primer delimitador, generalmente hasta un espacio en blanco o hasta un salto de línea.  </li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">      </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="linenos" data-linenos="3 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un número: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce un número: &quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="4 "></span><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="c1">//Read the integer</span>
 <span class="linenos" data-linenos="5 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El número introducido es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
 <span class="linenos" data-linenos="6 "></span><span class="w">   </span><span class="p">}</span>
 </code></pre></div>
-<p>Cuando se ejecuta el método <em>nextInt()</em>, no se ejecutan más declaraciones hasta que el método devuelve un valor int. Normalmente, esto no sucede hasta que el usuario ha escrito los dígitos de un número entero y presiona la tecla Intro o Intro.</p>
-<p>Para leer un String utilizamos el método <em>next()</em>.</p>
+<p>Cuando se ejecuta el método <em>nextInt()</em>, no se ejecutan más declaraciones hasta que el método devuelve un valor int. Normalmente, esto no sucede hasta que el usuario ha escrito los dígitos de un número entero y presiona la tecla Intro.</p>
+<p>Para leer un String utilizamos el método <em>next()</em>. Pero lee hasta el primer espacio o salto de línea.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">      </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-<span class="linenos" data-linenos="3 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce una palabra: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce una palabra: &quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="4 "></span><span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
 <span class="linenos" data-linenos="5 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 <span class="linenos" data-linenos="6 "></span><span class="w">   </span><span class="p">}</span>
 </code></pre></div>
 <p>Un objeto <em>Scanner</em> tiene un conjunto de cadenas de caracteres que separan o delimitan los fragmentos de datos que está buscando. De forma predeterminada, este conjunto de delimitadores consta de cualquier secuencia no vacía de caracteres en blanco, es decir, los caracteres de espacio, tabulación, retorno y nueva línea. Esto permitirá al usuario ingresar varios números enteros separados por espacios antes de presionar la tecla Enter. En código sería:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce dos números: &quot;</span><span class="p">);</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce dos números: &quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
 <span class="linenos" data-linenos="3 "></span><span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
 </code></pre></div>
+<img alt="Java" src="../../img/ud1/scanner.png" /></p>
+<p><strong>Errores:</strong> Si el dato encontrado no es del tipo esperado o de un tipo compatible se produce un error. En este caso se lanza la excepción InputMismatchException. Esto se produce, por ejemplo, cuando se está ejecutando el método nextInt() para extraer un entero del buffer y se introduce por ejemplo un double o un char.</p>
+<p><img alt="Java" src="../../img/ud1/errorscanner.png" /></p>
 <p>Los espacios en blanco como delimitadores también significan que el método <em>next()</em> no puede devolver una cadena vacía ni puede devolver una cadena que contenga espacios. Por ejemplo, considere el código:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un texto separado por espacio en blanco: &quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce un texto separado por espacio en blanco: &quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Usted introdujo: &quot;</span><span class="o">+</span><span class="n">str</span><span class="p">);</span>
 </code></pre></div>
 <p>Si se escribe "Hola mundo" y se presiona la tecla enter, la cadena str almacenará sólo "Hola".</p>
+<p><img alt="Java" src="../../img/ud1/scanner2.png" /></p>
 <p>Para que un objeto <em>Scanner</em> lea cadenas que contienen espacios, debemos usar el método <em>nextLine()</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce un texto separado por espacio en blanco: &quot;</span><span class="p">);</span>
+<span class="hll"><span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+</span><span class="linenos" data-linenos="3 "></span><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Usted introdujo: &quot;</span><span class="o">+</span><span class="n">str</span><span class="p">);</span><span class="w">   </span>
 </code></pre></div>
+<p><img alt="Java" src="../../img/ud1/scanner3.png" /></p>
+<h2 id="limpiar-el-buffer-de-entrada">Limpiar el buffer de entrada<a class="headerlink" href="#limpiar-el-buffer-de-entrada" title="Permanent link">&para;</a></h2>
+<p>Cuando el usuario introduce un dato, scanner lee hasta que encuentra un espacio o un <em>intro('/n')</em>, pero este intro queda en el buffer, por lo que en una segunda lectura de datos por scanner se lo encontrará como primer carácter por lo que no leerá los datos del usuario correctamente</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce tu edad: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="c1">//el usuario introduce el numero pero queda &#39;/n&#39; en el buffer</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce tu nombre:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="c1">//El programa no para ya que scanner encuentra datos en el buffer</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="c1">//En nuestro caso el caracter &#39;/n&#39;, por lo que no lee el nombre</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="linenos" data-linenos="9 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tu nombre es &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; y tienes &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; años&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="Java" src="../../img/ud1/scanner4.png" /></p>
+<p>La solución radica en limpiar el buffer de entrada mediante <em>nextLine</em> después de leer el número.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce tu edad: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="c1">//limpiamos el buffer</span>
+<span class="hll"><span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+</span><span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduce tu nombre:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tu nombre es &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; y tienes &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; años&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="Java" src="../../img/ud1/scanner5.png" /></p>
 
 
 
