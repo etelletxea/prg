@@ -701,6 +701,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#agrupar-casos" class="md-nav__link">
+    Agrupar casos
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2147,9 +2154,10 @@
 
 <h1 id="sentencia-switch">Sentencia <em>SWITCH</em><a class="headerlink" href="#sentencia-switch" title="Permanent link">&para;</a></h1>
 <p>Otra estructura de selección o alternativa para agregar a nuestro repertorio es la estructura <strong><em>switch</em></strong>.</p>
-<p><img alt="Java" src="../../img/switchsyntax.png" /></p>
+<p><img alt="Java" src="../../img/ud2/switchsyntax.png" />
+<img alt="Java" src="../../img/ud2/2switch.png" /></p>
 <p>La expresión <strong>switch</strong> se evalúa una vez.
-El valor de la expresión se compara con los valores de cada caso. Si hay una coincidencia, se ejecuta el bloque de código asociado. Las palabras clave <a href="#break"><strong>break</strong></a> y <a href="#default"><strong>default</strong></a> <strong>son opcionales</strong>. Los casos (case) suelen ser literales que no varían, y a menudo se usan constantes o el tipo de dato enum.</p>
+El valor de la expresión se compara con los valores de cada caso. Si hay una coincidencia, se ejecuta el bloque de código asociado. Las palabras clave <a href="#break"><strong>break</strong></a> y <a href="#default"><strong>default</strong></a> <strong>son opcionales</strong>. Los casos (case) suelen ser literales que no varían, y a menudo se usan constantes o el tipo de dato enum. No se aceptan el tipo punto flotante(34.5)</p>
 <p>Es una forma abreviada de codificar la <a href="../1seleccion/#sentencia-condicional-if-else-multiple">estructura de selección múltiple</a> que vimos en el capítulo anterior.</p>
 <p>De forma que el siguiente código expresado con if-else múltiple:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numJugadores</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -2179,12 +2187,45 @@ El valor de la expresión se compara con los valores de cada caso. Si hay una co
 </code></pre></div>
 <h2 id="break"><em>BREAK</em><a class="headerlink" href="#break" title="Permanent link">&para;</a></h2>
 <p>Cuando el programa Java alcanza la palabra break, se sale del bloque switch. Es decir, ya no se sigue ejecutando más código dentro del switch ni ningún case.</p>
-<p>{==</p>
 <p>Un break puede ahorrar mucho tiempo de ejecución porque "ignora" la ejecución de todo el resto del código switch.</p>
-<p>==}</p>
 <h2 id="default"><em>DEFAULT</em><a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 <p>La palabra default se usa para ejecutar código cuando no hay ninguna coincidencia con ningún caso (<em>case</em>).
 Siempre se pone al final, por tanto no necesita de la instrucción <em>break</em>.</p>
+<h2 id="agrupar-casos"><em>Agrupar casos</em><a class="headerlink" href="#agrupar-casos" title="Permanent link">&para;</a></h2>
+<p>En el <strong>Switch</strong> se va comparando cada <em>case</em> y una vez que encuentra una coincidencia ejecuta todo el código de <strong>switch</strong> hasta que se encuntra un <strong>break</strong> o termina.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kt">int</span><span class="w"> </span><span class="n">numJugadores</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">numJugadores</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Single player&quot;</span><span class="p">);</span>
+<span class="hll"><span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Two player&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Multiplayer&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="k">default</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Not possible, too many players&quot;</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</code></pre></div>
+Se ejecuta el código marcado</p>
+<p><img alt="Java" src="../../img/ud2/2switch2.png" /></p>
+<p>Esta característica la podemos aprovechar para agrupar casos</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">String</span><span class="w"> </span><span class="n">diaSemana</span><span class="o">=</span><span class="s">&quot;Miércoles&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">diaSemana</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Lunes&quot;</span><span class="p">:</span><span class="w">               </span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Martes&quot;</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Miércoles&quot;</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Jueves&quot;</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Viernes&quot;</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Es un día laborable.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Sábado&quot;</span><span class="p">:</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Domingo&quot;</span><span class="p">:</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Es un fin de semana.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Día no válido.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</code></pre></div>
 
 
 
