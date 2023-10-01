@@ -602,13 +602,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operador-ternario" class="md-nav__link">
-    Operador ternario (?:)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#abreviaciones" class="md-nav__link">
     Abreviaciones
   </a>
@@ -2456,13 +2449,20 @@ Los operadores condicionales son:</p>
 <td>OR lógico</td>
 <td>Devuelve verdadero si al menos una condición es cierta.</td>
 </tr>
+<tr>
+<td>!</td>
+<td>NOT lógico</td>
+<td>Invierte el valor lógico de la expresión lógica</td>
+</tr>
 </tbody>
 </table>
-<p><img alt="Java" src="../../img/OR.png" /></p>
+<p><img alt="Java" src="../../img/OR.png" /><img alt="Java" src="../../img/ud1/op_log.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">));</span><span class="w"> </span><span class="c1">//False</span>
 <span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">));</span><span class="w"> </span><span class="c1">//False</span>
-<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">));</span><span class="w"> </span><span class="c1">//True</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">));</span><span class="w"> </span><span class="c1">//True</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">));</span><span class="w"> </span><span class="c1">//True</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span><span class="p">));</span><span class="w"> </span><span class="c1">//False</span>
 </code></pre></div>
 <h2 id="operadores-de-bits">Operadores de bits<a class="headerlink" href="#operadores-de-bits" title="Permanent link">&para;</a></h2>
 <table>
@@ -2496,14 +2496,6 @@ Los operadores condicionales son:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="operador-ternario">Operador ternario (?:)<a class="headerlink" href="#operador-ternario" title="Permanent link">&para;</a></h2>
-<p>Ternario es una versión abreviada de la sentencia if-else. Tiene tres operandos y de ahí el nombre ternario. El formato general es:</p>
-<p><img alt="Java" src="../../img/ternaryoperator.png" /></p>
-<p>La declaración anterior significa que si la condición se evalúa como verdadera, entonces ejecuta las instrucciones después del ‘?‘ de lo contrario, ejecuta las instrucciones después de ‘:‘.</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
-<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="n">String</span><span class="w"> </span><span class="n">notaFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Aprobado&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Suspendido&quot;</span><span class="p">;</span>
-<span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">notaFinal</span><span class="p">);</span><span class="w"> </span><span class="c1">//muestra Aprobado</span>
-</code></pre></div>
 <h2 id="abreviaciones">Abreviaciones<a class="headerlink" href="#abreviaciones" title="Permanent link">&para;</a></h2>
 <p>En muchos casos, el operador de asignación se puede combinar con otros operadores para construir una versión más corta de la declaración llamada Declaración Compuesta (Compound Statement).</p>
 <ul>

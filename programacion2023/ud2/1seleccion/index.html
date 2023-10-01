@@ -680,6 +680,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#operador-ternario" class="md-nav__link">
+    Operador ternario (?:)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2252,6 +2259,30 @@ La sentencia simple condicional if tiene la siguiente estructura:</p>
 <span class="linenos" data-linenos="8 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Not possible, too many players&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="9 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
+<h2 id="operador-ternario">Operador ternario (?:)<a class="headerlink" href="#operador-ternario" title="Permanent link">&para;</a></h2>
+<p>Ternario es una versión abreviada de la sentencia if-else. Tiene tres operandos y de ahí el nombre ternario. El formato general es:</p>
+<p><img alt="Java" src="../../img/ternaryoperator.png" /></p>
+<p>La declaración anterior significa que si la condición se evalúa como verdadera, entonces ejecuta las instrucciones después del ‘?‘ de lo contrario, ejecuta las instrucciones después de ‘:‘.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="n">String</span><span class="w"> </span><span class="n">notaFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Aprobado&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Suspendido&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">notaFinal</span><span class="p">);</span><span class="w"> </span><span class="c1">//muestra Aprobado</span>
+</code></pre></div>
+Mediante if-else tenemos el siguiente código más extenso</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="n">String</span><span class="w"> </span><span class="n">notaFinal</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">){</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">notaFinal</span><span class="o">=</span><span class="s">&quot;Aprobado&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">  </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">  </span><span class="k">else</span><span class="p">{</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">notaFinal</span><span class="o">=</span><span class="s">&quot;Suspendido&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">  </span><span class="p">}</span><span class="w">  </span>
+<span class="linenos" data-linenos="9 "></span><span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">notaFinal</span><span class="p">);</span><span class="w"> </span><span class="c1">//muestra Aprobado</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Cuando las expresiones sean simples, es preferible utilizar el operador ternario en lugar de if-else, por economía y legibilidad</p>
+</div>
+<hr />
 
 
 
