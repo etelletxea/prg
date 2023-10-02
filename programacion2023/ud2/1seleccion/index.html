@@ -2193,20 +2193,19 @@ La respuesta es verdadera o falsa.</p>
 <li>siga las instrucciones en el cuadro "limpiaparabrisas desactivados",</li>
 <li>siga la línea para "Continuar".</li>
 </ul>
-<details class="example"><summary>Ejemplo del programa en código</summary><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>public static void main(String[] args) {
-<span class="linenos" data-linenos=" 2 "></span>    Scanner scan = new Scanner( System.in );
-<span class="linenos" data-linenos=" 3 "></span>    String respuesta;
-<span class="linenos" data-linenos=" 4 "></span>    System.out.print(&quot;¿Está lloviendo? (Y or N): &quot;);
-<span class="linenos" data-linenos=" 5 "></span>    respuesta = scan.nextLine();
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="w"> </span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">respuesta</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;¿Está lloviendo? (Y or N): &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">respuesta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
 <span class="linenos" data-linenos=" 6 "></span>
-<span class="linenos" data-linenos=" 7 "></span>    if (respuesta.equals(&quot;Y&quot;)) {
-<span class="linenos" data-linenos=" 8 "></span>        System.out.println(&quot;Activa limpiaparabrisas&quot;);
-<span class="linenos" data-linenos=" 9 "></span>    } else {
-<span class="linenos" data-linenos="10 "></span>        System.out.println(&quot;Desactiva limpiaparabrisas&quot;);
-<span class="linenos" data-linenos="11 "></span>    }
-<span class="linenos" data-linenos="12 "></span>}
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">respuesta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;Y&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Activa limpiaparabrisas&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Desactiva limpiaparabrisas&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-</details>
 <h2 id="sentencia-simple-condicional-if">Sentencia simple condicional <em>if</em><a class="headerlink" href="#sentencia-simple-condicional-if" title="Permanent link">&para;</a></h2>
 <p>La declaración if es la más básica de todas las declaraciones de flujo de control. Le dice a su programa que ejecute una determinada sección de código solo si una prueba en particular se evalúa como verdadera.
 La sentencia simple condicional if tiene la siguiente estructura:</p>
@@ -2215,10 +2214,8 @@ La sentencia simple condicional if tiene la siguiente estructura:</p>
 <span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p><img alt="Java" src="../../img/ud2if.png" /></p>
-<p><strong><em>Condicion</em></strong> es una expresión booleana. Recuerde que una expresión es una combinación de literales, operadores, nombres de variables y paréntesis que se utilizan para calcular un valor, o incluso una llamada a un método.</p>
-<p>{==</p>
+<p><strong><em>Condición</em></strong> es una expresión booleana. Recuerde que una expresión es una combinación de literales, operadores, nombres de variables y paréntesis que se utilizan para calcular un valor, o incluso una llamada a un método.</p>
 <p>Una <a href="../11booleanexpressions/">expresión booleana</a> es una expresión que se evalúa como verdadera o falsa.</p>
-<p>==}</p>
 <p>Dada esta descripción de la sintaxis de la sentencia if, los siguientes son ejemplos de sentencias if válidas:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;expresión if&quot;</span><span class="p">);</span>
