@@ -775,6 +775,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#control-de-la-entrada-del-usuario-mediante-while" class="md-nav__link">
+    Control de la entrada del usuario mediante while
+  </a>
+  
+    <nav class="md-nav" aria-label="Control de la entrada del usuario mediante while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-el-programa-hasta-que-se-introduzca-un-valor-en-concreto" class="md-nav__link">
+    Ejecutar el programa hasta que se introduzca un valor en concreto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leer-opcion-de-menu-valida-del-usuario-o-dato-de-usuario-valido" class="md-nav__link">
+    Leer opción de menú válida del usuario o dato de usuario válido
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2253,6 +2280,68 @@
 <p>Salida</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    55
 </code></pre></div>
+<h2 id="control-de-la-entrada-del-usuario-mediante-while">Control de la entrada del usuario mediante <strong>while</strong><a class="headerlink" href="#control-de-la-entrada-del-usuario-mediante-while" title="Permanent link">&para;</a></h2>
+<p>Las estructuras en bucle permiten controlar la entrada del usuario en nuestros programas. Tenemos varios casos de uso. Vamos a ver algunos.</p>
+<h3 id="ejecutar-el-programa-hasta-que-se-introduzca-un-valor-en-concreto">Ejecutar el programa hasta que se introduzca un valor en concreto<a class="headerlink" href="#ejecutar-el-programa-hasta-que-se-introduzca-un-valor-en-concreto" title="Permanent link">&para;</a></h3>
+<p>Este caso:
+Vamos a suponer que el programa terminará cuando el número sea negativo(puede ser cualquier condición)</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>   1. Mostrar mensaje al usuario: &quot;Introduzca un número o ingrese un número negativo para terminar.&quot;
+<span class="linenos" data-linenos="2 "></span>   2. Leer el dato ingresado por el usuario.
+<span class="linenos" data-linenos="3 "></span>   3. Mientras el dato no sea negativo:
+<span class="linenos" data-linenos="4 "></span>      1. Ejecutar las acciones correspondientes al dato ingresado.
+<span class="linenos" data-linenos="5 "></span>      2. Mostrar mensaje al usuario: &quot;Introduzca otro número o ingrese un número negativo para terminar.&quot;
+<span class="linenos" data-linenos="6 "></span>      3. Leer el siguiente dato ingresado por el usuario.
+<span class="linenos" data-linenos="7 "></span>   4. Fin del bucle while.
+<span class="linenos" data-linenos="8 "></span>   5. Fin del programa.
+</code></pre></div>
+<p>Por ejemplo, si queremos un programa en el que el usuario introduce números en los que le dirá si es "par" o "impar" hasta que introduzca "0"</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduzca un número ó \&quot;0\&quot; para terminar:&quot;</span><span class="p">);</span>
+<span class="hll"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="c1">//miestras no sea 0</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="c1">// Realizar acciones con el número ingresado</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">numero</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El número  es par&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">else</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El número  es impar&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="c1">// Pedir al usuario otro número</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduzca un número ó \&quot;0\&quot; para terminar:&quot;</span><span class="p">);</span>
+<span class="hll"><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Programa finalizado.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+</code></pre></div>
+<img alt="Java" src="../../img/ud2/whilemenu.png" /></p>
+<p>Observa como es necesario pedir el valor antes de entrar en el while</p>
+<h3 id="leer-opcion-de-menu-valida-del-usuario-o-dato-de-usuario-valido">Leer opción de menú válida del usuario o dato de usuario válido<a class="headerlink" href="#leer-opcion-de-menu-valida-del-usuario-o-dato-de-usuario-valido" title="Permanent link">&para;</a></h3>
+<p>Si las opciones por parte del usuario tienen que ser limitadas. Podemos mediante un bucle pedir al usuario la opción hasta que sea una opción válida. </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kt">int</span><span class="w"> </span><span class="n">opcion</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Menú de opciones:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;1. Opción 1&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;2. Opción 2&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;3. Opción 3&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;4. Opción 4&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Seleccione una opción: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">opcion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">opcion</span><span class="o">&lt;</span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mi">4</span><span class="o">&lt;</span><span class="n">opcion</span><span class="p">);</span>
+</code></pre></div>
+<p>Esto mismo te sirve para cualquier entrada de datos del usuario, pero hay que ajustar la condición</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">respuesta</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;¿Desea continuar? (s/n): &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">respuesta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">respuesta</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">respuesta</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;n&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos="8 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fin&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>El método <strong>equalsIgnoreCase</strong> compara dos string ignorando mayúsculas y minúsculas</p>
 
 
   
