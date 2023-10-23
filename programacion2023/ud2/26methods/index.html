@@ -938,18 +938,12 @@
     Parámetros de entrada
   </a>
   
-    <nav class="md-nav" aria-label="Parámetros de entrada">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#funcion-sin-parametros" class="md-nav__link">
     Función sin parámetros
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -964,6 +958,40 @@
   <a href="#funciones-que-no-devuelven-valor-void" class="md-nav__link">
     Funciones que no devuelven valor: void
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-de-argumentos-por-valor-o-por-referencia" class="md-nav__link">
+    Paso de argumentos por valor o por referencia
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso de argumentos por valor o por referencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-por-valor" class="md-nav__link">
+    Paso por valor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-por-referencia" class="md-nav__link">
+    Paso por referencia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-de-parametros-en-java-por-valor" class="md-nav__link">
+    Paso de parámetros en Java: Por valor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2243,7 +2271,7 @@
 llamaremos a la función</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="o">=</span><span class="n">multiplicar</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="funcion-sin-parametros">Función sin parámetros<a class="headerlink" href="#funcion-sin-parametros" title="Permanent link">&para;</a></h3>
+<h2 id="funcion-sin-parametros">Función sin parámetros<a class="headerlink" href="#funcion-sin-parametros" title="Permanent link">&para;</a></h2>
 <p>Una función puede no necesitar parámetro. Por ejemplo, si queremos mostrar un menú</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">muestraMenu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
@@ -2339,6 +2367,40 @@ Por ejemplo, una función que imprima la tabla de multiplicar de un número</p>
 <span class="linenos" data-linenos="4 "></span><span class="w">       </span><span class="p">}</span>
 <span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
+<h2 id="paso-de-argumentos-por-valor-o-por-referencia">Paso de argumentos por valor o por referencia<a class="headerlink" href="#paso-de-argumentos-por-valor-o-por-referencia" title="Permanent link">&para;</a></h2>
+<p>En programación hay dos formas de paso de parámetros a un método: por valor o por referencia.</p>
+<h3 id="paso-por-valor">Paso por valor<a class="headerlink" href="#paso-por-valor" title="Permanent link">&para;</a></h3>
+<p>El paso de parámetros por valor consiste en copiar el contenido de la variable que queremos pasar en otra dentro del ámbito local de la función. Se tendrán dos valores duplicados e independientes, con lo que la modificación de uno no afecta al otro.</p>
+<p><img alt="Método" src="../../img/ud2/26por_valor.png" /></p>
+<h3 id="paso-por-referencia">Paso por referencia<a class="headerlink" href="#paso-por-referencia" title="Permanent link">&para;</a></h3>
+<p>Cuando se invoca al método se crea una nueva variable (el parámetro formal) a la que se le
+asigna la dirección de memoria donde se encuentra el parámetro actual.
+En este caso el método trabaja con la variable original por lo que puede modificar su valor.</p>
+<p><img alt="Método" src="../../img/ud2/26por_referencia.png" /></p>
+<p>Lenguajes como C, C++, C#, php, VisualBasic, etc. soportan ambas formas de paso de
+parámetros. </p>
+<h3 id="paso-de-parametros-en-java-por-valor">Paso de parámetros en Java: Por valor<a class="headerlink" href="#paso-de-parametros-en-java-por-valor" title="Permanent link">&para;</a></h3>
+<p>Java solo soporta el paso por valor. </p>
+<p>Cuando el argumento es de tipo primitivo (int, double, char, boolean, float, short, byte), el paso por valor significa que cuando se invoca al método se reserva un nuevo espacio en memoria para el parámetro formal. El método no puede modificar el parámetro actual. </p>
+<p>Como veremos más adelante, cuando se trata de objetos, se envía la copia a la dirección al objeto, por los que si se modifica el objeto en el método, se modifica el objeto original.</p>
+<p>En el caso de los String, es un excepción. Los String son inmnutable, esto quiere decir, que si se modifica el objeto, se crea un nuevo String en vez de modificar el original.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">saluda</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">){</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="c1">//crea un nuevo objeto String</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">nombre</span><span class="o">=</span><span class="s">&quot;Hola &quot;</span><span class="o">+</span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="s">&quot;Pepe&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="c1">//imprime Hola Pepe</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">saluda</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="c1">//imprime Pepe</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+Imprime
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">Hola Pepe</span>
+<span class="linenos" data-linenos="2 "></span><span class="go">Pepe</span>
+</code></pre></div></p>
 
 
   
