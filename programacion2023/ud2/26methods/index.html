@@ -1002,6 +1002,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#documentacion-de-metodos-con-javadoc" class="md-nav__link">
+    Documentación de métodos con JavaDoc
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentación de métodos con JavaDoc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-javadoc" class="md-nav__link">
+    Etiquetas Javadoc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-javadoc" class="md-nav__link">
+    Ejemplo JavaDoc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2414,6 +2448,78 @@ Imprime
 <p>mostrarTablaMultiplicar(5)</p>
 <p>mostrarNumerosPrimos(9)</p>
 <p>esPrimo(7)</p>
+<h2 id="documentacion-de-metodos-con-javadoc">Documentación de métodos con JavaDoc<a class="headerlink" href="#documentacion-de-metodos-con-javadoc" title="Permanent link">&para;</a></h2>
+<h3 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h3>
+<p>Javadoc es una utilidad de Oracle para la generación de documentación de APIs en formato HTML a partir de código fuente Java. Javadoc es el estándar de la industria para documentar clases de Java. La mayoría de los IDEs los generan automáticamente.
+Como nos dice la Wikipedia.</p>
+<h3 id="etiquetas-javadoc">Etiquetas Javadoc<a class="headerlink" href="#etiquetas-javadoc" title="Permanent link">&para;</a></h3>
+<p>Para generar API con Javadoc han de usarse etiquetas (tags) de HTML o ciertas palabras reservadas precedidas por el carácter "@".
+Estas etiquetas se escriben al principio de cada clase, miembro o método, dependiendo de qué objeto se desee describir, mediante un comentario iniciado con "/*<em>" y acabado con "</em>/"</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cm">/**</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="cm"> * Esto es un comentario para javadoc </span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="cm"> */</span>
+</code></pre></div>
+Las etiquetas que podemos utilizar</p>
+<table>
+<thead>
+<tr>
+<th>TAG</th>
+<th>DESCRIPCIÓN</th>
+<th>COMPRENDE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@author</td>
+<td>Nombre del desarrollador.</td>
+<td>Nombre autor o autores</td>
+</tr>
+<tr>
+<td>@deprecated</td>
+<td>Indica que el método o clase es obsoleto (propio de versiones anteriores) y que no se recomienda su uso.</td>
+<td>Descripción</td>
+</tr>
+<tr>
+<td>@param</td>
+<td>Definición de un parámetro de un método, es requerido para todos los parámetros del método.</td>
+<td>Nombre de parámetro y descripción</td>
+</tr>
+<tr>
+<td>@return</td>
+<td>Informa de lo que devuelve el método, no se aplica en constructores o métodos "void".</td>
+<td>Descripción del valor de retorno</td>
+</tr>
+<tr>
+<td>@see</td>
+<td>Asocia con otro método o clase.</td>
+<td>Referencia cruzada Referencia (#método(); clase#método(); paquete.clase; paquete.clase#método()).</td>
+</tr>
+<tr>
+<td>@version</td>
+<td>Versión del método o clase.</td>
+<td>Versión</td>
+</tr>
+</tbody>
+</table>
+<p>Las etiquetas @author y @version se usan para documentar clases e interfaces. Por tanto no son válidas en cabecera de constructores ni métodos. La etiqueta @param se usa para documentar constructores y métodos. La etiqueta @return se usa solo en métodos de tipo función.</p>
+<h3 id="ejemplo-javadoc">Ejemplo JavaDoc<a class="headerlink" href="#ejemplo-javadoc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cm">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cm"> * Esta función cuenta el número de palabras en un String.</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="cm"> *</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="cm"> * @param texto El String del cual contar las palabras.</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="cm"> * @return El número de palabras en el String.</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="cm"> */</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">contarPalabras</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">texto</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">texto</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="c1">// Dividir el texto en palabras usando espacios en blanco como delimitador.</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">palabras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texto</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">palabras</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</code></pre></div>
 
 
   
