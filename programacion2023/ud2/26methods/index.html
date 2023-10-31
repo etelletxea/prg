@@ -552,20 +552,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ud1/19poo/" class="md-nav__link">
-        💾 Introducción a la programación orientada a objetos
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -1097,16 +1083,30 @@
       
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-          🌎 Programación orientada a objetos POO
+          UD04-Programación orientada a objetos POO
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          🌎 Programación orientada a objetos POO
+          UD04-Programación orientada a objetos POO
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud1/19poo/" class="md-nav__link">
+        🌎 Introducción a la programación orientada a objetos
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2322,7 +2322,7 @@ llamaremos a la función</p>
 <span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;2-Cambiar opciones&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;3-Salir&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">opc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">opc</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">opc</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">opc</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">opc</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
 <span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">opc</span><span class="p">;</span>
 <span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
@@ -2467,39 +2467,32 @@ Las etiquetas que podemos utilizar</p>
 <tr>
 <th>TAG</th>
 <th>DESCRIPCIÓN</th>
-<th>COMPRENDE</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>@author</td>
 <td>Nombre del desarrollador.</td>
-<td>Nombre autor o autores</td>
 </tr>
 <tr>
 <td>@deprecated</td>
 <td>Indica que el método o clase es obsoleto (propio de versiones anteriores) y que no se recomienda su uso.</td>
-<td>Descripción</td>
 </tr>
 <tr>
 <td>@param</td>
 <td>Definición de un parámetro de un método, es requerido para todos los parámetros del método.</td>
-<td>Nombre de parámetro y descripción</td>
 </tr>
 <tr>
 <td>@return</td>
 <td>Informa de lo que devuelve el método, no se aplica en constructores o métodos "void".</td>
-<td>Descripción del valor de retorno</td>
 </tr>
 <tr>
 <td>@see</td>
 <td>Asocia con otro método o clase.</td>
-<td>Referencia cruzada Referencia (#método(); clase#método(); paquete.clase; paquete.clase#método()).</td>
 </tr>
 <tr>
 <td>@version</td>
 <td>Versión del método o clase.</td>
-<td>Versión</td>
 </tr>
 </tbody>
 </table>
