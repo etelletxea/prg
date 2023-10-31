@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../ud1/19poo/">
+        <link rel="prev" href="../0poo/">
       
       
         <link rel="next" href="../2constructor/">
@@ -963,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud1/19poo/" class="md-nav__link">
+      <a href="../0poo/" class="md-nav__link">
         🌎 Introducción a la programación orientada a objetos
       </a>
     </li>
@@ -1026,8 +1026,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#estado-campos" class="md-nav__link">
-    ❇️ Estado - Campos
+  <a href="#estado-campos-o-atributos" class="md-nav__link">
+    ❇️ Estado - Campos o Atributos
   </a>
   
 </li>
@@ -2295,18 +2295,20 @@ Como ya estudiamos en la unidad 1, los objetos del mundo real tienen tres caract
 <p><img alt="oop" src="../../img/ud3/1object.png" /></p>
 <h3 id="identidad">❇️ Identidad<a class="headerlink" href="#identidad" title="Permanent link">&para;</a></h3>
 <p>La identidad de un objeto normalmente se implementa a través de un <strong>ID único</strong>. El valor del <strong>ID no es visible para el usuario externo</strong>. Sin embargo, la JVM lo utiliza internamente para identificar cada objeto de forma única.</p>
-<h3 id="estado-campos">❇️ Estado - Campos<a class="headerlink" href="#estado-campos" title="Permanent link">&para;</a></h3>
+<h3 id="estado-campos-o-atributos">❇️ Estado - Campos o Atributos<a class="headerlink" href="#estado-campos-o-atributos" title="Permanent link">&para;</a></h3>
 <p><strong>Representa el valor de los datos</strong>. Por ejemplo, para un ordenador, el estado podría ser la cantidad de memoria RAM que tiene, el sistema operativo que incluye, tamaño del disco duro, etc.
 En el caso de una persona, el estado puede ser la edad, el nombre, si está casada, etc.</p>
+<p><img alt="oop" src="../../img/ud3/claseobjeto.png" /></p>
 <h3 id="comportamiento-metodos">❇️ Comportamiento - Métodos<a class="headerlink" href="#comportamiento-metodos" title="Permanent link">&para;</a></h3>
 <p>Atendiendo al comportamiento de un ordenador podría ser arrancando, apagándose, reiniciando, escribir en la pantalla, etc.
 Para una persona será comer, beber, dormir, etc.</p>
 <hr />
-<p>Los objetos de software almacenan su estado en <strong><em>campos</em></strong>. Los campos es lo que conocemos como variables.
+<p>Los objetos de software almacenan su estado en <strong><em>atributos o propiedades</em></strong>. Es lo que conocemos como variables.
 Y exponen su comportamiento en lo que llamamos <strong><em>métodos</em></strong>.</p>
 <div class="admonition important">
-<p class="admonition-title">💀 Importante</p>
-<p><strong>Un objeto es una instancia de la clase.</strong> Una clase es una plantilla o modelo a partir del cual se crean objetos. Entonces, un objeto es la instancia (resultado) de una clase.</p>
+<p class="admonition-title"> Instancias de la clase</p>
+<p><strong>Un objeto es una instancia de la clase.</strong> Una clase es una plantilla o modelo a partir del cual se crean objetos. Un objeto es la <strong>instancia</strong> (resultado) de una clase.
+<img alt="oop" src="../../img/ud3/instancia.png" /></p>
 </div>
 <h2 id="clases">Clases<a class="headerlink" href="#clases" title="Permanent link">&para;</a></h2>
 <p>Teniendo en cuenta todo esto, podemos pasar a hablar de <strong>clase</strong>.
@@ -2356,7 +2358,8 @@ Ejemplo:</p>
 </code></pre></div>
 <p>A diferencia de esto, las clases nos permiten crear variables que pueden ser accesibles desde cualquier lugar dentro de la clase que estamos creando. A estas variables se les conoce con el nombre de <strong>variables miembro/instancia</strong>, o de manera más común como <strong>campos</strong> o <strong>atributos</strong> de la clase.</p>
 <h3 id="creacion-de-atributos-de-la-clase">Creación de atributos de la clase<a class="headerlink" href="#creacion-de-atributos-de-la-clase" title="Permanent link">&para;</a></h3>
-<p>Para crear un campo de la clase se debe especificar un modificador de acceso(opcional) + tipo de dato + nombre de la variable + inicialización(opcional).</p>
+<p>Para crear un campo de la clase se debe especificar:</p>
+<p>un modificador de acceso(opcional) + tipo de dato + nombre de la variable + inicialización(opcional).</p>
 <p><em>Si no se pone modificador utiliza el de por defecto en el que la variable es accesible por las clases dentro del mismo paquete.</em></p>
 <p>El modificador de acceso funciona de la misma forma a como lo hemos explicado anteriormente para la creación de una clase.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
@@ -2396,7 +2399,7 @@ Significa que la representación del objeto se ocultará a la vista, es decir, e
 </code></pre></div>
 <h4 id="consejos-para-elegir-un-nivel-de-acceso">Consejos para elegir un nivel de acceso<a class="headerlink" href="#consejos-para-elegir-un-nivel-de-acceso" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Utiliza el nivel de acceso más restrictivo que tenga sentido para un miembro en particular. Usa private a menos que tengas una buena razón para no hacerlo.</li>
+<li>Utiliza el nivel de acceso más restrictivo que tenga sentido para un miembro en particular. Usa <strong>private</strong> a menos que tengas una buena razón para no hacerlo.</li>
 <li>Evita los campos públicos a excepción de las constantes.</li>
 </ul>
 <h3 id="metodos-de-instancia">Métodos de instancia<a class="headerlink" href="#metodos-de-instancia" title="Permanent link">&para;</a></h3>
@@ -2405,15 +2408,15 @@ Estos métodos ya no van a ser public static como hemos visto hasta ahora.
 Para crear los métodos que actualizan los campos debemos usar la siguiente nomenclatura:</p>
 <ul>
 <li>
-<p>Setters: establecen el valor en el campo de la clase</p>
+<p><strong>Setters</strong>: establecen el valor en el campo de la clase</p>
 <blockquote>
-<p>public void setNombreCampo(<em>TipoDatoCampo</em> <em>nombreCampo</em>), donde el parámetro del método debe ser del mismo tipo ya que vamos a actualizar su valor mediante el método.</p>
+<p><strong>public void setNombreCampo(<em>TipoDatoCampo</em> <em>nombreCampo</em>)</strong>, donde el parámetro del método debe ser del mismo tipo ya que vamos a actualizar su valor mediante el método.</p>
 </blockquote>
 </li>
 <li>
-<p>Getters: devuelven el campo de la clase</p>
+<p><strong>Getters</strong>: devuelven el campo de la clase</p>
 <blockquote>
-<p>public <em>tipoDatoCampo</em> getNombreCampo()</p>
+<p><strong>public <em>tipoDatoCampo</em> getNombreCampo()</strong></p>
 </blockquote>
 </li>
 </ul>
@@ -2432,7 +2435,7 @@ Para crear los métodos que actualizan los campos debemos usar la siguiente nome
 <span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">puertas</span><span class="p">;</span>
 <span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="p">}</span>
 <span class="linenos" data-linenos="15 "></span>
-<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setRuedas</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setRuedas</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ruedas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">ruedas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
 <span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="p">}</span>
 <span class="linenos" data-linenos="19 "></span>
@@ -2459,11 +2462,14 @@ Para crear los métodos que actualizan los campos debemos usar la siguiente nome
 <span class="linenos" data-linenos="40 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <h3 id="palabra-reservada-this"><strong>Palabra reservada this</strong><a class="headerlink" href="#palabra-reservada-this" title="Permanent link">&para;</a></h3>
-<p>En un método set como el nombre del parámetro del método es igual al del campo de la clase, necesitamos algo que nos permita distinguir entre uno u otro. Para esto se utiliza la palabra reservada <strong><em>this</em></strong> que hace alusión al campo de la clase.</p>
+<p>En un método <strong>set</strong>, como el nombre del parámetro del método es igual al del campo de la clase, necesitamos algo que nos permita distinguir entre uno u otro. Para esto se utiliza la palabra reservada <strong><em>this</em></strong> que hace alusión al campo de la clase.</p>
+<p><img alt="Java" src="../../img/ud3/this.png" /></p>
 <h2 id="clase-object-en-java"><strong>Clase Object en java</strong><a class="headerlink" href="#clase-object-en-java" title="Permanent link">&para;</a></h2>
 <p>Es necesario conocer a grandes rasgos la clase <code>Object</code>. También es llamada como <strong>clase cósmica</strong>, ya que la clase <code>Object</code>, es la clase que está por encima de todas las clases de la api de java.</p>
+<p><img alt="Java" src="../../img/ud3/object2.png" /></p>
 <p>Esto quiere decir que todas las clases de java que vienen predefinidas en el lenguaje de programación, como las que nosotros construimos, heredan de la clase <code>object</code>.</p>
 <p>Por eso cuando creamos un objeto, viene ya definido con ciertos métodos que se han heredado de la clase <code>Object</code>.</p>
+<p><img alt="Java" src="../../img/ud3/object.png" /></p>
 
 
   
