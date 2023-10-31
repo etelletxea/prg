@@ -1081,15 +1081,42 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metodos-de-instancia" class="md-nav__link">
-    Métodos de instancia
+  <a href="#encapsulacion" class="md-nav__link">
+    Encapsulación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-de-acceso-getters-y-setters" class="md-nav__link">
+    Métodos de acceso: Getters y Setters
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos de acceso: Getters y Setters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palabra-reservada-this" class="md-nav__link">
+    Palabra reservada this
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#palabra-reservada-this" class="md-nav__link">
-    Palabra reservada this
+  <a href="#proteccion-de-datos-de-la-clase" class="md-nav__link">
+    Protección de datos de la clase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformacion-de-datos" class="md-nav__link">
+    Transformación de datos
   </a>
   
 </li>
@@ -2397,24 +2424,29 @@ Significa que la representación del objeto se ocultará a la vista, es decir, e
 <span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="c1">//modificador privado</span>
 <span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">;</span>
 </code></pre></div>
-<h4 id="consejos-para-elegir-un-nivel-de-acceso">Consejos para elegir un nivel de acceso<a class="headerlink" href="#consejos-para-elegir-un-nivel-de-acceso" title="Permanent link">&para;</a></h4>
+<h3 id="encapsulacion">Encapsulación<a class="headerlink" href="#encapsulacion" title="Permanent link">&para;</a></h3>
+<p>Uno de los pilares de la POO es la <strong>enacapsulación</strong>, y se refiere al ocultamiento de los datos miembro de un objeto, de manera que solo se pueda cambiar mediante las operaciones definidas para ese objeto.</p>
+<p><img alt="oop" src="../../img/ud3/encapsulacion.png" /></p>
+<h4 id="consejos-para-elegir-un-nivel-de-acceso">Consejos para elegir un nivel de acceso.<a class="headerlink" href="#consejos-para-elegir-un-nivel-de-acceso" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Utiliza el nivel de acceso más restrictivo que tenga sentido para un miembro en particular. Usa <strong>private</strong> a menos que tengas una buena razón para no hacerlo.</li>
 <li>Evita los campos públicos a excepción de las constantes.</li>
 </ul>
-<h3 id="metodos-de-instancia">Métodos de instancia<a class="headerlink" href="#metodos-de-instancia" title="Permanent link">&para;</a></h3>
-<p>Para actualizar los campos de la clase, como su acceso es privado se utilizan los <strong>métodos de instancia</strong>.
-Estos métodos ya no van a ser public static como hemos visto hasta ahora.
-Para crear los métodos que actualizan los campos debemos usar la siguiente nomenclatura:</p>
+<h2 id="metodos-de-acceso-getters-y-setters">Métodos de acceso: Getters y Setters<a class="headerlink" href="#metodos-de-acceso-getters-y-setters" title="Permanent link">&para;</a></h2>
+<p>Hemos visto que la encapsulación se aconseja la ocultación de la información. </p>
+<p>¿Cómo accedemos a la información?</p>
+<p>Para actualizar las propiedades de la clase, como su acceso es privado se utilizan los <strong>métodos de acceso</strong>.</p>
+<p><img alt="oop" src="../../img/ud3/gettersetter.png" /></p>
+<p>Para crear los métodos que actualizan los campos debemos usar la siguiente nomenclatura:</p>
 <ul>
 <li>
-<p><strong>Setters</strong>: establecen el valor en el campo de la clase</p>
+<p><strong>Setters</strong>: Permiten modificar una propiedad del objeto.</p>
 <blockquote>
 <p><strong>public void setNombreCampo(<em>TipoDatoCampo</em> <em>nombreCampo</em>)</strong>, donde el parámetro del método debe ser del mismo tipo ya que vamos a actualizar su valor mediante el método.</p>
 </blockquote>
 </li>
 <li>
-<p><strong>Getters</strong>: devuelven el campo de la clase</p>
+<p><strong>Getters</strong>: devuelven el valor de una propiedad de un objeto de la clase</p>
 <blockquote>
 <p><strong>public <em>tipoDatoCampo</em> getNombreCampo()</strong></p>
 </blockquote>
@@ -2461,9 +2493,35 @@ Para crear los métodos que actualizan los campos debemos usar la siguiente nome
 <span class="linenos" data-linenos="39 "></span>
 <span class="linenos" data-linenos="40 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<h3 id="palabra-reservada-this"><strong>Palabra reservada this</strong><a class="headerlink" href="#palabra-reservada-this" title="Permanent link">&para;</a></h3>
-<p>En un método <strong>set</strong>, como el nombre del parámetro del método es igual al del campo de la clase, necesitamos algo que nos permita distinguir entre uno u otro. Para esto se utiliza la palabra reservada <strong><em>this</em></strong> que hace alusión al campo de la clase.</p>
+<h3 id="palabra-reservada-this">Palabra reservada <strong>this</strong><a class="headerlink" href="#palabra-reservada-this" title="Permanent link">&para;</a></h3>
+<p>This hace referencia al objeto actual de la clase. En un método <strong>set</strong>, como el nombre del parámetro del método es igual al del campo de la clase, necesitamos algo que nos permita distinguir entre uno u otro. Para esto se utiliza la palabra reservada <strong><em>this</em></strong> que hace alusión al campo de la clase.</p>
 <p><img alt="Java" src="../../img/ud3/this.png" /></p>
+<h3 id="proteccion-de-datos-de-la-clase">Protección de datos de la clase<a class="headerlink" href="#proteccion-de-datos-de-la-clase" title="Permanent link">&para;</a></h3>
+<p>Los setter y getter nos permite la introducción de datos correctos en el objeto. Por ejemplo, si las especificaciones nos indican que el número de puertas solamente pueden ser 3, 4 ó 5. Podemos tener un método setter</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPuertas</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">puertas</span><span class="p">){</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">puertas</span><span class="o">&gt;=</span><span class="mi">3</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">puertas</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">){</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">puertas</span><span class="o">=</span><span class="n">puertas</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: número de puertas incorrecto&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="transformacion-de-datos">Transformación de datos<a class="headerlink" href="#transformacion-de-datos" title="Permanent link">&para;</a></h3>
+<p>También se puede dar el caso que  queramos mostrar siempre el <strong>modelo</strong> en mayúsculas. Podemos tener un setter que transforme los datos de entrada</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setModelo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">modelo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modelo</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>Si quisiéramos mantener los datos de entrada del usuario para la propiedad <strong>modelo</strong> pero al obtener el dato lo queremos devolver siempre en mayúsculas, la solución puede ser:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setModelo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">modelo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getModelo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="c1">//devolvemos el string en mayúsculas</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">modelo</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</code></pre></div>
 <h2 id="clase-object-en-java"><strong>Clase Object en java</strong><a class="headerlink" href="#clase-object-en-java" title="Permanent link">&para;</a></h2>
 <p>Es necesario conocer a grandes rasgos la clase <code>Object</code>. También es llamada como <strong>clase cósmica</strong>, ya que la clase <code>Object</code>, es la clase que está por encima de todas las clases de la api de java.</p>
 <p><img alt="Java" src="../../img/ud3/object2.png" /></p>
