@@ -1133,6 +1133,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#javadoc-documentacion-de-la-clase" class="md-nav__link">
+    JavaDoc: Documentación de la clase
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2425,7 +2432,7 @@ Significa que la representación del objeto se ocultará a la vista, es decir, e
 <span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="encapsulacion">Encapsulación<a class="headerlink" href="#encapsulacion" title="Permanent link">&para;</a></h3>
-<p>Uno de los pilares de la POO es la <strong>enacapsulación</strong>, y se refiere al ocultamiento de los datos miembro de un objeto, de manera que solo se pueda cambiar mediante las operaciones definidas para ese objeto.</p>
+<p>Uno de los pilares de la POO es la <strong>encapsulación</strong>, y se refiere al ocultamiento de los datos miembro de un objeto, de manera que solo se pueda cambiar mediante las operaciones definidas para ese objeto.</p>
 <p><img alt="oop" src="../../img/ud3/encapsulacion.png" /></p>
 <h4 id="consejos-para-elegir-un-nivel-de-acceso">Consejos para elegir un nivel de acceso.<a class="headerlink" href="#consejos-para-elegir-un-nivel-de-acceso" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2526,8 +2533,62 @@ Significa que la representación del objeto se ocultará a la vista, es decir, e
 <p>Es necesario conocer a grandes rasgos la clase <code>Object</code>. También es llamada como <strong>clase cósmica</strong>, ya que la clase <code>Object</code>, es la clase que está por encima de todas las clases de la api de java.</p>
 <p><img alt="Java" src="../../img/ud3/object2.png" /></p>
 <p>Esto quiere decir que todas las clases de java que vienen predefinidas en el lenguaje de programación, como las que nosotros construimos, heredan de la clase <code>object</code>.</p>
-<p>Por eso cuando creamos un objeto, viene ya definido con ciertos métodos que se han heredado de la clase <code>Object</code>.</p>
+<p>Por eso, cuando creamos un objeto, viene ya definido con ciertos métodos que se han heredado de la clase <code>Object</code>.</p>
 <p><img alt="Java" src="../../img/ud3/object.png" /></p>
+<h2 id="javadoc-documentacion-de-la-clase">JavaDoc: Documentación de la clase<a class="headerlink" href="#javadoc-documentacion-de-la-clase" title="Permanent link">&para;</a></h2>
+<p>Como ya indicamos en el tema de programación modular, tenemos la siguientes tags para documentar con JavaDoc</p>
+<p>Las etiquetas que podemos utilizar</p>
+<table>
+<thead>
+<tr>
+<th>TAG</th>
+<th>DESCRIPCIÓN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@author</td>
+<td>Nombre del desarrollador.</td>
+</tr>
+<tr>
+<td>@deprecated</td>
+<td>Indica que el método o clase es obsoleto (propio de versiones anteriores) y que no se recomienda su uso.</td>
+</tr>
+<tr>
+<td>@param</td>
+<td>Definición de un parámetro de un método, es requerido para todos los parámetros del método.</td>
+</tr>
+<tr>
+<td>@return</td>
+<td>Informa de lo que devuelve el método, no se aplica en constructores o métodos "void".</td>
+</tr>
+<tr>
+<td>@see</td>
+<td>Asocia con otro método o clase.</td>
+</tr>
+<tr>
+<td>@version</td>
+<td>Versión del método o clase.</td>
+</tr>
+</tbody>
+</table>
+<p>Las etiquetas @author y @version se usan para documentar clases e interfaces, de esta manera, podemos documentar la clase Coche:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cm">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cm"> * La clase Coche contiene la información básica de los coches de</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="cm"> * la empresa</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="cm"> * @version 2.11.2023</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="cm"> * @author Pepito Grillo</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="cm"> */</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">puertas</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">peso</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</code></pre></div>
 
 
   
