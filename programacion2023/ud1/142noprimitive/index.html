@@ -2293,10 +2293,11 @@ Por ejemplo, las clases existentes (como <em>java.util.Date</em> y <em>SimpleDat
 <span class="linenos" data-linenos="16 "></span><span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">formatted</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="enum-en-java">Enum en Java<a class="headerlink" href="#enum-en-java" title="Permanent link">&para;</a></h2>
-<p>El tipo enumerado es un tipo de datos especial que permite que una variable sea un conjunto de constantes predefinidas. La variable debe ser igual a uno de los valores que se han predefinido para ella.</p>
-<p>Debido a que son constantes, los nombres de los campos del tipo enum deben estar en letras mayúsculas.</p>
+<p>El tipo enumerado es un tipo de datos especial que permite que una variable sea un conjunto de constantes predefinidas. Sirven para definir grupos de constantes como valores posibles de una variable. La variable debe ser igual a uno de los valores que se han predefinido para ella.</p>
+<p>Debido a que son constantes, los nombres de los campos del tipo <strong>enum</strong> deberían estar en letras mayúsculas.</p>
 <p>En Java, se define un enumerado utilizando la palabra clave <strong>enum</strong> seguido del nombre siguiendo la convención del nombrado de clases. Primera letra en mayúscula y CamelCase.</p>
-<p>Para crear un enum en Java, botón derecho en el paquete &rarr; new Java class y seleccionamos enum.</p>
+<p>El objetivo principal es la acotación de datos y la claridad de lectura del código</p>
+<p>Para crear un enum en Java, botón derecho en el <strong>paquete &rarr; new Java class</strong> y seleccionamos <strong>enum</strong>.</p>
 <p>Ejemplo de enumerado:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">PuntosCardinales</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">NORTE</span><span class="p">,</span><span class="w"> </span><span class="n">SUR</span><span class="p">,</span><span class="w"> </span><span class="n">ESTE</span><span class="p">,</span><span class="w"> </span><span class="n">OESTE</span>
@@ -2306,10 +2307,45 @@ Por ejemplo, las clases existentes (como <em>java.util.Date</em> y <em>SimpleDat
 <span class="linenos" data-linenos=" 6 "></span>
 <span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 8 "></span><span class="w">      </span><span class="n">PuntosCardinales</span><span class="w"> </span><span class="n">myVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PuntosCardinales</span><span class="p">.</span><span class="na">ESTE</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myVar</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myVar</span><span class="p">);</span><span class="c1">//Imprime &quot;ESTE&quot;</span>
 <span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos="11 "></span>
 <span class="linenos" data-linenos="12 "></span><span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<p>Otro ejemplo</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">DiaSemana</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="n">LUNES</span><span class="p">,</span><span class="w"> </span><span class="n">MARTES</span><span class="p">,</span><span class="n">MIERCOLES</span><span class="p">,</span><span class="n">JUEVES</span><span class="p">,</span><span class="n">VIERNES</span><span class="p">,</span><span class="n">SABADO</span><span class="p">,</span><span class="n">DOMINGO</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">DiaSemana</span><span class="w"> </span><span class="n">diaFavorito</span><span class="o">=</span><span class="n">DiaSemana</span><span class="p">.</span><span class="na">SABADO</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">diaFavorito</span><span class="p">.</span><span class="na">name</span><span class="p">());</span><span class="c1">//SABADO</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">diaFavorito</span><span class="p">);</span><span class="c1">//SABADO</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">diaFavorito</span><span class="p">.</span><span class="na">ordinal</span><span class="p">());</span><span class="c1">//5</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">DiaSemana</span><span class="w"> </span><span class="n">peorDia</span><span class="o">=</span><span class="n">DiaSemana</span><span class="p">.</span><span class="na">LUNES</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">diaFavorito</span><span class="o">==</span><span class="n">peorDia</span><span class="p">);</span><span class="c1">//podemos hacer comparaciones</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>En los switch permiten una mejor legibilidad del código</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="n">DiaSemana</span><span class="w"> </span><span class="n">dia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DiaSemana</span><span class="p">.</span><span class="na">MARTES</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">dia</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">LUNES</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">MARTES</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">MIERCOLES</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">JUEVES</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">VIERNES</span><span class="p">:</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">          </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A trabajar...&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">          </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">SABADO</span><span class="p">:</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">DOMINGO</span><span class="p">:</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">          </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A descansar...&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">  </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span>
 </code></pre></div>
 
 
