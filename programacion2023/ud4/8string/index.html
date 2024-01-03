@@ -1241,6 +1241,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#clasificacion-de-caracteres" class="md-nav__link">
+    Clasificación de caracteres
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2293,7 +2300,7 @@ Los caracteres de un string están numerados internamente con índices empezando
 <p><img alt="String" src="../../img/indexstring.png" /></p>
 <p>El primer carácter tiene índice 0 y el último tiene la longitud del string menos 1.</p>
 <h2 id="metodos-de-la-clase-string">Métodos de la clase String<a class="headerlink" href="#metodos-de-la-clase-string" title="Permanent link">&para;</a></h2>
-<p>La clase String proporciona métodos para el tratamiento de las cadenas de caracteres: acceso a caracteres individuales, buscar y extraer una subcadena, copiar cadenas, convertir cadenas a mayúsculas o minúsculas, etc.</p>
+<p>La clase String proporciona métodos para el tratamiento de las cadenas de caracteres: acceso a caracteres individuales, buscar y extraer una subcadena, copiar cadenas, convertir cadenas a mayúsculas o minúsculas, etc. Alguno de los métodos más importantes son:</p>
 <p><img alt="String" src="../../img/methodstring.png" /></p>
 <p>Para acceder a alguno de los métodos siguientes utilizamos la notación "."</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">  </span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Clase&quot;</span><span class="p">;</span>
@@ -2303,7 +2310,7 @@ Los caracteres de un string están numerados internamente con índices empezando
 <p><img alt="String" src="../../img/ud4/string1.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Para más información consulta la documentación oficial de la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></p>
+<p>Para más información consulta la documentación oficial de la clase <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html">String</a></p>
 </div>
 <h2 id="comparar-strings">Comparar Strings<a class="headerlink" href="#comparar-strings" title="Permanent link">&para;</a></h2>
 <p>Los operadores relacionales como == o &lt; &gt; <strong>NO</strong> se utilizan para comparar Strings, aunque el código compile no es correcto, ya que == compara objetos, y devolvería falso aunque dos strings tuvieran el mismo texto puesto que son objetos diferentes.</p>
@@ -2331,17 +2338,23 @@ Los caracteres de un string están numerados internamente con índices empezando
 <span class="linenos" data-linenos="4 "></span><span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
 <span class="linenos" data-linenos="5 "></span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">OUTPUT</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">OUTPUT</span>
 <span class="linenos" data-linenos="2 "></span><span class="n">C</span>
 <span class="linenos" data-linenos="3 "></span><span class="n">S</span>
 <span class="linenos" data-linenos="4 "></span><span class="n">E</span>
 </code></pre></div>
+Tambiés es posible recorrerlo mediante un foreach transformando el String en array de char</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="s">&quot;Hola&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">:</span><span class="n">s</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</code></pre></div>
 <h2 id="char">char<a class="headerlink" href="#char" title="Permanent link">&para;</a></h2>
-<p>A todos los valores char se les asigna un número internamente por el ordenador, son los llamados valores ASCII.
+<p>A todos los valores char se les asigna un número internamente por el ordenador, son los llamados valores UNICODE.
 Por ejemplo:</p>
 <blockquote>
-<p>el carácter 'A' es 65 en código ASCII</p>
-<p>el carácter 'a' es 97 en código ASCII</p>
+<p>el carácter 'A' es 65 en código UNICODE</p>
+<p>el carácter 'a' es 97 en código UNICODE</p>
 </blockquote>
 <p>Mezclar tipos de datos char e int automáticamente cause una conversión en entero.
 Por ejemplo:</p>
@@ -2361,6 +2374,37 @@ Por ejemplo:</p>
 <li>No se puede comparar un String usando operadores relacionales.</li>
 <li>Si se puede comparar un char usando operadores relacionales: 'a' &lt; 'b', 'X' == 'X', ...</li>
 </ul>
+<h2 id="clasificacion-de-caracteres">Clasificación de caracteres<a class="headerlink" href="#clasificacion-de-caracteres" title="Permanent link">&para;</a></h2>
+<p>Un carácter puede clasificarse dentro de alguno de estos grupos:</p>
+<ul>
+<li><strong>Dígitos</strong>: formado por '0', '1'...'9'</li>
+<li><strong>Letras</strong>: formado por todos los elementos del alfabeto: 'a','b'...'A','B'...</li>
+<li><strong>Caracteres blancos</strong>: como espacio, tabulador...todos aquellos que no tienen representación visual</li>
+<li><strong>Otros caracteres</strong>: signos de puntuación, matemáticos, etc.</li>
+</ul>
+<p>Tenemos una serie de métodos que nos permite saber el tipo de carácter</p>
+<p><img alt="String" src="../../img/ud4/string2.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kt">boolean</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isDigit</span><span class="p">(</span><span class="sc">&#39;8&#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isDigit</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span><span class="c1">//false</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isLetter</span><span class="p">(</span><span class="sc">&#39;8&#39;</span><span class="p">);</span><span class="c1">//false</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isLetter</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isLetterOrDigit</span><span class="p">(</span><span class="sc">&#39;8&#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isLetterOrDigit</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isLetterOrDigit</span><span class="p">(</span><span class="sc">&#39;%&#39;</span><span class="p">);</span><span class="c1">//false</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isUpperCase</span><span class="p">(</span><span class="sc">&#39;t&#39;</span><span class="p">);</span><span class="c1">//false</span>
+<span class="linenos" data-linenos="10 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isUpperCase</span><span class="p">(</span><span class="sc">&#39;T&#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isLowerCase</span><span class="p">(</span><span class="sc">&#39;t&#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos="12 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isLowerCase</span><span class="p">(</span><span class="sc">&#39;T&#39;</span><span class="p">);</span><span class="c1">//false</span>
+<span class="linenos" data-linenos="13 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isWhitespace</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos="14 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isWhitespace</span><span class="p">(</span><span class="sc">&#39;\r&#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos="15 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isWhitespace</span><span class="p">(</span><span class="sc">&#39; &#39;</span><span class="p">);</span><span class="c1">//true</span>
+<span class="linenos" data-linenos="16 "></span><span class="n">b</span><span class="o">=</span><span class="n">Character</span><span class="p">.</span><span class="na">isWhitespace</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span><span class="c1">//false</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Para más información consulta la documentación oficial de la clase <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html">Character</a></p>
+</div>
 
 
   
