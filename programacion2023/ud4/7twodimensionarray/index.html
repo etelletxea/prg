@@ -1239,6 +1239,40 @@
     Longitud de una matriz 2D
   </a>
   
+    <nav class="md-nav" aria-label="Longitud de una matriz 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#longitud-de-un-array-2d-de-tamano-de-columna-fijo" class="md-nav__link">
+    Longitud de un array 2D de tamaño de columna fijo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorrer-array-2d-de-tamano-de-columna-fijo" class="md-nav__link">
+    Recorrer array 2D de tamaño de columna fijo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longitud-de-un-array-2d-con-tamano-de-columna-variable-en-java" class="md-nav__link">
+    Longitud de un array 2D con tamaño de columna variable en Java
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorrer-array-2d-de-tamano-de-columna-variable" class="md-nav__link">
+    Recorrer array 2D de tamaño de columna variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2246,13 +2280,14 @@
 <p><img alt="Arrays" src="../../img/ud4/6matriz1.png" /></p>
 <p>Para acceder a la posición 0,2 lo haríamos con <code>matriz[0][2]</code> y esto devuelve el entero 4.</p>
 <p>Al igual que con una matriz 1D o un arrar, un índice de matriz puede ser un literal entero, una variable de tipo entero, un método que se evalúa como un número entero o una expresión aritmética que involucra todas estas cosas:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">matriz</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">34</span><span class="p">;</span>
-<span class="linenos" data-linenos="2 "></span>
-<span class="linenos" data-linenos="3 "></span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">suma</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
-<span class="linenos" data-linenos="4 "></span>
-<span class="linenos" data-linenos="5 "></span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="n">someFunction</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
-<span class="linenos" data-linenos="6 "></span>
-<span class="linenos" data-linenos="7 "></span><span class="n">matriz</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz</span><span class="o">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">][</span><span class="n">algunaFunción</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span><span class="w"> </span><span class="o">[][]</span><span class="w"> </span><span class="n">matriz</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">matriz</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">34</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="c1">//si estamos en un bucle</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matriz</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="c1">//</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="n">someFunction</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span><span class="n">matriz</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz</span><span class="o">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">][</span><span class="n">algunaFunción</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="declaracion-de-un-array-2d-o-matriz-2d">Declaración de un array 2D o matriz 2D<a class="headerlink" href="#declaracion-de-un-array-2d-o-matriz-2d" title="Permanent link">&para;</a></h2>
 <p>Recordamos que al igual que los arrays unidimensionales, las matrices bidimensionales son objetos. Para declara un array bidimensional se puede crear una lista. La lista debe contener las filas cada una separada por una coma; y cada fila es una lista de valores.</p>
@@ -2266,7 +2301,47 @@
 <p>Si un programa intenta acceder a una celda que no existe, se lanzará una excepción (que generalmente detendrá su programa). Hacer una asignación a una celda que no existe es un error.</p>
 <h2 id="longitud-de-una-matriz-2d">Longitud de una matriz 2D<a class="headerlink" href="#longitud-de-una-matriz-2d" title="Permanent link">&para;</a></h2>
 <p><strong>La longitud de una matriz 2D es el número de filas</strong> que tiene. Se puede adivinar que "longitud" podría definirse como un par de números (filas, columnas). Pero el número de columnas puede variar de una fila a otra, por lo que esto no funcionará. Sin embargo, el número de filas no cambia, por lo que funciona como una longitud.</p>
+<h3 id="longitud-de-un-array-2d-de-tamano-de-columna-fijo">Longitud de un array 2D de tamaño de columna fijo<a class="headerlink" href="#longitud-de-un-array-2d-de-tamano-de-columna-fijo" title="Permanent link">&para;</a></h3>
+<p>Si sabemos que un array 2D es una cuadrícula rectangular, podemos obtener el número de filas usando <strong>matriz.length</strong> y el número de columnas usando <strong>matriz[0].length</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">matriz</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">matriz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">][</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="c1">//5</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="c1">//10</span>
+</code></pre></div>
+<h3 id="recorrer-array-2d-de-tamano-de-columna-fijo">Recorrer array 2D de tamaño de columna fijo<a class="headerlink" href="#recorrer-array-2d-de-tamano-de-columna-fijo" title="Permanent link">&para;</a></h3>
+<p>Para recorrer un array, debemos usar un bucle anidado, donde el primer bucle controla las filas y el de dentro las columnas</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//Definimos un array de 3 filas x 5 columnas</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="o">[][]=</span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">}};</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="c1">//Recorremos el array multidimensional</span>
+<span class="hll"><span class="linenos" data-linenos="5 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="c1">//total filas</span>
+</span><span class="hll"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="c1">//total columnas</span>
+</span><span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">);</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="longitud-de-un-array-2d-con-tamano-de-columna-variable-en-java">Longitud de un array 2D con tamaño de columna variable en Java<a class="headerlink" href="#longitud-de-un-array-2d-con-tamano-de-columna-variable-en-java" title="Permanent link">&para;</a></h3>
 <p>Cada fila de una matriz 2D puede tener un número diferente de celdas (columnas), por lo que cada fila tiene su propia longitud.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">matriz</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">matriz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">2</span><span class="o">][]</span><span class="p">;</span><span class="c1">//dos filas</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">matriz</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span><span class="c1">//5 elementos la fila 0</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">matriz</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span><span class="c1">//10 elementos la fila 1</span>
+<span class="linenos" data-linenos="5 "></span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">test</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span><span class="kt">int</span><span class="w"> </span><span class="n">col_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">test</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="c1">//5</span>
+<span class="linenos" data-linenos="7 "></span><span class="kt">int</span><span class="w"> </span><span class="n">col_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">test</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="c1">//10</span>
+</code></pre></div>
+<h3 id="recorrer-array-2d-de-tamano-de-columna-variable">Recorrer array 2D de tamaño de columna variable<a class="headerlink" href="#recorrer-array-2d-de-tamano-de-columna-variable" title="Permanent link">&para;</a></h3>
+<p>Para recorrer un array, debemos usar un bucle anidado, donde el primer bucle controla las filas y el de dentro las columnas</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//Definimos un array de 3 filas x  columnas variables</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="o">[][]=</span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">}};</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="c1">//Recorremos el array multidimensional</span>
+<span class="hll"><span class="linenos" data-linenos="5 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="c1">//total filas</span>
+</span><span class="hll"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="c1">//total columna actual</span>
+</span><span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">);</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
 <h2 id="entender-mejor-los-arrays-o-matrices-2d">Entender mejor los arrays o matrices 2D<a class="headerlink" href="#entender-mejor-los-arrays-o-matrices-2d" title="Permanent link">&para;</a></h2>
 <p>Un array bidimensional se implementa como un array unidimensionales. La declaracion</p>
 <p><code>int [][] myArray;</code> // 1.</p>
