@@ -2296,12 +2296,14 @@
 <p><img alt="JavaFx" src="../../img/ud8/2node.png" /></p>
 <h3 id="2-cuadro-delimitador-bounding-box">2. Cuadro delimitador (Bounding Box)<a class="headerlink" href="#2-cuadro-delimitador-bounding-box" title="Permanent link">&para;</a></h3>
 <p>Un nodo JavaFX tiene un cuadro delimitador. El cuadro delimitador es un cuadro lógico alrededor de la forma del nodo. El nodo completo se encuentra dentro del cuadro delimitador, es decir, gráficamente. En otras palabras, todas las esquinas y bordes del Nodo están contenidos dentro del cuadro delimitador, y no hay espacio adicional alrededor del Nodo, a menos que se agregue a través de un efecto, relleno u otra cosa aplicada al Nodo.</p>
+<p><img alt="JavaFx" src="../../img/ud8/box.png" /></p>
 <p>En realidad, un nodo tiene 3 cuadros delimitadores:</p>
 <ul>
 <li><strong>layoutBounds</strong> Los límites del nodo en su propio espacio de coordenadas, sin aplicar ningún efecto, recorte o transformación.</li>
 <li><strong>boundsInLocal</strong> Los límites del nodo en su propio espacio de coordenadas, con efectos y clip aplicados, pero sin transformaciones.</li>
 <li><strong>boundsInParent</strong> Los límites del nodo en su espacio de coordenadas principal, con efectos, recorte y transformaciones aplicadas.</li>
 </ul>
+<p><img alt="JavaFx" src="../../img/ud8/box2.png" /></p>
 <p>Cada una de estas dimensiones del cuadro delimitador se puede leer desde sus propiedades correspondientes con el mismo nombre, es decir, propiedades denominadas layoutBounds,boundsInLocal yboundsInParent.</p>
 <p>El cuadro boundsInParent es utilizado por el nodo padre (padre) para diseñar sus hijos. El nodo principal necesita conocer el espacio total, incluidos todos los efectos, clips y transformaciones de un nodo para poder asignarle espacio.</p>
 <h3 id="3-layoutx-y-layouty">3. layoutX y layoutY<a class="headerlink" href="#3-layoutx-y-layouty" title="Permanent link">&para;</a></h3>
