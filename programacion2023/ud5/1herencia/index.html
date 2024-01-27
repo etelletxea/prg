@@ -1320,6 +1320,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#caracteristicas-de-las-clases-derivadas" class="md-nav__link">
+    Características de las clases derivadas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modificadores-de-acceso-en-java" class="md-nav__link">
+    Modificadores de acceso en Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructores-y-herencia-en-java-constructores-en-clases-derivadas" class="md-nav__link">
+    Constructores y herencia en Java. Constructores en clases derivadas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ejemplo-clase-animal" class="md-nav__link">
     Ejemplo clase Animal
   </a>
@@ -1327,28 +1348,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#super-keyword" class="md-nav__link">
-    Super keyword
+  <a href="#super" class="md-nav__link">
+    Super
   </a>
-  
-    <nav class="md-nav" aria-label="Super keyword">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#probar-funcionamiento" class="md-nav__link">
-    Probar funcionamiento
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sobreescribir-metodos-de-la-clase-padre-en-los-hijos" class="md-nav__link">
-    Sobreescribir métodos de la clase padre en los hijos
+  <a href="#sobrescribir-metodosoverride" class="md-nav__link">
+    Sobrescribir métodos(override)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llamar-a-metodo-en-una-clase-derivada" class="md-nav__link">
+    Llamar a método en una clase derivada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sobrecarga-vs-sobrescritura" class="md-nav__link">
+    Sobrecarga vs Sobrescritura
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intellij-y-override" class="md-nav__link">
+    IntelliJ y Override
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clases-finales" class="md-nav__link">
+    Clases Finales
   </a>
   
 </li>
@@ -2286,7 +2322,8 @@ La Figura muestra el concepto de jerarquía de clases. Observa que la clase <cod
 <p><img alt="Arrays" src="../../img/ud5/herenciaboton.png" /></p>
 <h2 id="herencia-simple">Herencia simple<a class="headerlink" href="#herencia-simple" title="Permanent link">&para;</a></h2>
 <p>En Java, solo se puede heredar de una clase. A esto se le llama <strong>herencia simple</strong>. Aunque algunos lenguajes de programación permiten que una clase hija herede de más de una clase padre. A esto se le llama <strong>herencia múltiple</strong>. Con la herencia múltiple, a veces es difícil saber qué padre contribuyó con qué características al hijo. Java evita estos problemas mediante el uso de herencia simple.</p>
-<p>Una clase padre puede tener múltiples hijos.</p>
+<p><img alt="Arrays" src="../../img/ud5/taxi1.png" /></p>
+<p>Una clase padre si puede tener múltiples hijos.</p>
 <p><img alt="Arrays" src="../../img/ud5/herenciaboton2.png" /></p>
 <h2 id="sintaxis-herencia-en-java-extends">Sintaxis herencia en Java - <em>extends</em><a class="headerlink" href="#sintaxis-herencia-en-java-extends" title="Permanent link">&para;</a></h2>
 <p>La sintaxis para heredar de una superclase es:</p>
@@ -2295,10 +2332,74 @@ La Figura muestra el concepto de jerarquía de clases. Observa que la clase <cod
 <span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Los miembros (variables y métodos) de la clase padre se incluyen automáticamente en el hijo por herencia. Si se quieren agregar miembros adicionales en la clase hija se hace en su definición de clase.</p>
-<div class="admonition final">
-<p class="admonition-title">Final<p>Las clases declaradas como <code>final</code> no pueden ser extendidas.</p>
-</p>
-</div>
+<h2 id="caracteristicas-de-las-clases-derivadas">Características de las clases derivadas<a class="headerlink" href="#caracteristicas-de-las-clases-derivadas" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Una clase derivada hereda de la clase base sus componentes (atributos y métodos).</p>
+</li>
+<li>
+<p>Los constructores no se heredan. Las clases derivadas deberán implementar sus propios constructores. </p>
+</li>
+<li>
+<p>Una clase derivada puede acceder a los miembros públicos y protegidos de la clase base como si fuesen miembros propios.</p>
+</li>
+<li>
+<p>Una clase derivada no tiene acceso a los miembros privados de la clase base. Deberá acceder a través de métodos heredados de la clase base.</p>
+</li>
+<li>
+<p>Si se necesita tener acceso directo a los miembros privados de la clase base se deben declarar protected en lugar de private en la clase base.</p>
+</li>
+<li>
+<p>Una clase derivada puede añadir a los miembros heredados, sus propios atributos y métodos (extender la funcionalidad de la clase).</p>
+</li>
+<li>
+<p>También puede modificar los métodos heredados (especializar el comportamiento de la clase base).</p>
+</li>
+<li>
+<p>Una clase derivada puede volver a declarar un atributo heredado (atributo public o protected en
+la clase base). En este caso, el atributo de la clase base queda oculto por el de la clase derivada</p>
+</li>
+<li>
+<p>Una clase derivada puede, a su vez, ser una clase base, dando lugar a una jerarquía de clases.</p>
+</li>
+</ul>
+<h2 id="modificadores-de-acceso-en-java">Modificadores de acceso en Java<a class="headerlink" href="#modificadores-de-acceso-en-java" title="Permanent link">&para;</a></h2>
+<p>Una clase derivada podrá acceder a los miembros de su padre según el modificador</p>
+<p><img alt="herencia" src="../../img/ud5/modificadoresdeacceso.png" /></p>
+<h2 id="constructores-y-herencia-en-java-constructores-en-clases-derivadas">Constructores y herencia en Java. Constructores en clases derivadas<a class="headerlink" href="#constructores-y-herencia-en-java-constructores-en-clases-derivadas" title="Permanent link">&para;</a></h2>
+<p>Los constructores no se heredan. Cada clase derivada tendrá sus propios constructores. La clase
+base es la encargada de inicializar sus atributos. La clase derivada se encarga de inicializar solo los
+suyos. Cuando se crea un objeto de una clase derivada se ejecutan los constructores en este
+orden:</p>
+<ol>
+<li>Primero se ejecuta el constructor de la clase base.</li>
+<li>Después se ejecuta el constructor de la clase derivada.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Persona...&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="cm">/* Resto de métodos */</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Alumno...&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="cm">/* Resto de métodos */</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Si creamos una instancia de Alumno</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Alumno</span><span class="w"> </span><span class="n">pepito</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">();</span>
+</code></pre></div>
+Cuando se invoca al constructor de la clase Alumno se invoca automáticamente al constructor de
+la clase Persona y después continúa la ejecución del constructor de la clase Alumno. </p>
+<p>Muesta por pantalla</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Ejecutando<span class="w"> </span>el<span class="w"> </span>constructor<span class="w"> </span>de<span class="w"> </span>Persona...
+<span class="linenos" data-linenos="2 "></span>Ejecutando<span class="w"> </span>el<span class="w"> </span>constructor<span class="w"> </span>de<span class="w"> </span>Alumno...
+</code></pre></div>
 <h2 id="ejemplo-clase-animal">Ejemplo clase Animal<a class="headerlink" href="#ejemplo-clase-animal" title="Permanent link">&para;</a></h2>
 <p>Vamos a crear una clase base <code>Animal</code> que tendrá una serie de características comunes para todos los animales como puede ser, nombre, peso, tamaño, etc.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
@@ -2311,10 +2412,11 @@ La Figura muestra el concepto de jerarquía de clases. Observa que la clase <cod
 <span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
 <span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
-<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="12 "></span>
-<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="c1">//getters y setters</span>
-<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Animal...&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">//getters y setters</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Ahora queremos crear un tipo de animal <code>Dog</code> que contendrá todas las características (atributos y métodos) de la clase <code>Animal</code>:</p>
 <p><img alt="Herencia" src="../../img/ud5/herenciaanimal1.png" /></p>
@@ -2333,14 +2435,19 @@ La Figura muestra el concepto de jerarquía de clases. Observa que la clase <cod
 </code></pre></div>
 <p>Al crear una clase hija <code>Dog</code> que hereda de la clase padre <code>Animal</code>, lo que estamos haciendo es heredar todo su comportamiento (atributos y métodos) y además nos permite añadir atributos específicos y únicos para esa clase hija que son particulares de los perros y no comunes o aplicables a todos los animales.</p>
 <hr />
-<h2 id="super-keyword"><em>Super</em> keyword<a class="headerlink" href="#super-keyword" title="Permanent link">&para;</a></h2>
+<h2 id="super"><em>Super</em><a class="headerlink" href="#super" title="Permanent link">&para;</a></h2>
 <p>La palabra reservada <code>super</code> se utiliza para llamar al constructor de la clase de la que estamos heredando, es decir, llamar a la clase padre o superclase. En nuestro caso, para invocar al constructor de la superclase <code>Animal</code>.
 Esto nos permite inicializar la clase <code>Animal</code>, ya que <code>Dog</code> es una clase derivada que se basa en ella.</p>
 <div class="admonition importante">
 <p class="admonition-title">Importante</p>
 <ul>
 <li>La primera línea dentro del constructor de la clase hija debe ser la llamada al constructor padre con <strong>super()</strong>.</li>
-<li>Si no se especifica explícitamente entonces el compilador Java llama por defecto a <strong>super();</strong>, es decir, al constructor por defecto (sin argumentos) de la clase padre</li>
+<li>Si no se especifica explícitamente entonces el compilador Java llama por defecto a <strong>super();</strong>, es decir, al constructor por defecto (sin argumentos) de la clase padre
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">super</span><span class="p">();</span><span class="w"> </span><span class="c1">//esta instrucción se ejecuta siempre. No es necesario escribirla</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Alumno&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</code></pre></div></li>
 <li>Si se proporciona un constructor con parámetros en una clase, el compilador de Java <strong>no</strong> creará automáticamente el constructor sin parámetros.</li>
 <li>Si el padre no tiene un constructor sin argumentos, entonces provoca un error.</li>
 </ul>
@@ -2356,12 +2463,13 @@ Esto nos permite inicializar la clase <code>Animal</code>, ya que <code>Dog</cod
 <span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 6 "></span>
 <span class="hll"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span><span class="c1">//llama al constructor de Animal</span>
 </span><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
 <span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
 <span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Dog...&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
 </code></pre></div>
 <p>En la clase base, vamos a añadir comportamiento, que será común para todos los animales: comer y moverse</p>
 <p><img alt="Herencia" src="../../img/ud5/herenciaanimal3.png" /></p>
@@ -2375,36 +2483,85 @@ Esto nos permite inicializar la clase <code>Animal</code>, ya que <code>Dog</cod
 <span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
 <span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
-<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Alumno...&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="12 "></span>
-<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="c1">//código</span>
-<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="16 "></span>
-<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="c1">//código</span>
-<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="20 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;comiendo animal...&quot;</span><span class="o">+</span><span class="n">name</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;se mueve el animal...&quot;</span><span class="o">+</span><span class="n">name</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="23 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Al hacer esto, y crearlos como <code>public</code> (<code>protected</code> también serviría), significa que ahora están disponibles en la clase <code>Dog</code> automáticamente. Es decir, el método <code>eat</code> y <code>move</code> se hereda a la clase <code>Dog</code>.</p>
-<h3 id="probar-funcionamiento">Probar funcionamiento<a class="headerlink" href="#probar-funcionamiento" title="Permanent link">&para;</a></h3>
-<p>Vamos a probar cómo funciona la herencia, para ello creamos un clase <code>Main</code> con un método <code>main</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="linenos" data-linenos="3 "></span>
-<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;Maxi&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="linenos" data-linenos="5 "></span>
-<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;Maxi&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="c1">//llamamos al método eat que existe en la clase padre</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">dog</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 </code></pre></div>
-<p>Vemos que crear un animal no tiene mucho sentido, puesto que no sabemos mucho sobre él. Cuando creamos un perro, podemos ser más específicos en nuestra definición y dar valores relativos solo para perros.
-Además, desde perro tenemos acceso a los métodos definidos en la clase padre (<code>Animal</code>) como públicos o protected. Por ejemplo, <code>dog.eat()</code> invocará al método comer que se encuentra en la clase padre, ya que la clase <code>Dog</code> no tiene ningún método <code>eat</code>.</p>
-<h2 id="sobreescribir-metodos-de-la-clase-padre-en-los-hijos">Sobreescribir métodos de la clase padre en los hijos<a class="headerlink" href="#sobreescribir-metodos-de-la-clase-padre-en-los-hijos" title="Permanent link">&para;</a></h2>
-<p>La herencia nos aporta la opción de la <strong>sobreescritura</strong> de métodos. Es decir, redefinir los métodos de una clase padre en las clases hijas.</p>
-<p>Por ejemplo, en la clase <code>Dog</code> podemos sobreescribir el método <code>eat()</code> con una funcionalidad más específica.</p>
-<p>El IntelliJ nos ofrece un atajo para sobreescritura de métodos. Botón derecho &rarr; Generate...</p>
+<p>muestra</p>
+<p><strong>comiendo animal...Maxi</strong></p>
+<h2 id="sobrescribir-metodosoverride">Sobrescribir métodos(override)<a class="headerlink" href="#sobrescribir-metodosoverride" title="Permanent link">&para;</a></h2>
+<p>La herencia nos aporta la opción de la <strong>sobrescritura</strong> de métodos. Es decir, redefinir los métodos de una clase padre en las clases hijas con su propia funcionalidad.</p>
+<h2 id="llamar-a-metodo-en-una-clase-derivada">Llamar a método en una clase derivada<a class="headerlink" href="#llamar-a-metodo-en-una-clase-derivada" title="Permanent link">&para;</a></h2>
+<div class="admonition importante">
+<p class="admonition-title">Importante</p>
+<p>Cuando se invoca un método de una clase en una jerarquía de clases sucede lo siguiente</p>
+<ol>
+<li>Se busca en su clase el método correspondiente.</li>
+<li>Si no se encuentra, se busca en su clase base.</li>
+<li>Si no se encuentra, se sigue buscando hacia arriba en la jerarquía de clases hasta que el método se encuentra.</li>
+<li>Si al llegar a la clase raíz el método no se ha encontrado se producirá un error.</li>
+</ol>
+</div>
+<p>Por ejemplo, en la clase <code>Dog</code> podemos sobrescribir el método <code>eat()</code> con una funcionalidad más específica.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span><span class="c1">//llama al constructor de Animal</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Dog...&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+<span class="hll"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nd">@override</span>
+</span><span class="hll"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">(){</span>
+</span><span class="hll"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El dog &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">&quot; está comiendo...&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
+</span><span class="linenos" data-linenos="18 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="sobrecarga-vs-sobrescritura">Sobrecarga vs Sobrescritura<a class="headerlink" href="#sobrecarga-vs-sobrescritura" title="Permanent link">&para;</a></h2>
+<div class="admonition sobrecarga">
+<p class="admonition-title">Sobrecarga</p>
+<p>No confundir con el concepto de <strong>sobrecarga</strong> en la que en una clase tenemos varios métodos con el mismo nombre pero diferentes parámetros
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="c1">//método sumar 2 parámetros</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">sumar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">m1</span><span class="o">+</span><span class="n">m2</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="c1">//método sumar 3 parámetros</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">sumar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">m1</span><span class="o">+</span><span class="n">m2</span><span class="o">+</span><span class="n">m3</span><span class="p">;</span>
+<span class="linenos" data-linenos="9 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div></p>
+</div>
+<h2 id="intellij-y-override">IntelliJ y Override<a class="headerlink" href="#intellij-y-override" title="Permanent link">&para;</a></h2>
+<p>El IntelliJ nos ofrece un atajo para sobrescritura de métodos. </p>
+<p><strong>Botón derecho &rarr; Generate...</strong></p>
 <p><img alt="Arrays" src="../../img/ud5/1intellij.png" /></p>
 <p><img alt="Arrays" src="../../img/ud5/2intellij.png" /></p>
-<p>IntelliJ nos muestra todos los métodos que están en la clase <code>Animal</code> y podemos sobreescribir:</p>
+<p>IntelliJ nos muestra todos los métodos que están en la clase <code>Animal</code> y podemos sobrescribir:</p>
 <p><img alt="Arrays" src="../../img/ud5/3intellij.png" /></p>
 <p>Si seleccionamos el método <code>eat()</code>, tenemos:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
@@ -2447,49 +2604,24 @@ Además, desde perro tenemos acceso a los métodos definidos en la clase padre (
 <span class="linenos" data-linenos="18 "></span>
 <span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="nd">@Override</span>
 <span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog eat&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">chew</span><span class="p">();</span>
-<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
-<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="25 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El dog &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">&quot; está comiendo...&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="24 "></span><span class="p">}</span>
 </code></pre></div>
-<p>En términos de sobreescritura, debemos de llevar cuidado con el método que se invoca:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 2 "></span>
-<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 6 "></span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eyes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">legs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">years</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">eyes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eyes</span><span class="p">;</span>
-<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">legs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">legs</span><span class="p">;</span>
-<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
-<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="13 "></span>
-<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">//Método privado solo de la clase Dog</span>
-<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">chew</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="16 "></span>
-<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="18 "></span>
-<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="nd">@Override</span>
-<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog eat&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">chew</span><span class="p">();</span>
-<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
-<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="25 "></span>
-<span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">walk</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">move</span><span class="p">();</span>
-<span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="29 "></span>
-<span class="linenos" data-linenos="30 "></span><span class="p">}</span>
+<h2 id="clases-finales">Clases Finales<a class="headerlink" href="#clases-finales" title="Permanent link">&para;</a></h2>
+<p>Si queremos evitar que una clase tenga clases derivadas debe declararse con el modificador final
+delante de class:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="err">…</span><span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</code></pre></div></p>
+<p>Esto la convierte en clase final. Una clase final no se puede heredar. Si intentamos crear una clase derivada de Dog se producirá un error de compilación:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//producirá un error de compilación</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Chiguagua</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Dog</span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="err">…</span><span class="w"> </span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
 </code></pre></div>
-<p>Si no sobreescribimos el método <code>move()</code> en la clase <code>Dog</code>, cuando lo invocamos dentro del método <code>walk()</code> se llamaría al método de la clase <code>Animal</code>.</p>
-<div class="admonition warning warning">
-<p class="admonition-title">Warning</p>
-<p><strong>Los métodos estáticos</strong> se heredan pero no se pueden sobreescribir.</p>
-</div>
 
 
   
