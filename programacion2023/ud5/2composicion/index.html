@@ -1226,14 +1226,14 @@
       
       
         <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-          ✨ Herencia y polimorfismo
+          UD06-Herencia y polimorfismo
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          ✨ Herencia y polimorfismo
+          UD06-Herencia y polimorfismo
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2214,6 +2214,7 @@
 <p>La composición es otro componente de la programación orientada a objetos y es muy utilizada.</p>
 <p>Es el mecanismo en el cual una clase se construye a partir de otros objetos de igual o distinto tipo, pudiéndolos combinar para obtener la funcionalidad deseada. En la composición la nueva clase, mantiene una relación “Usa/Tiene un”, con los objetos que son parte de la clase.</p>
 <p>Vamos a ver un ejemplo de la clase <code>Car</code> que extiende <code>Vehicle</code>:</p>
+<p><img alt="composicion" src="../../img/ud5/vehiculo1.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span>
 <span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
@@ -2352,7 +2353,8 @@ Por ejemplo, pensemos en un ordenador. Un ordenador se compone de una CPU, panta
 <span class="linenos" data-linenos="116 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Hemos creado las clases <code>Monitor</code>, <code>Teclado</code> y <code>Procesador</code>.
-Ahora vamos a crear una clase <code>Ordenador</code> que se compondrán de las otras tres clases de la forma:</p>
+Ahora vamos a crear una clase <code>Ordenador</code> que se compondrá de las otras tres clases de la forma:</p>
+<p><img alt="Composición" src="../../img/ud5/ordenador1.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ordenador</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span>
 <span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Procesador</span><span class="w"> </span><span class="n">procesador</span><span class="p">;</span>

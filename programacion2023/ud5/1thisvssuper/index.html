@@ -1226,14 +1226,14 @@
       
       
         <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-          ✨ Herencia y polimorfismo
+          UD06-Herencia y polimorfismo
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          ✨ Herencia y polimorfismo
+          UD06-Herencia y polimorfismo
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2242,7 +2242,10 @@
 <p>La palabra reservada <strong>this</strong> se utiliza para acceder a los miembros (atributos y métodos) de la clase actual en la que se usa.</p>
 </li>
 </ul>
+<div class="admonition importante">
+<p class="admonition-title">Importante</p>
 <p>Las dos palabras pueden usarse en cualquier lugar excepto en bloques de código estático.</p>
+</div>
 <h2 id="this">This<a class="headerlink" href="#this" title="Permanent link">&para;</a></h2>
 <p><code>this</code> es generalmente usada en constructores y en los métodos setters, y opcionalmente en los getters ya que no tenemos parámetro de entrada con el mismo nombre:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
@@ -2250,12 +2253,12 @@
 <span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 4 "></span>
 <span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Coche</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ruedas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ruedas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="p">}</span>
+<span class="hll"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ruedas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
+</span><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos=" 8 "></span>
 <span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setRuedas</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ruedas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ruedas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
-<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+<span class="hll"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ruedas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
+</span><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos="12 "></span>
 <span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRuedas</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ruedas</span><span class="p">;</span>
@@ -2268,8 +2271,8 @@
 <span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dog eat&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="n">chew</span><span class="p">();</span>
-<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
-<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
+<span class="hll"><span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span>
+</span><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>Sin la palabra reservada <code>super</code>, se produciría una llamada recursiva al mismo método de forma infinita.</p>
 <h2 id="this_1">this()<a class="headerlink" href="#this_1" title="Permanent link">&para;</a></h2>
@@ -2279,8 +2282,8 @@
 <p>Usamos <code>super()</code> en forma de método dentro del cuerpo de un constructor cuando queremos invocar a un constructor de la clase padre.
 <code>super()</code> solo puede usarse en un constructor; y debe de ser la primera sentencia que aparece en el constructor.</p>
 <p>Recordemos que el compilador de Java agrega de forma automática la sentencia <code>super()</code> en el constructor de la clase hija si nosotros no lo añadimos.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
 <p>Un constructor puede tener las sentencias <code>this()</code> o <code>super()</code> pero nunca ambas.</p>
 </div>
 <p><img alt="Arrays" src="../../img/ud5/1thisvssuper.png" /></p>
@@ -2302,15 +2305,17 @@
 <span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
 <span class="linenos" data-linenos="16 "></span>
 <span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Coche</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">modelo</span><span class="p">,</span><span class="n">marca</span><span class="p">);</span>
-<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="20 "></span>
-<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Coche</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">puertas</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">precio</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">puertas</span><span class="p">,</span><span class="w"> </span><span class="n">precio</span><span class="p">);</span>
-<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">modelo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
-<span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">marca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
-<span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="26 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="c1">//llama al constructor de abajo</span>
+<span class="hll"><span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">modelo</span><span class="p">,</span><span class="n">marca</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Coche</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">puertas</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">precio</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="c1">//llama al constructor padre</span>
+<span class="hll"><span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">puertas</span><span class="p">,</span><span class="w"> </span><span class="n">precio</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">modelo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">marca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span><span class="p">}</span>
 </code></pre></div>
 
 
