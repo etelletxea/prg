@@ -1356,7 +1356,7 @@
       
         <li class="md-nav__item">
   <a href="#sobrescribir-metodosoverride" class="md-nav__link">
-    Sobrescribir métodos(override)
+    Sobrescribir métodos(@Override)
   </a>
   
 </li>
@@ -1406,6 +1406,20 @@
     <li class="md-nav__item">
       <a href="../1thisvssuper/" class="md-nav__link">
         This vs super
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1xclaseobject/" class="md-nav__link">
+        Clase Object
       </a>
     </li>
   
@@ -2441,15 +2455,59 @@ Esto nos permite inicializar la clase <code>Animal</code>, ya que <code>Dog</cod
 <div class="admonition importante">
 <p class="admonition-title">Importante</p>
 <ul>
-<li>La primera línea dentro del constructor de la clase hija debe ser la llamada al constructor padre con <strong>super()</strong>.</li>
-<li>Si no se especifica explícitamente entonces el compilador Java llama por defecto a <strong>super();</strong>, es decir, al constructor por defecto (sin argumentos) de la clase padre
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="2 "></span><span class="kd">super</span><span class="p">();</span><span class="w"> </span><span class="c1">//esta instrucción se ejecuta siempre. No es necesario escribirla</span>
-<span class="linenos" data-linenos="3 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Alumno&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+<li>La primera línea dentro del constructor de la clase hija debe ser la llamada al constructor padre con <strong>super()</strong>.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="n">Persona</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kd">super</span><span class="p">();</span><span class="w"> </span><span class="c1">//esta instrucción se ejecuta siempre. No es necesario escribirla</span>
+</span><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="o">=</span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">curso</span><span class="o">=</span><span class="n">curso</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Alumno&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
 </code></pre></div></li>
-<li>Si se proporciona un constructor con parámetros en una clase, el compilador de Java <strong>no</strong> creará automáticamente el constructor sin parámetros.</li>
-<li>Si el padre no tiene un constructor sin argumentos, entonces provoca un error.</li>
+<li>Si no se especifica explícitamente entonces el compilador Java llama por defecto a <strong>super();</strong>, es decir, al constructor por defecto (sin argumentos) de la clase padre
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">;</span>
+<span class="hll"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="c1">//no es necesario llamar a super(), lo llama el compilador</span>
+</span><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="o">=</span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">curso</span><span class="o">=</span><span class="n">curso</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Alumno&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div></li>
+<li>Si se proporciona un constructor con parámetros en una clase, el compilador de Java <strong>no</strong> creará automáticamente el constructor sin parámetros. El siguiente código es <strong>erróneo</strong>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="n">Persona</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="hll"><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Persona..&quot;</span><span class="p">);</span>
+</span><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="p">{</span>
+<span class="hll"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="c1">//ERROR: es necesario llamar al constructor del padre</span>
+</span><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                    </span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="o">=</span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">curso</span><span class="o">=</span><span class="n">curso</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Alumno&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</code></pre></div>
+El constructor de Alumno tendría que ser como sigue
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">curso</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                    </span>
+<span class="hll"><span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="n">Persona</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">curso</span><span class="o">=</span><span class="n">curso</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Alumno..&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div></li>
 </ul>
 </div>
 <hr />
@@ -2508,7 +2566,7 @@ Esto nos permite inicializar la clase <code>Animal</code>, ya que <code>Dog</cod
 </code></pre></div>
 <p>muestra</p>
 <p><strong>comiendo animal...Maxi</strong></p>
-<h2 id="sobrescribir-metodosoverride">Sobrescribir métodos(override)<a class="headerlink" href="#sobrescribir-metodosoverride" title="Permanent link">&para;</a></h2>
+<h2 id="sobrescribir-metodosoverride">Sobrescribir métodos(@Override)<a class="headerlink" href="#sobrescribir-metodosoverride" title="Permanent link">&para;</a></h2>
 <p>La herencia nos aporta la opción de la <strong>sobrescritura</strong> de métodos. Es decir, redefinir los métodos de una clase padre en las clases hijas con su propia funcionalidad.</p>
 <h2 id="llamar-a-metodo-en-una-clase-derivada">Llamar a método en una clase derivada<a class="headerlink" href="#llamar-a-metodo-en-una-clase-derivada" title="Permanent link">&para;</a></h2>
 <div class="admonition importante">
@@ -2535,7 +2593,7 @@ Esto nos permite inicializar la clase <code>Animal</code>, ya que <code>Dog</cod
 <span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
 <span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ejecutando el constructor de Dog...&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
-<span class="hll"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nd">@override</span>
+<span class="hll"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nd">@Override</span>
 </span><span class="hll"><span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">(){</span>
 </span><span class="hll"><span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El dog &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s">&quot; está comiendo...&quot;</span><span class="p">);</span>
 </span><span class="hll"><span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span>
@@ -2618,7 +2676,7 @@ delante de class:
 </code></pre></div></p>
 <p>Esto la convierte en clase final. Una clase final no se puede heredar. Si intentamos crear una clase derivada de Dog se producirá un error de compilación:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//producirá un error de compilación</span>
-<span class="linenos" data-linenos="2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Chiguagua</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Dog</span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">public</span><span class="w">  </span><span class="kd">class</span> <span class="nc">Chiguagua</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Dog</span><span class="p">{</span>
 <span class="linenos" data-linenos="3 "></span><span class="err">…</span><span class="w"> </span>
 <span class="linenos" data-linenos="4 "></span><span class="p">}</span>
 </code></pre></div>
