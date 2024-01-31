@@ -1423,6 +1423,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excepcion" class="md-nav__link">
+    Excepción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tratamiento-de-excepciones" class="md-nav__link">
+    Tratamiento de excepciones
+  </a>
+  
+    <nav class="md-nav" aria-label="Tratamiento de excepciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    Ejemplos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipo-de-exepciones" class="md-nav__link">
+    Tipo de exepciones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#checked-exceptions" class="md-nav__link">
     Checked exceptions
   </a>
@@ -2301,11 +2342,172 @@
 
 
 <h1 id="excepciones">Excepciones<a class="headerlink" href="#excepciones" title="Permanent link">&para;</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>En el proceso de ejecución de un programa, pueden surgir errores que como programadores pueden ser difíciles de controlar. Por ejemplo</p>
+<ul>
+<li>cuando tenemos que leer un fichero y este no existe</li>
+<li>cuando el usuario tiene que introducir un número e introduce un texto</li>
+<li>cuando hacemos una petición a una base de datos y no contesta...</li>
+</ul>
+<p>Por ejemplo, las siguientes muestras de código provocan la parada del programa</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">numeros</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">//provocará un error porque nos salimos tamaño del array</span>
+<span class="hll"><span class="linenos" data-linenos=" 3 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numeros</span><span class="o">[</span><span class="mi">6</span><span class="o">]</span><span class="p">);</span><span class="c1">// java.lang.ArrayIndexOutOfBoundsException</span>
+</span><span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="s">&quot;Hola&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="c1">//provocará un error al convertir el string a entero</span>
+<span class="hll"><span class="linenos" data-linenos=" 7 "></span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="o">=</span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="c1">//java.base/java.lang.NumberFormatException</span>
+</span><span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">//provocará error al dividir por cero</span>
+<span class="hll"><span class="linenos" data-linenos="10 "></span><span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">0</span><span class="p">;</span><span class="c1">//java.lang.ArithmeticException: / by zero</span>
+</span><span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">lista</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="c1">//provocará error nullPointerException, el objeto no existe</span>
+<span class="hll"><span class="linenos" data-linenos="14 "></span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">length</span>
+</span></code></pre></div>
+<p>Los programas tienes que ser robustos y recuperarse ante errores. Para manejar los errores y que los programas no se queden “colgados” y sigan su funcionamiento a pesar de haber ocurrido un error tenemos el <strong>manejo de excepciones</strong>. </p>
+<p>Si el error no se trata, el manejador de excepciones realiza lo siguiente:</p>
+<ul>
+<li>Muestra la descripción de la excepción.</li>
+<li>Muestra la traza de la pila de llamadas.</li>
+<li>Provoca el final del programa</li>
+</ul>
+<p><img alt="Exception" src="../../img/ud5/excepciones6.png" /></p>
+<h2 id="excepcion">Excepción<a class="headerlink" href="#excepcion" title="Permanent link">&para;</a></h2>
+<p>Las excepciones son un mecanismo especial para gestionar errores y permiten separar el tratamiento de errores del código normal de un programa</p>
 <p>Una excepción es un evento que ocurre durante la ejecución de una aplicación e interrumpe el flujo normal de las instrucciones del programa.</p>
 <p><img alt="Exception" src="../../img/ud5/exceptions1.png" /></p>
-<p>Class Exception y class Error extienden Throwable. Un método Java puede "lanzar" un objeto de clase Throwable.</p>
+<p>Class Exception y class Error extienden Throwable. </p>
+<p>La <strong>clase Error</strong> está relacionada con errores de la máquina virtual de Java. Generalmente estos
+errores no dependen del programador, por lo que no nos debemos preocupar por tratarlos, por
+ejemplo, OutOfMemoryError, StackOverflowError, errores de hardware, etc.</p>
+<p>En la <strong>clase Exception</strong> se encuentran las excepciones que se pueden lanzar en una aplicación</p>
 <p>Las excepciones son diferentes de los errores porque se pueden escribir programas para recuperarse de excepciones, pero no se pueden escribir programas para recuperarse de errores.</p>
 <p>Las excepciones pueden ser detectadas por una parte del programa que intenta recuperarse del problema.</p>
+<p>En la clase Exception se encuentran las excepciones que se pueden lanzar en una aplicación. Tiene
+varias subclases, entre ellas:</p>
+<ul>
+<li><strong>RuntimeException</strong>: son excepciones lanzadas durante la ejecución del programa. Por
+ejemplo: ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException,
+etc. y pertenecen al paquete java.lang.</li>
+<li><strong>IOException</strong>: son excepciones lanzadas al ejecutar una operación de entrada-salida.
+Pertenecen al paquete java.io.</li>
+<li><strong>ClassNotFoundException</strong>: excepción lanzada cuando una aplicación intenta cargar una
+clase, pero no se encuentra el fichero .class correspondiente.</li>
+</ul>
+<p>Podemos ver un resumen</p>
+<p><img alt="Exception" src="../../img/ud5/excepciones7.png" /></p>
+<h2 id="tratamiento-de-excepciones">Tratamiento de excepciones<a class="headerlink" href="#tratamiento-de-excepciones" title="Permanent link">&para;</a></h2>
+<p>Un programa que trate una excepción, tiene que un bloque del tipo
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="c1">//Instrucciones que se intentan ejecutar, si se produce una</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="c1">//situación inesperada se lanza una excepción</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="p">}</span><span class="w"> </span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">catch</span><span class="p">(</span><span class="n">tipoExcepcion</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="c1">//Instrucciones para tratar esta excepción</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">catch</span><span class="p">(</span><span class="n">otroTipoExcepcion</span><span class="w"> </span><span class="n">e</span><span class="p">){</span><span class="w"> </span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="c1">//Instrucciones para tratar esta excepción</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="c1">//Se pueden escribir tantos bloques catch como sean necesarios</span>
+<span class="linenos" data-linenos="12 "></span><span class="k">finally</span><span class="p">{</span><span class="c1">//opcional</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="c1">//instrucciones que se ejecutarán siempre después de un bloque try,</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">//se haya producido o no una excepción</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Bloque try:</strong> dentro del bloque try se coloca el código que podría generar una
+excepción. </p>
+<p><strong>Bloques catch:</strong> capturan y tratan una excepción cuando esta
+ocurre. Pueden existir varios bloques catch. Estos se definen directamente
+después del bloque try. Ningún código puede estar entre el final del bloque
+try y el comienzo del primer bloque catch. Los catch se evalúan por orden,
+si un catch atrapa la excepción que ha ocurrido, se ejecuta y los demás no.</p>
+<p><strong>Bloque finallly:</strong> es opcional e incluye código que se ejecuta
+siempre, independientemente si se ha producido una excepción o no</p>
+<h3 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h3>
+<p>El siguiente programa lee un número entero y lo muestra. Si en la instrucción <strong>sc.nextInt()</strong> se
+introduce un número de otro tipo o un carácter, se lanza una excepción <strong>InputMismatchException</strong>
+que es capturada por el bloque catch. En este bloque se realizan las instrucciones necesarias para
+resolver la situación y que el programa pueda continuar.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">do</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">try</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un número entero &gt; 0: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Número introducido: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">catch</span><span class="p">(</span><span class="n">InputMismatchException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="c1">//retorna la tecla enter</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Debe introducir un número entero &quot;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</code></pre></div>
+El siguiente ejemplo captura dos excepciones, por un lado se espera la entrada de dos enteros y por otro que el segundo no sea cero</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">try</span><span class="p">{</span>
+<span class="hll"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="c1">//produce error si no se introduce un entero</span>
+</span><span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce dividendo: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce divisor: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="hll"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="c1">//produce un error si n2 es 0</span>
+</span><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">n1</span><span class="o">/</span><span class="n">n2</span><span class="p">);</span><span class="w">            </span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InputMismatchException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: hay que introducir un entero&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ArithmeticException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: no se puede dividir por 0&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="admonition importante">
+<p class="admonition-title">Importante</p>
+<p>Cuando se lanza una excepción se captura por el primer bloque catch cuyo parámetro sea de la
+misma clase que el objeto excepción o de una clase base directa o indirecta. Por este motivo, es importante el orden en que se coloquen los bloques catch.</p>
+<p>Las excepciones más genéricas se deben capturar al final. Si no es necesario tratar excepciones
+concretas de forma específica se puede poner un bloque catch de una clase base que las capture
+todas y las trate de forma general. Esto se conoce como captura genérica de excepciones.</p>
+</div>
+<p>En el siguiente ejemplo, en el último catch, se captura cualquier posible error que surja</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">};</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">repetir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="k">do</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">try</span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="n">repetir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introduce un número entero &gt; 0 y &lt; &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">                    </span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">                    </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor en la posición &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">                    </span><span class="n">array</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="k">catch</span><span class="p">(</span><span class="n">InputMismatchException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">            </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Debe introducir un número entero &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">            </span><span class="n">repetir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="k">catch</span><span class="p">(</span><span class="n">IndexOutOfBoundsException</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Debe introducir un número entero &gt; 0 y &lt;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">            </span><span class="n">repetir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="c1">// resto de excepciones de tipo Exception y derivadas</span>
+<span class="hll"><span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span><span class="w"> </span>
+</span><span class="linenos" data-linenos="28 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error inesperado &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="linenos" data-linenos="29 "></span><span class="w">            </span><span class="n">repetir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">repetir</span><span class="p">);</span>
+<span class="linenos" data-linenos="32 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="tipo-de-exepciones">Tipo de exepciones<a class="headerlink" href="#tipo-de-exepciones" title="Permanent link">&para;</a></h2>
 <p>En Java, hay dos tipos de excepciones:</p>
 <ul>
 <li><strong>Checked exceptions</strong> (Excepciones verificadas).</li>
