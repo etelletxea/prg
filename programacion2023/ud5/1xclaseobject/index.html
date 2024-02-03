@@ -1349,6 +1349,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#equals-vs" class="md-nav__link">
+    'equals' vs '=='
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importancia-de-sobrescribir-equals" class="md-nav__link">
+    Importancia de sobrescribir 'equals'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#intellij-y-equals" class="md-nav__link">
     IntelliJ y equals()
   </a>
@@ -2340,7 +2354,19 @@ Podemos comparar los objeto
 <span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;persona1 equals persona3: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">juan</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">juanito</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
 <span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div></p>
-<p>Por otro lado, otras clases, utilizan equals para comparar si sus elementos son iguales, por ejemplo el método <strong>Arrays.equals</strong> o <strong>indexOf</strong> de la clase <strong>ArrayList</strong></p>
+<h3 id="equals-vs">'equals' vs '=='<a class="headerlink" href="#equals-vs" title="Permanent link">&para;</a></h3>
+<p>Es importante tener en cuenta, que una variable que instancia a un objeto, tiene la dirección a dicho objeto. Por lo que si dos variables se comparan con <strong>==</strong>, nos dará <strong>true</strong> si la dirección en la misma y no su contenido.</p>
+<p><img alt="equals" src="../../img/ud5/equals2.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="p">{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;O&#39;</span><span class="p">,</span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="sc">&#39;A&#39;</span><span class="p">};</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="p">{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;O&#39;</span><span class="p">,</span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="sc">&#39;A&#39;</span><span class="p">};</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">c</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="linenos" data-linenos="7 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</code></pre></div>
+<h3 id="importancia-de-sobrescribir-equals">Importancia de sobrescribir 'equals'<a class="headerlink" href="#importancia-de-sobrescribir-equals" title="Permanent link">&para;</a></h3>
+<p>Otras clases utilizan equals para comparar si sus elementos son iguales, por ejemplo, el método <strong>Arrays.equals</strong> o <strong>indexOf</strong> de la clase <strong>ArrayList</strong></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;12345678A&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;87654321B&quot;</span><span class="p">);</span>
