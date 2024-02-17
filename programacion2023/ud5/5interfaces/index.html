@@ -1437,6 +1437,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#otro-ejemplo-con-herencia-e-interface" class="md-nav__link">
+    ❇️Otro ejemplo con herencia e interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clase-anonimas" class="md-nav__link">
+    ❇️ Clase anónimas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clase-anonimas-y-desarrollo-en-entornos-graficos" class="md-nav__link">
+    ❇️ Clase anónimas y desarrollo en entornos gráficos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#novedades" class="md-nav__link">
     ❇️ Novedades
   </a>
@@ -2282,6 +2303,11 @@
 <h1 id="interfaces">⚕️Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h1>
 <h2 id="definicion">❇️ Definición<a class="headerlink" href="#definicion" title="Permanent link">&para;</a></h2>
 <p>Una <strong>interfaz</strong> es una clase que define métodos pero no los implementa. La idea es proporcionar un comportamiento común que pueda ser utilizado por varias clases que implemente una interfaz. <strong>No se pueden instanciar</strong>.</p>
+<p>Te permiten definir tipos cuyos comportamientos pueden ser compartidos por varias clases que no están relacionadas, con el fin de crear instancias que se adapten a un dominio específico.</p>
+<p>Las interfaces juegan un papel fundamental en la creación de aplicaciones Java ya que
+permiten interactuar a objetos no relacionados entre sí. Utilizando interfaces es posible
+que clases no relacionadas, situadas en distintas jerarquías de clases sin relaciones de
+herencia, tengan comportamientos comunes</p>
 <p>Una interfaz es una lista de constantes y signaturas de métodos. Los métodos no están implementados en la interfaz (no hay cuerpo de método).</p>
 <h2 id="por-que-se-utilizan-las-interfaces">❇️ ¿Por qué se utilizan las interfaces?<a class="headerlink" href="#por-que-se-utilizan-las-interfaces" title="Permanent link">&para;</a></h2>
 <p>Hay principalmente tres razones para usar la interfaz.</p>
@@ -2297,8 +2323,9 @@
 <p>Una clase puede extender de una clase padre para heredar los métodos y las variables de instancia de ese padre. </p>
 <p>Una clase también puede implementar una interfaz al incluir métodos y constantes adicionales. Sin embargo, los métodos en la interfaz deben escribirse explícitamente como parte de la definición de la clase. La interfaz es una lista de requisitos que debe incluir la definición de clase (a través de código explícito, no a través de herencia).</p>
 <p>Por ejemplo, una clase <code>Coche</code> podría extender de la clase <code>Vehiculo</code>. La herencia le da todos los métodos y variables de instancia. Pero si <code>Coche</code> también implementa la interfaz <code>Impuestos</code>, entonces su definición debe contener código <strong>para TODOS los métodos enumerados en</strong> <code>Impuestos</code>.</p>
-<p>En Java las interfaces también representan una relación ES-UN.</p>
-<p>{++Una clase extiende de un solo padre, pero puede implementar varias interfaces.++}</p>
+<p>Los nombres de las interfaces suelen acabar en <strong>able</strong> aunque no es necesario: <code>configurable,
+arrancable, dibujable, etc</code>.</p>
+<p><strong>Una clase extiende de un solo padre, pero puede implementar varias interfaces.</strong></p>
 <h2 id="como-crear-una-interfaz">❇️ Cómo crear una interfaz<a class="headerlink" href="#como-crear-una-interfaz" title="Permanent link">&para;</a></h2>
 <p>Para crear una interfaz en IntelliJ, haremos lo siguiente:</p>
 <ol>
@@ -2357,11 +2384,166 @@
 <p class="admonition-title">Warning</p>
 <p>Las interfaces <em>NO PUEDEN INSTANCIARSE</em>, es decir, no podemos crear objetos de interfaces. Hay que usar una clase que haya implementado la funcionalidad definida por la interfaz.</p>
 </div>
+<h2 id="otro-ejemplo-con-herencia-e-interface">❇️Otro ejemplo con herencia e interface<a class="headerlink" href="#otro-ejemplo-con-herencia-e-interface" title="Permanent link">&para;</a></h2>
+<p>Queremos crear un videojuego en el que tenemos pieza de cubo que el usuario las utilizará para construir un mundo. Algunas de las piezas(no todas) cuando se toquen pueden explotar y otras pueden quemarse, otras pueden quemarse y explotar. 
+Por otro lado, tenemos otros elementos que puedes explotar, como puede ser una Nave. El diagrama de clases puedes ser</p>
+<p><img alt="Interface" src="../../img/ud5/interface3.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">//*********Clase padre****</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cubo</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">     </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Cubo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">//********Interfaces**************</span>
+<span class="linenos" data-linenos="10 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Inicinerable</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">incinerar</span><span class="p">();</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="c1">//******************************</span>
+<span class="linenos" data-linenos="14 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Explotable</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">explotar</span><span class="p">();</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="c1">//******Clases hijas************</span>
+<span class="linenos" data-linenos="19 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cesped</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Cubo</span><span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Cesped</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="23 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="24 "></span><span class="c1">//******************************</span>
+<span class="linenos" data-linenos="25 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dinamita</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Cubo</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Explotable</span><span class="p">{</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dinamita</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="29 "></span>
+<span class="linenos" data-linenos="30 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">explotar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="32 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Boooo!!!&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="34 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="35 "></span><span class="c1">//********************************</span>
+<span class="linenos" data-linenos="36 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Madera</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Cubo</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Inicinerable</span><span class="p">{</span>
+<span class="linenos" data-linenos="37 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Madera</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="38 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="39 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="40 "></span>
+<span class="linenos" data-linenos="41 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="42 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">incinerar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="43 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;fuegooooo!!!&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="44 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="45 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="46 "></span><span class="c1">//********************************</span>
+<span class="linenos" data-linenos="47 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Butano</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Cubo</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Inicinerable</span><span class="p">,</span><span class="n">Explotable</span><span class="p">{</span>
+<span class="linenos" data-linenos="48 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Butano</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="49 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="50 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="51 "></span>
+<span class="linenos" data-linenos="52 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="53 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">explotar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="54 "></span><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Bataboooo!!!);</span>
+<span class="linenos" data-linenos="55 "></span><span class="s">    }</span>
+<span class="linenos" data-linenos="56 "></span>
+<span class="linenos" data-linenos="57 "></span><span class="s">    @Override</span>
+<span class="linenos" data-linenos="58 "></span><span class="s">    public void incinerar() {</span>
+<span class="linenos" data-linenos="59 "></span><span class="s">        System.out.println(&quot;</span><span class="n">Buegoonnnn</span><span class="o">!!!</span><span class="p">);</span>
+<span class="linenos" data-linenos="60 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="61 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="62 "></span><span class="c1">//********************</span>
+<span class="linenos" data-linenos="63 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Nave</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Explotable</span><span class="p">{</span>
+<span class="linenos" data-linenos="64 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos="65 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="66 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">explotar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="67 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Exxxxxploooosiooooon!!!!&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="68 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="69 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="70 "></span><span class="c1">//********************</span>
+<span class="linenos" data-linenos="71 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="72 "></span><span class="w">    </span><span class="c1">//podemos crear un dinamita y explotarla</span>
+<span class="linenos" data-linenos="73 "></span><span class="w">    </span><span class="n">Dinamita</span><span class="w"> </span><span class="n">dim1</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Dinamita</span><span class="p">(</span><span class="s">&quot;DinamitaCat1&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="74 "></span><span class="w">    </span><span class="n">dim1</span><span class="p">.</span><span class="na">explotar</span><span class="p">();</span>
+<span class="linenos" data-linenos="75 "></span><span class="w">    </span><span class="c1">//podemos crear madera y quemarla</span>
+<span class="linenos" data-linenos="76 "></span><span class="w">    </span><span class="n">Madera</span><span class="w"> </span><span class="n">mad1</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Madera</span><span class="p">(</span><span class="s">&quot;Pino&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="77 "></span><span class="w">    </span><span class="n">mad1</span><span class="p">.</span><span class="na">incinerar</span><span class="p">();</span>
+<span class="linenos" data-linenos="78 "></span><span class="w">    </span><span class="c1">//podemos crear butano y explotarlo y quemarlo</span>
+<span class="linenos" data-linenos="79 "></span><span class="w">    </span><span class="n">Butano</span><span class="w"> </span><span class="n">but1</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Butano</span><span class="p">(</span><span class="s">&quot;But10Litros&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="80 "></span><span class="w">    </span><span class="n">but1</span><span class="p">.</span><span class="na">incinerar</span><span class="p">();</span>
+<span class="linenos" data-linenos="81 "></span><span class="w">    </span><span class="n">but1</span><span class="p">.</span><span class="na">explotar</span><span class="p">();</span>
+<span class="linenos" data-linenos="82 "></span><span class="w">    </span><span class="c1">//pero no podemos crear cesped que se queme o explote</span>
+<span class="linenos" data-linenos="83 "></span><span class="w">    </span><span class="n">Cesped</span><span class="w"> </span><span class="n">cesp1</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Cesped</span><span class="p">(</span><span class="s">&quot;artificial&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="84 "></span>
+<span class="linenos" data-linenos="85 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Suponer que queremos que el usuario pueda generar grandes explosiones o grandes fuegos amontonando cubos Explotables o Incinerables. </p>
+<p>Con las Interface ocurre lo mismo que con las clases abstractas, podemos instanciar un objeto que implemente la interface sobre una variable del tipo que implementa.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span><span class="n">Explotable</span><span class="w"> </span><span class="n">explotable</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Dinamita</span><span class="p">(</span><span class="s">&quot;DinamitaCat1&quot;</span><span class="p">);</span>
+</code></pre></div></p>
+<p>De esta forma, podemos tener un array de objetos explotables
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">granExplosion</span><span class="p">(</span><span class="n">Explotable</span><span class="o">[]</span><span class="w"> </span><span class="n">explotables</span><span class="p">){</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Explotable</span><span class="w"> </span><span class="n">explotable</span><span class="p">:</span><span class="n">explotables</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="c1">//cada tipo de objeto genera su propia explosión</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">explotable</span><span class="p">.</span><span class="na">explotar</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="c1">//creamos array de explotables</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">Explotable</span><span class="o">[]</span><span class="w"> </span><span class="n">miGranExplosion</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Explotable</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="c1">//creamos explotables de diferente tipo</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">miGranExplosion</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="k">new</span><span class="w"> </span><span class="n">Dinamita</span><span class="p">(</span><span class="s">&quot;DinamitaCat1&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">miGranExplosion</span><span class="o">[</span><span class="mi">1</span><span class="o">]=</span><span class="k">new</span><span class="w"> </span><span class="n">Butano</span><span class="p">(</span><span class="s">&quot;But10Litros&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">miGranExplosion</span><span class="o">[</span><span class="mi">2</span><span class="o">]=</span><span class="k">new</span><span class="w"> </span><span class="n">Nave</span><span class="p">();</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="c1">//llamamos a la gran explosion</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">granExplosion</span><span class="p">(</span><span class="n">miGranExplosion</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div></p>
+<h2 id="clase-anonimas">❇️ Clase anónimas<a class="headerlink" href="#clase-anonimas" title="Permanent link">&para;</a></h2>
+<p>Lo más común es que las interfaces sean implementadas por distintas clases que además, se crearán diversos objetos. Pero en muchas ocasiones, la creación de una interface es solo necesaria en una ocasión en ese lugar y no deseamos crear una clase para ese propósito.</p>
+<p>Para estos casos tenemos las clases anónimas. Son clases sin nombre que implementan un interface y que utilizan el nombre de la Interface como constructor.</p>
+<p>Vamos a suponer que en un momento del juego, queremos generar una explosión exclusiva que no está asociada a ningún objeto. Podemos crear una objeto de la clase anónima de la siguiente forma</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Explotable</span><span class="w"> </span><span class="n">miExplosion</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Explotable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">            </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">explotar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;boonnobooonnnoboonnnobonnbonn!&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">            </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="p">};</span>
+<span class="linenos" data-linenos="7 "></span><span class="c1">//No hay una clase específica</span>
+<span class="linenos" data-linenos="8 "></span><span class="n">miExplosion</span><span class="p">.</span><span class="na">explotar</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="clase-anonimas-y-desarrollo-en-entornos-graficos">❇️ Clase anónimas y desarrollo en entornos gráficos<a class="headerlink" href="#clase-anonimas-y-desarrollo-en-entornos-graficos" title="Permanent link">&para;</a></h2>
+<p>En el desarrollo de aplicaciones en entornos gráficos orientados a eventos, las clases anónimas se utilizan constantemente, ya que para definir los diferentes eventos como puede ser realizar una acción cuando hace click sobre un botón, el método correspondiente para asignar el evento al botón espera un objeto de una clase que implemente cierta interface, y como solamente defines una vez lo que tiene que hacerse cuando se pulsa el botón, no creas una clase concreta, creas una clase anónima que implementa la interface.</p>
+<p>Por ejemplo, en JavaFx, podemos tener un botón que haga algo
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Button</span><span class="w"> </span><span class="n">boton</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">();</span>
+</code></pre></div>
+Para asignar el evento al botón vemos el tipo de objeto que necesita</p>
+<p><img alt="Interface" src="../../img/ud5/interface4.png" /></p>
+<p>Y vemos que <code>EventHandler</code> es una interface</p>
+<p><img alt="Interface" src="../../img/ud5/interface5.png" /></p>
+<p>De esta forma, creamos una clase anónima que implementa la interface con la acción que realizar el botón</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">Button</span><span class="w"> </span><span class="n">boton</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">//creamos objeto de clase anónima que implementa EventHandler</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">EventHandler</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">MouseEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">eventHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHandler</span><span class="o">&lt;</span><span class="n">MouseEvent</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">MouseEvent</span><span class="w"> </span><span class="n">mouseEvent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">                </span><span class="c1">//hacer algo....</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">};</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">//lo asignamos a la acción del  botón</span>
+<span class="linenos" data-linenos="10 "></span><span class="n">boton</span><span class="p">.</span><span class="na">setOnMouseClicked</span><span class="p">(</span><span class="n">eventHandler</span><span class="p">);</span>
+</code></pre></div>
+<p>y solemos verlo simplificada de la siguiente forma</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">boton</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">boton</span><span class="p">.</span><span class="na">setOnMouseClicked</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EventHandler</span><span class="o">&lt;</span><span class="n">MouseEvent</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">MouseEvent</span><span class="w"> </span><span class="n">mouseEvent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">                </span><span class="c1">//hacer algo....</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">});</span>
+</code></pre></div>
 <h2 id="novedades">❇️ Novedades<a class="headerlink" href="#novedades" title="Permanent link">&para;</a></h2>
 <p>Desde Java 8 podemos incluir en una interfaz:</p>
 <ul>
 <li>
-<p><strong>métodos con cuerpo o implementación</strong>: se denominan <strong><em>default methods</em></strong>. Estos métodos se heredan como cualquier método ordinario más y se pueden sobreescribir en la clase que implementa esa interfaz o sobreescribir en la interfaz que hereda de esa interfaz.</p>
+<p><strong>métodos con cuerpo o implementación</strong>: se denominan <strong><em>default methods</em></strong>. Estos métodos se heredan como cualquier método ordinario más y se pueden sobrescribir en la clase que implementa esa interfaz o sobrescribir en la interfaz que hereda de esa interfaz.</p>
 </li>
 <li>
 <p><strong>métodos estáticos</strong> con cuerpo o implementación. Estos métodos no pueden ser sobreescritos o cambiar en ninguna clase que implemente la interfaz. Aunque si se heredan.</p>
