@@ -1458,6 +1458,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#interfaz-comparable" class="md-nav__link">
+    ❇️ Interfaz Comparable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-comparator" class="md-nav__link">
+    ❇️ Interface Comparator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparable-vs-comparator" class="md-nav__link">
+    Comparable vs Comparator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#novedades" class="md-nav__link">
     ❇️ Novedades
   </a>
@@ -2446,7 +2467,7 @@ Por otro lado, tenemos otros elementos que puedes explotar, como puede ser una N
 <span class="linenos" data-linenos="56 "></span>
 <span class="linenos" data-linenos="57 "></span><span class="s">    @Override</span>
 <span class="linenos" data-linenos="58 "></span><span class="s">    public void incinerar() {</span>
-<span class="linenos" data-linenos="59 "></span><span class="s">        System.out.println(&quot;</span><span class="n">Buegoonnnn</span><span class="o">!!!</span><span class="p">);</span>
+<span class="linenos" data-linenos="59 "></span><span class="s">        System.out.println(&quot;</span><span class="n">Fuegoonnnn</span><span class="o">!!!</span><span class="p">);</span>
 <span class="linenos" data-linenos="60 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos="61 "></span><span class="p">}</span>
 <span class="linenos" data-linenos="62 "></span><span class="c1">//********************</span>
@@ -2538,6 +2559,147 @@ Para asignar el evento al botón vemos el tipo de objeto que necesita</p>
 <span class="linenos" data-linenos="5 "></span><span class="w">                </span><span class="c1">//hacer algo....</span>
 <span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="p">}</span>
 <span class="linenos" data-linenos="7 "></span><span class="p">});</span>
+</code></pre></div>
+<h2 id="interfaz-comparable">❇️ Interfaz Comparable<a class="headerlink" href="#interfaz-comparable" title="Permanent link">&para;</a></h2>
+<p>En programación hay ciertas operaciones que son tan comunes que se han desarrollado en la Api de Java. Una de estas operaciones es determinar el orden de una lista de objetos de la misma clase.</p>
+<p>En Java, la interfaz <code>Comparable</code> es una interfaz genérica que se utiliza para definir el orden natural de los objetos de una clase. Esta interfaz se encuentra en el paquete <code>java.lang</code> y tiene un único método llamado <code>compareTo()</code> . </p>
+<p>La idea es que una clase que implementa la interfaz <code>Comparable</code> puede ser comparada con otras instancias de la misma clase y se puede saber si es menor, mayor o igual.</p>
+<p>La clase que implementa <code>Comparable</code> tiene que implementar el método <code>compareTo()</code> que devuelve un entero</p>
+<p><strong>int compareTo(Object ob)</strong></p>
+<p>De tal manera que</p>
+<p><strong>ob1.compareTo(ob2) &lt; 0</strong>  si ob1 va antes que ob2</p>
+<p><strong>ob1.compareTo(ob2) &gt; 0</strong>  si ob2 va antes que ob1</p>
+<p><strong>ob1.compareTo(ob2) = 0</strong>  si ob1 es igual que ob2</p>
+<p>En este ejemplo, la comparación se realiza en función de la edad de las personas. Puedes personalizar la lógica dentro del método <code>compareTo()</code> según los criterios de orden que desees establecer para tus objetos.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="c1">// Constructor y otros métodos de la clase</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="hll"><span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">otraPersona</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="c1">// Comparación basada en la edad</span>
+</span><span class="hll"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">otraPersona</span><span class="p">.</span><span class="na">edad</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+</span><span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">persona1</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">persona2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona1</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; es menor que &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">persona2</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">persona1</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">persona2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona1</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; es mayor que &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">persona2</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona1</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; tiene la misma edad que &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">persona2</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span><span class="p">}</span>
+</code></pre></div>
+De esta manera, la Api de Java tiene clases que utilizan la interface Comparator para ordenar. Por ejemplo la clase Arrays.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">Persona</span><span class="o">[]</span><span class="w"> </span><span class="n">personas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">persona1</span><span class="p">,</span><span class="w"> </span><span class="n">persona2</span><span class="p">,</span><span class="w"> </span><span class="n">persona3</span><span class="p">};</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">imprimirArray</span><span class="p">(</span><span class="n">personas</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="c1">// Ordenar el array utilizando Arrays.sort()</span>
+<span class="hll"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">personas</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nArray de personas después de ordenar por edad:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">imprimirArray</span><span class="p">(</span><span class="n">personas</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="c1">// Método para imprimir el array de personas</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimirArray</span><span class="p">(</span><span class="n">Persona</span><span class="o">[]</span><span class="w"> </span><span class="n">personas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">persona</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">personas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; - Edad: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">getEdad</span><span class="p">());</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+o para ordenar una ArrayList</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="c1">// Crear objetos Persona</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="c1">// Crear ArrayList y agregar personas</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaPersonas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">persona1</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">persona2</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">persona3</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ArrayList de personas antes de ordenar:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">imprimirArrayList</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="c1">// Ordenar el ArrayList utilizando Collections.sort()</span>
+<span class="hll"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nArrayList de personas después de ordenar por edad:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">imprimirArrayList</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">);</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="c1">// Método para imprimir el ArrayList de personas</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimirArrayList</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaPersonas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">persona</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">listaPersonas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; - Edad: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">getEdad</span><span class="p">());</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<h2 id="interface-comparator">❇️ Interface Comparator<a class="headerlink" href="#interface-comparator" title="Permanent link">&para;</a></h2>
+<p>Mediante la interface <code>Comparable</code> hemos visto que otras clases pueden ordenar un conjunto de objetos de una clase por una condición(en el ejemplo, por la edad), pero podemos tener la necesidad de tener que ordenar por otras condiciones(por ejemplo por el nombre).</p>
+<p>Si vemos la a Api de Java para la clase Arrays, tenemos el método <code>sort</code> sobrecargado, y una de las sobrecargas es</p>
+<p><strong>sort(T[] a, Comparator&lt;? super T&gt; c)</strong></p>
+<p>Vemos que acepta un objeto que implementa <code>Comparator</code>. Esto nos permite ordenar por otras condiciones determinadas por <code>Comparator</code></p>
+<p>Por ejemplo, queremos ordenar un array de Personas por nombre, haríamos lo siguiente</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">Persona</span><span class="o">[]</span><span class="w"> </span><span class="n">personas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">personas</span><span class="o">[</span><span class="mi">0</span><span class="o">]=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Pepe&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">personas</span><span class="o">[</span><span class="mi">1</span><span class="o">]=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">personas</span><span class="o">[</span><span class="mi">2</span><span class="o">]=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Fernan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="c1">// Usando Comparator para ordenar por edad de forma ascendente, creamos una clase anónima</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">comparadorNombreAscendente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">per1</span><span class="p">,</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="n">per2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="c1">//aprovechamos que String implementa Comparable</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">per1</span><span class="p">.</span><span class="na">getNombre</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">per2</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">};</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="c1">//ordenamos por nombre</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">personas</span><span class="p">,</span><span class="n">comparadorNombreAscendente</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="c1">// Imprimiendo la lista ordenada ascendente</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">persona</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">personas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; - &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">edad</span><span class="p">);</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span><span class="p">}</span>
+</code></pre></div>
+El mismo ejemplo pero con un <code>ArrayList</code>.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//suponemos que personas es un ArrayList</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">personas</span><span class="p">,</span><span class="w"> </span><span class="n">comparadorNombreAscendente</span><span class="p">);</span>
+</code></pre></div>
+De esta forma, podremos ordenar nuestros datos según diferentes criterios</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//ordenar por nombre de forma descendente</span>
+<span class="linenos" data-linenos="2 "></span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">comparadorNombreDescendente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">per1</span><span class="p">,</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="n">per2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">            </span><span class="c1">//descendente por nombre</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">per2</span><span class="p">.</span><span class="na">getNombre</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">per1</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="p">};</span>
+<span class="linenos" data-linenos="9 "></span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">personas</span><span class="p">,</span><span class="n">comparadorNombreDescendente</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="comparable-vs-comparator">Comparable vs Comparator<a class="headerlink" href="#comparable-vs-comparator" title="Permanent link">&para;</a></h2>
+<p><code>Comparable</code> nos va a permitir ordenar por un criterio principal el conjunto de objetos de una clase y <code>Comparator</code> nos permitirá ordenar por otros criterios los objetos de la clase</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//ordenamos por edad mediante Comparable</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">personas</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="c1">//ordenamos por nombre ascendente por Comparator</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">personas</span><span class="p">,</span><span class="n">comparadorNombreAscendente</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="c1">//ordenamos por nombre descendente por Comparator</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">personas</span><span class="p">,</span><span class="n">comparadorNombreDescendente</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="novedades">❇️ Novedades<a class="headerlink" href="#novedades" title="Permanent link">&para;</a></h2>
 <p>Desde Java 8 podemos incluir en una interfaz:</p>
