@@ -1437,6 +1437,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#que-ocurre-cuando-se-produce-una-excepcion" class="md-nav__link">
+    Qué ocurre cuando se produce una excepción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jerarquia-de-excepciones" class="md-nav__link">
+    Jerarquía de Excepciones
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tratamiento-de-excepciones" class="md-nav__link">
     Tratamiento de excepciones
   </a>
@@ -1492,8 +1506,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#excecpciones-personalizadas" class="md-nav__link">
-    Excecpciones personalizadas
+  <a href="#relanzar-una-excepcion" class="md-nav__link">
+    Relanzar una excepción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excepciones-personalizadas" class="md-nav__link">
+    Excepciones personalizadas
   </a>
   
 </li>
@@ -2384,6 +2405,46 @@ ejemplo, OutOfMemoryError, StackOverflowError, errores de hardware, etc.</p>
 <p>En la <strong>clase Exception</strong> se encuentran las excepciones que se pueden lanzar en una aplicación</p>
 <p>Las excepciones son diferentes de los errores porque se pueden escribir programas para recuperarse de excepciones, pero no se pueden escribir programas para recuperarse de errores.</p>
 <p>Las excepciones pueden ser detectadas por una parte del programa que intenta recuperarse del problema.</p>
+<h2 id="que-ocurre-cuando-se-produce-una-excepcion">Qué ocurre cuando se produce una excepción<a class="headerlink" href="#que-ocurre-cuando-se-produce-una-excepcion" title="Permanent link">&para;</a></h2>
+<ul>
+<li>La Máquina Virtual Java crea un objeto excepción y lo lanza. El objeto excepción creado contiene información sobre el error. La ejecución normal del programa se detiene.</li>
+<li>El sistema busca en el método donde se ha producido la excepción un manejador de excepciones que capture(catch) ese objeto y trate la excepción.</li>
+<li>
+<p>Si el método no contiene un manejador para la excepción se busca en el método que llamó a este y así sucesivamente en toda la pila de llamadas.</p>
+</li>
+<li>
+<p>Cuando se encuentra un manejador apropiado se le pasa la excepción. Un manejador de excepciones es considerado apropiado si el tipo de objeto excepción lanzado es compatible al tipo que puede manejar.</p>
+</li>
+<li>Si no se encuentra un manejador adecuado la Máquina Virtual Java muestra el error y acaba el programa.
+ Por ejemplo, si tenemos un programa que tiene una serie de llamadas a métodos para hacer una división y finalmente el usuario introduce un 0 en el denominador </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExcepPiladellamadas</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">incluirNumerador</span><span class="p">(){</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Indica el numerador: &quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">incluirDenominador</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">incluirDenominador</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Indica el denominador: &quot;</span><span class="p">);</span>
+<span class="hll"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">den</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="c1">//si se introduce un 0</span>
+</span><span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">realizarDivisión</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">den</span><span class="p">);</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">realizarDivisión</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">){</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La división es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="o">/</span><span class="n">d</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">incluirNumerador</span><span class="p">();</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="p">}</span>
+</code></pre></div>
+<p><img alt="Exception" src="../../img/ud5/excepciones8.png" /></p>
+<h2 id="jerarquia-de-excepciones">Jerarquía de Excepciones<a class="headerlink" href="#jerarquia-de-excepciones" title="Permanent link">&para;</a></h2>
 <p>En la clase Exception se encuentran las excepciones que se pueden lanzar en una aplicación. Tiene
 varias subclases, entre ellas:</p>
 <ul>
@@ -2513,26 +2574,45 @@ todas y las trate de forma general. Esto se conoce como captura genérica de exc
 <li><strong>Checked exceptions</strong> (Excepciones verificadas).</li>
 <li><strong>Unchecked exceptions</strong> (Excepciones no verificadas).</li>
 </ul>
+<p><img alt="Exception" src="../../img/ud5/excepciones9.png" /></p>
 <h2 id="checked-exceptions">Checked exceptions<a class="headerlink" href="#checked-exceptions" title="Permanent link">&para;</a></h2>
-<p>Estas son las excepciones que se comprueban en tiempo de compilación, es decir, un método debe hacer algo al respecto sino el programa no compila. Si algún código dentro de un método arroja una excepción verificada, entonces el método puede:</p>
+<p>Estas son las excepciones que se comprueban en tiempo de compilación, es decir, un método debe hacer algo al respecto sino el programa no compila. El programador está obligado a tratarla. </p>
+<p>No son culpa del programador de Java. Por ejemplo, un programa que debe acceder a una imagen en una carpeta. Si esa imagen no se encuentra en la ubicación esperada porque alguien la ha movido, borrado o cambiado el nombre, dará error, no siendo responsabilidad del programador.</p>
+<p>Si algún código dentro de un método arroja una excepción verificada, entonces el método puede una de las dos posibilidades:</p>
 <ol>
-<li>manejar la excepción en un bloque <code>try-catch{}</code>, o</li>
+<li>manejar la excepción en un bloque <code>try-catch{}</code></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">leerFichero</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">           </span><span class="c1">//código java manejo de ficheros</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">            </span><span class="c1">// Capturamos la excepción en caso de que ocurra y manejamos el error</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error de entrada/salida (IOException): &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
+<ol start="2">
 <li><code>throws</code> (lanzar) la excepción al que invoca el método.</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">leerFichero</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="c1">//código java</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="c1">//código java manejo de ficheros</span>
 <span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>En el ejemplo, <code>IOException</code> es una checked exception. Este método lanza una IOException cuando hay un problema de lectura.</p>
 <p>La palabra reservada <code>throws</code> dice que este método <strong>no</strong> captura la excepción <code>IOException</code> con un <code>catch</code>, sino que cuando ocurra una, se lanzará a la persona que llama el método <code>leerFichero</code>.</p>
-<p>Si hiciéramos esto en un método <code>main</code>, como por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="c1">//código java</span>
-<span class="linenos" data-linenos="3 "></span>
-<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+<p>Si hiciéramos esto en un método <code>main</code>, podemos capturar la excepción lanzada por el método.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">          </span><span class="n">leerFichero</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">            </span><span class="c1">// Capturamos la excepción en caso de que ocurra y manejamos el error</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error de entrada/salida (IOException): &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
 </code></pre></div>
-<p>La excepción se lanzará al Java runtime system.
-El sistema de tiempo de ejecución de Java detecta las excepciones que se le han lanzado e imprime un mensaje y un seguimiento de la pila utilizando los datos de la excepción.</p>
 <h2 id="unchecked-exceptions">Unchecked exceptions<a class="headerlink" href="#unchecked-exceptions" title="Permanent link">&para;</a></h2>
 <p>Ocurren en tiempo de compilación, es decir, no se verifican por el compilador. En Java, las excepciones en las clases <em>RunTimeException</em> y <em>Error</em> y sus subclases son unchecked exceptions todo lo demás es es checked.</p>
 <p>Depende de los programadores especificar o detectar las excepciones unchecked.
@@ -2556,7 +2636,13 @@ Por ejemplo, imagina que tenemos el siguiente programa Java se compila sin erorr
 <p>La JVM arroja errores para indicar problemas graves <strong>que no están destinados a ser manejados por una aplicación.</strong></p>
 <p>Ejemplos típicos de eso son <code>OutOfMemoryError</code> o <code>StackOverflowError</code>. Ambos son causados por situaciones que están fuera del control de la aplicación y no se pueden manejar.</p>
 <p>Por lo tanto, es mejor que <strong>NUNCA</strong> captures un Throwable.</p>
-<h2 id="excecpciones-personalizadas">Excecpciones personalizadas<a class="headerlink" href="#excecpciones-personalizadas" title="Permanent link">&para;</a></h2>
+<h2 id="relanzar-una-excepcion">Relanzar una excepción<a class="headerlink" href="#relanzar-una-excepcion" title="Permanent link">&para;</a></h2>
+<p>Java permite al programador lanzar excepciones mediante la palabra reservada throw:</p>
+<p><strong>throw objetoExcepcion;</strong></p>
+<p>La excepción que se lanza es un objeto, por lo que hay que crearlo como cualquier otro objeto mediante new.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArithmeticException</span><span class="p">(</span><span class="err">“</span><span class="n">División</span><span class="w"> </span><span class="n">por</span><span class="w"> </span><span class="n">cero</span><span class="err">”</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="excepciones-personalizadas">Excepciones personalizadas<a class="headerlink" href="#excepciones-personalizadas" title="Permanent link">&para;</a></h2>
 <p>Aunque las excepciones de Java cubren casi todas las excepciones generales que están obligadas a ocurrir en la programación. Sin embargo, a veces necesitamos complementar estas excepciones estándar con las nuestras.</p>
 <p>Estas son las principales razones para introducir excepciones personalizadas:</p>
 <ul>
@@ -2586,7 +2672,7 @@ Por ejemplo, imagina que tenemos el siguiente programa Java se compila sin erorr
 <span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 </code></pre></div>
-<p><code>Exception</code> y <code>RuntimeException</code> proporcionan constructores que aceptan un <code>Throwable</code> que describe la causa de la excepción. Por tanato, nuestra excepción debería hacer lo mismo. Debemos implementar <strong>al menos un constructor que obtenga el Throwable causante como parámetro y lo establezca en la superclase</strong>.</p>
+<p><code>Exception</code> y <code>RuntimeException</code> proporcionan constructores que aceptan un <code>Throwable</code> que describe la causa de la excepción. Por tanto, nuestra excepción debería hacer lo mismo. Debemos implementar <strong>al menos un constructor que obtenga el Throwable causante como parámetro y lo establezca en la superclase</strong>.</p>
 <h2 id="pasos-para-implementar-una-excepcion-personalizada">Pasos para implementar una excepción personalizada<a class="headerlink" href="#pasos-para-implementar-una-excepcion-personalizada" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Debemos extender de la clase <code>java.lang.Exception</code>.</li>
