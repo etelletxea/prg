@@ -1421,14 +1421,14 @@
       
       
         <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-          🧆 Colecciones
+          UD07-Colecciones
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
-          🧆 Colecciones
+          UD07-Colecciones
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1482,6 +1482,47 @@
   <a href="#estructuras-de-datos-dinamicas" class="md-nav__link">
     Estructuras de datos dinámicas
   </a>
+  
+    <nav class="md-nav" aria-label="Estructuras de datos dinámicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listas-lineales" class="md-nav__link">
+    Listas lineales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pilas" class="md-nav__link">
+    Pilas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colas" class="md-nav__link">
+    Colas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arboles" class="md-nav__link">
+    Arboles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafos" class="md-nav__link">
+    Grafos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2329,11 +2370,56 @@
 <li>Estructura de datos dinámica</li>
 </ol>
 <h2 id="estructuras-de-datos-estaticos">Estructuras de datos estáticos<a class="headerlink" href="#estructuras-de-datos-estaticos" title="Permanent link">&para;</a></h2>
-<p>En la estructura de datos estática, el tamaño de la estructura es <strong>fijo</strong>. El contenido de la estructura de datos se puede modificar pero sin cambiar el espacio de memoria que se le asigna. Un ejemplo de estas estructuras son los arrays que vimos en la unidad 4.</p>
-<p>Aunque los arrays son muy útiles como hemos estudiado, si queremos redimensionar un array, es decir, cambiar su tamaño una vez lo hemos creado y preservar los valores que se encuentran en él la única forma de hacerlo sería creando un nuevo array y copiar los elementos a este nuevo array.
-Hacer esto cada vez que queremos redimensionar el tamaño de un array es muy tedioso y no es nada productivo.</p>
+<p>En la estructura de datos estática, el tamaño de la estructura es <strong>fijo</strong>. El contenido de la estructura de datos se puede modificar pero sin cambiar el espacio de memoria que se le asigna. Un ejemplo de estas estructuras son los arrays que vimos en la unidad 5.</p>
+<p><img alt="List" src="../../img/ud6/arrayrep.png" /></p>
+<p>Aunque los arrays son muy útiles como hemos estudiado, tenemos varios inconvenientes:</p>
+<ul>
+<li><strong>Difícil de adaptar al tamaño del problema</strong>: Se ha de conocer el tamaño al crear el array,
+implica que o se pierde algo de espacio o es posible que se quede pequeño…</li>
+<li><strong>Posibles problemas de memoria</strong>:  En caso de gran cantidad de objetos a gestionar se ha
+de reservar memoria contigua, y en ocasiones esto no es sencillo.</li>
+<li><strong>Manejo complejo</strong>: La inserción y borrado  de elementos es compleja.</li>
+</ul>
 <h2 id="estructuras-de-datos-dinamicas">Estructuras de datos dinámicas<a class="headerlink" href="#estructuras-de-datos-dinamicas" title="Permanent link">&para;</a></h2>
-<p>En la estructura de datos dinámica, el tamaño de la estructura no es fijo y puede modificarse durante las operaciones realizadas en él. Las estructuras de datos dinámicas están diseñadas para facilitar el cambio en tiempo de ejecución.</p>
+<p>En la estructura de datos dinámica, el tamaño de la estructura no es fijo y puede modificarse durante las operaciones realizadas en él. Las estructuras de datos dinámicas están diseñadas para facilitar el cambio en tiempo de ejecución y resolución de muchos algoritmos. Algunas de estas estructuras son:</p>
+<h3 id="listas-lineales">Listas lineales<a class="headerlink" href="#listas-lineales" title="Permanent link">&para;</a></h3>
+<p>Una lista es una colección, originalmente vacía, de elementos u objetos de cualquier tipo no
+necesariamente consecutivos en memoria, que durante la ejecución del programa pueden crecer
+o decrecer elemento a elemento según las necesidades previstas en el mismo.
+Una lista está formada por un número variable de datos (elementos) de un mismo tipo,
+ordenados según una secuencia lineal. Cada elemento, salvo el primero, tiene un predecesor en la
+lista. Todos los elementos, salvo el último, tienen un sucesor.</p>
+<p>En función de la información que cada elemento de la lista almacene respecto a la localización de
+sus antecesores y/o predecesores, las listas pueden clasificarse en: </p>
+<ul>
+<li>listas lineales simplemente enlazadas</li>
+<li>listas lineales doblemente enlazadas</li>
+<li>listas circulares simplemente enlazadas</li>
+<li>listas circulares doblemente enlazadas.</li>
+</ul>
+<p>Elegir el tipo de lista depende de las necesidades del problema, con mayor coste de memoria para las estructuras más complejas</p>
+<p><img alt="List" src="../../img/ud6/lisprep.png" /></p>
+<h3 id="pilas">Pilas<a class="headerlink" href="#pilas" title="Permanent link">&para;</a></h3>
+<p>Una pila es una lista en la que todas las inserciones y supresiones se hacen en un extremo de la
+lista. Un ejemplo de esta estructura es una pila de platos. En ella, el añadir o quitar platos se hace
+siempre por la parte superior de la pila. Esta estructura utiliza el principio LIFO (last-in first-out), último en entrar, primero en salir</p>
+<p><img alt="List" src="../../img/ud6/pila.png" /></p>
+<p>Son estructuras necesarias en la resolución de muchos algoritmos</p>
+<h3 id="colas">Colas<a class="headerlink" href="#colas" title="Permanent link">&para;</a></h3>
+<p>Una cola es una lista lineal en la que todas las inserciones se hacen por un extremo de la lista (por
+el final) y todas las supresiones se hacen por el otro extremo (por el principio). Por ejemplo, una
+fila en la caja del supermercado. Este tipo de listas recibe también el nombre de listas FIFO (first in first out – primero en entrar, primero en salir)</p>
+<p><img alt="List" src="../../img/ud6/cola.png" /></p>
+<p>Tanto pilas como colas, son utilizadas en muchos algoritmos en sistemas operativos entre otros</p>
+<h3 id="arboles">Arboles<a class="headerlink" href="#arboles" title="Permanent link">&para;</a></h3>
+<p>La estructura de datos árbol al contrario que las listas es una estructura de datos no lineal. Las listas tienen un orden impuesto en sus elementos teniendo como mucho un predecesor y un sucesor. Los árboles pueden tener dos o más sucesores.</p>
+<p>Un árbol consiste en un conjunto de nodos o vértices y un conjunto de aristas</p>
+<p><img alt="List" src="../../img/ud6/arbol.png" /></p>
+<p>Permiten crear algoritmos muy eficientes de búsqueda y ordenación, así como resolución de problemas de IA entre otros.</p>
+<h3 id="grafos">Grafos<a class="headerlink" href="#grafos" title="Permanent link">&para;</a></h3>
+<p>Los grafos son estructuras de datos no lineales que representan relaciones entre objetos. Debido a que no son estructuras lineales, no existe jerarquia en las relaciones. Un grafo G(V,A) es un conjunto de vertices (V) y arcos (A).</p>
+<p><img alt="List" src="../../img/ud6/grafo.png" /></p>
+<p>Permiten resolver problemas como puede ser el camino más corto. En la Api de Java no existe estas estructuras, pero si que tenemos librerías que las implementan</p>
 <p><a href="https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html">Documentación oficial Collections Java</a></p>
 <h2 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
 <p><img alt="List" src="../../img/ud6/list1.png" /></p>
