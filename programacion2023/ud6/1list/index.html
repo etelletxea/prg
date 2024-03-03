@@ -1549,6 +1549,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#metodos-principales-de-arraylist" class="md-nav__link">
+    Métodos principales de ArrayList
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#anadir-item-al-arraylist" class="md-nav__link">
     Añadir ítem al ArrayList
   </a>
@@ -1577,6 +1584,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#encontrar-un-elemento-en-el-arraylist" class="md-nav__link">
+    Encontrar un elemento en el ArrayList
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#copiar-todo-el-contenido-del-un-arraylist-a-otro" class="md-nav__link">
     Copiar todo el contenido del un ArrayList a otro
   </a>
@@ -1584,15 +1598,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#buscar-un-item-en-el-arraylist" class="md-nav__link">
-    Buscar un ítem en el ArrayList
+  <a href="#ordenar-un-arraylist" class="md-nav__link">
+    Ordenar un ArrayList
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#comprobar-si-existe-un-item-en-el-arraylist" class="md-nav__link">
-    Comprobar si existe un ítem en el ArrayList
+  <a href="#ejemplo-completo-con-arraylist-de-string" class="md-nav__link">
+    Ejemplo completo con ArrayList de String
   </a>
   
 </li>
@@ -2417,14 +2431,14 @@ fila en la caja del supermercado. Este tipo de listas recibe también el nombre 
 <p><img alt="List" src="../../img/ud6/arbol.png" /></p>
 <p>Permiten crear algoritmos muy eficientes de búsqueda y ordenación, así como resolución de problemas de IA entre otros.</p>
 <h3 id="grafos">Grafos<a class="headerlink" href="#grafos" title="Permanent link">&para;</a></h3>
-<p>Los grafos son estructuras de datos no lineales que representan relaciones entre objetos. Debido a que no son estructuras lineales, no existe jerarquia en las relaciones. Un grafo G(V,A) es un conjunto de vertices (V) y arcos (A).</p>
+<p>Los grafos son estructuras de datos no lineales que representan relaciones entre objetos. Debido a que no son estructuras lineales, no existe jerarquía en las relaciones. Un grafo G(V,A) es un conjunto de vértices (V) y arcos (A).</p>
 <p><img alt="List" src="../../img/ud6/grafo.png" /></p>
-<p>Permiten resolver problemas como puede ser el camino más corto. En la Api de Java no existe estas estructuras, pero si que tenemos librerías que las implementan</p>
-<p><a href="https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html">Documentación oficial Collections Java</a></p>
+<p>Permiten resolver problemas como puede ser el camino más corto. En la Api de Java no existe los Grafos, pero si que tenemos librerías que las implementan</p>
 <h2 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html">Documentación oficial Collections Java</a></p>
 <p><img alt="List" src="../../img/ud6/list1.png" /></p>
 <p>Una lista se puede ver como un array ya que es una secuencia de elementos o colección ordenada que te permite tener elementos en posiciones consecutivas.</p>
-<p>En Java <code>List</code> es una interfaz <strong><em>Java.util.List</em></strong> que exitende de <code>Collection</code>. Siempre conserva el orden de los elementos. Los elementos contenidos en una lista se pueden insertar, acceder, iterar y eliminar de acuerdo con el orden en que aparecen internamente en la lista. El orden de los elementos es la razón por la cual esta estructura de datos se llama <code>List</code>. Cada elemento en una lista de Java tiene un índice, al igual que ocurría con los arrays.</p>
+<p>En Java <code>List</code> es una interfaz <strong><em>Java.util.List</em></strong> que extiende de <code>Collection</code>. Siempre conserva el orden de los elementos. Los elementos contenidos en una lista se pueden insertar, acceder, iterar y eliminar de acuerdo con el orden en que aparecen internamente en la lista. El orden de los elementos es la razón por la cual esta estructura de datos se llama <code>List</code>. Cada elemento en una lista de Java tiene un índice, al igual que ocurría con los arrays.</p>
 <p>La interfaz de lista se implementa mediante las clases <code>ArrayList</code>, <code>LinkedList</code>, <code>Vector</code> y <code>Stack</code>. Es decir, dado que <code>List</code> es una interfaz, no se puede crear una instancia directamente. Sin embargo, uno puede crear objetos de aquellas clases que han implementado esta interfaz e instanciarlos. Por ejemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
 <span class="linenos" data-linenos="2 "></span><span class="n">List</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="p">();</span>
@@ -2436,41 +2450,230 @@ fila en la caja del supermercado. Este tipo de listas recibe también el nombre 
 <p>La primera clase de la que vamos a hablar es <code>ArrayList</code>. Un <code>ArrayList</code> como su nombre indica basa su implementación de una lista en un array. Es un array dinámico en tamaño (es decir, de tamaño variable), pudiendo agrandarse el número de elementos o disminuirse de forma automática. Implementa todos los métodos de la interfaz List y permite incluir elementos null.</p>
 <p>Un <code>ArrayList</code> no permite almacenar tipos de datos primitivos, solo puede almacenar objetos. Al contrario que un array que permitía almacenar ambos.
 Sin embargo, desde Java 5, las primitivas se convierten automáticamente en objetos, gracias a los Wrappers.</p>
+<p><img alt="List" src="../../img/ud6/wrapper.png" /></p>
 <p><code>ArrayList</code> forma parte de <code>Collection</code> en Java. Por lo tanto, a diferencia de los arrays que para acceder a los elementos se hacía usando [], en <code>ArrayList</code> tenemos un  conjunto de métodos para acceder a los elementos y modificarlos.</p>
 <h3 id="crear-un-arraylist">Crear un <code>ArrayList</code><a class="headerlink" href="#crear-un-arraylist" title="Permanent link">&para;</a></h3>
 <p>Para crear un <code>ArrayList</code> en IntelliJ escribimos:</p>
 <p><img alt="List" src="../../img/ud6/arraylist1.png" /></p>
-<p>Si nos fijamos nos aparece una <code>&lt;E&gt;</code>, esto quiere decir que cuando creamos un <code>ArrayList</code> no le estamos diciendo el tipo como hacíamos con los arrays: <code>int[] array;</code>. Por tanto, para crear un <code>ArrayList</code> que almacena objetos necesitamos decirle qué tipo de datos vamos a almacenar en nuestra lista.</p>
-<p><img alt="List" src="../../img/ud6/arraylist2.png" /></p>
+<p>Si nos fijamos nos aparece una <code>&lt;E&gt;</code>, esto quiere decir que cuando creamos un <code>ArrayList</code> no le estamos diciendo el tipo como hacíamos con los arrays: <code>int[] array;</code>. Por tanto, para crear un <code>ArrayList</code> que almacena objetos necesitamos decirle qué tipo de datos vamos a almacenar en nuestra lista.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// Crear una ArrayList de personas</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="c1">//creamos un ArrayList de String</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">hobbies</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div></p>
 <p>En el ejemplo hemos creado una lista que contendrá elementos de tipo <code>String</code>. Y si nos fijamos no le hemos especificado ningún tamaño como hacíamos en los arrays puesto que Java maneja el tamaño por nosotros automáticamente.</p>
+<p>Si no indicamos el tipo, estamos creando un ArrayList de tipo Object, en el que cabe cualquier elemento</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">ArrayList</span><span class="w"> </span><span class="n">lista</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;hola&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="mi">23</span><span class="p">));</span>
+</code></pre></div>
+<h3 id="metodos-principales-de-arraylist">Métodos principales de ArrayList<a class="headerlink" href="#metodos-principales-de-arraylist" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>MÉTODO</th>
+<th>DESCRIPCIÓN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size()</td>
+<td>Devuelve el número de elementos (int).</td>
+</tr>
+<tr>
+<td>add(x)</td>
+<td>Añade el objeto X al final. Devuelve true.</td>
+</tr>
+<tr>
+<td>add(posición, X)</td>
+<td>Inserta el objeto X en la posición indicada desplazando hacia adelante el resto de elementos de la colección.</td>
+</tr>
+<tr>
+<td>get(posición)</td>
+<td>Devuelve el elemento que está en la posición indicada.</td>
+</tr>
+<tr>
+<td>remove(posición)</td>
+<td>Elimina el elemento que se encuentra en la posición indicada desplazando hacia atrás el resto de los elementos de la colección. Devuelve el elemento eliminado.</td>
+</tr>
+<tr>
+<td>remove(X)</td>
+<td>Elimina la primera ocurrencia del objeto X. Devuelve true si el elemento está en la lista.</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>Elimina todos los elementos.</td>
+</tr>
+<tr>
+<td>set(posición, X)</td>
+<td>Sustituye el elemento que se encuentra en la posición indicada por el objeto X. Devuelve el elemento sustituido.</td>
+</tr>
+<tr>
+<td>contains(x)</td>
+<td>Comprueba si la colección contiene al objeto X. Devuelve true o false.</td>
+</tr>
+<tr>
+<td>indexOf()</td>
+<td>Devuelve la primera posición del objeto X. Si no existe devuelve -1.</td>
+</tr>
+<tr>
+<td>lastIndexOf(X)</td>
+<td>Devuelve la última posición del objeto X. Si no existe devuelve -1.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="anadir-item-al-arraylist">Añadir ítem al <code>ArrayList</code><a class="headerlink" href="#anadir-item-al-arraylist" title="Permanent link">&para;</a></h3>
-<p>Para agregar un ítem o elemento a la lista utilizaremos los métodos que nos provee la interfaz <code>List</code>:</p>
-<p><img alt="List" src="../../img/ud6/arraylist3.png" /></p>
+<p>Partimos de la siguiente clase</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getEdad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Persona [nombre=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, edad=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;]&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>Para agregar un ítem tenemos el método <code>add</code> de la interface <code>List</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span><span class="c1">// Crear una ArrayList de personas</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">       </span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="c1">// Agregar algunas personas a la lista</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">));</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">));</span>
+<span class="linenos" data-linenos="7 "></span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">));</span>
+</code></pre></div>
 <p>El método <code>add</code> agrega automáticamente el elemento en la lista. <code>ArrayList</code> es el que tiene toda la funcionalidad sobre dónde guardarlo (posición) y cantidad de espacio para asignar. Eso es abstracto para nosotros y no tenemos que preocuparnos por ello.</p>
 <h3 id="imprimir-los-elementos-del-arraylist">Imprimir los elementos del <code>ArrayList</code><a class="headerlink" href="#imprimir-los-elementos-del-arraylist" title="Permanent link">&para;</a></h3>
-<p><img alt="List" src="../../img/ud6/arraylist4.png" /></p>
+<p>Como ocurre con el Array, podemos recorrer la lista de varias formas:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Mostrar la lista mediante foreach</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Lista de Personas:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">persona</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">listaPersonas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1">//Mostrar la lista mediante for</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Lista de Personas:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+</code></pre></div>
 <h3 id="modificar-un-item-en-una-posicion-del-arraylist">Modificar un ítem en una posición del <code>ArrayList</code><a class="headerlink" href="#modificar-un-item-en-una-posicion-del-arraylist" title="Permanent link">&para;</a></h3>
-<p><img alt="List" src="../../img/ud6/arraylist5.png" /></p>
+<p>Para modificar sustituir un elemento de la lista, tenemos <code>set</code>, al que le pasamos el indice y el objeto</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// Agregar algunas personas a la lista</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">));</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">));</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">));</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="n">Persona</span><span class="w"> </span><span class="n">teresa</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Teresa&quot;</span><span class="p">,</span><span class="mi">24</span><span class="p">);</span>
+<span class="linenos" data-linenos="7 "></span><span class="c1">//sustituye Carlos por Teresa. Recuerda que el primer indice empiza por 0</span>
+<span class="hll"><span class="linenos" data-linenos="8 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">teresa</span><span class="p">);</span>
+</span></code></pre></div>
 <h3 id="eliminar-un-item-de-un-arraylist">Eliminar un ítem de un <code>ArrayList</code><a class="headerlink" href="#eliminar-un-item-de-un-arraylist" title="Permanent link">&para;</a></h3>
-<p><img alt="List" src="../../img/ud6/arraylist6.png" /></p>
-<p>El método remove elimina el elemento de la lista y deja la lista ordenada, es decir, si tuviéramos una lista con los siguientes productos: ["Leche", "Tomate", "Lechuga", "Carne"] y elimináramos el producto <code>Tomate</code>, la lista quedaría: ["Leche", "Lechuga", "Carne"], los ítem se moverían de posiciones. Todo eso lo hace Java automáticamente por nosotros.</p>
+<p>El método <code>remove</code> elimina el elemento de la lista. Tenemos dos opciones:</p>
+<ul>
+<li>
+<p><strong>Eliminar por índice</strong>: Indicamos la posición del elemento a eliminar
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span><span class="c1">// Agregar algunas personas a la lista</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">));</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">));</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">));</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;tamaño lista: &quot;</span><span class="o">+</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="c1">//3</span>
+<span class="linenos" data-linenos="7 "></span><span class="c1">//Eliminamos a Juan</span>
+<span class="hll"><span class="linenos" data-linenos="8 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="9 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;tamaño lista: &quot;</span><span class="o">+</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="c1">//2</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Eliminar por objeto</strong>: En este caso, la clase base del ArrayList tiene que tener sobrecargado el método <code>equal</code> para que la clase ArrayList pueda encontrar el primer objeto igual al pasado por parámetro. En nuestro caso, vamos indicar que la clase Persona que dos personas son iguales si su nombre es igual</p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="c1">//.....</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">getClass</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Persona</span><span class="p">)</span><span class="w"> </span><span class="n">o</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+</code></pre></div>
+Eliminamos una persona que ArrayList encontrará utilizando en método anterior</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Agregar algunas personas a la lista</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;tamaño lista: &quot;</span><span class="o">+</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="c1">//3</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="c1">//Eliminamos a Juan</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">Persona</span><span class="w"> </span><span class="n">juan</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="mi">31</span><span class="p">);</span>
+<span class="hll"><span class="linenos" data-linenos=" 9 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">juan</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="10 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;tamaño lista: &quot;</span><span class="o">+</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="c1">//2</span>
+</code></pre></div>
+<h3 id="encontrar-un-elemento-en-el-arraylist">Encontrar un elemento en el ArrayList<a class="headerlink" href="#encontrar-un-elemento-en-el-arraylist" title="Permanent link">&para;</a></h3>
+<p>Como ocurre con el anterior, es necesario que la clase base tenga el método <code>equals</code></p>
+<p>El método <code>contains</code> permite saber si existe el item en el ArrayList</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Persona</span><span class="w"> </span><span class="n">juan</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="mi">31</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">//si no existe, lo inserta en la lista</span>
+<span class="hll"><span class="linenos" data-linenos="3 "></span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">juan</span><span class="p">))</span>
+</span><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">juan</span><span class="p">);</span>
+</code></pre></div>
+El método <code>indexof</code> permite averiguar la posisión de un objeto en la lista. Si no existe, devuelve -1</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Persona</span><span class="w"> </span><span class="n">tere</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Tere&quot;</span><span class="p">,</span><span class="mi">31</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">//si no existe, devuelve -1</span>
+<span class="hll"><span class="linenos" data-linenos="3 "></span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="o">=</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">tere</span><span class="p">);</span>
+</span><span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="k">if</span><span class="p">(</span><span class="n">pos</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">pos</span><span class="p">));</span>
+</code></pre></div>
 <h3 id="copiar-todo-el-contenido-del-un-arraylist-a-otro">Copiar todo el contenido del un <code>ArrayList</code> a otro<a class="headerlink" href="#copiar-todo-el-contenido-del-un-arraylist-a-otro" title="Permanent link">&para;</a></h3>
 <p>Se puede hacer de varias formas:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Forma 1</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">newArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 3 "></span><span class="n">newArray</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">productosList</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">otraLista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">otraLista</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 4 "></span>
 <span class="linenos" data-linenos=" 5 "></span><span class="c1">//Forma 2</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">newArray2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">productosList</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">otraLista2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 7 "></span>
-<span class="linenos" data-linenos=" 8 "></span><span class="c1">//Forma 3 - Copiar un ArrayList a un array</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="n">productosList</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
-<span class="linenos" data-linenos="10 "></span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">productosList</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="n">myArray</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1">//Forma 3 - Copiar un ArrayList a un Array</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">Persona</span><span class="o">[]</span><span class="w"> </span><span class="n">otroArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="o">[</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">otroArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="n">otroArray</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="buscar-un-item-en-el-arraylist">Buscar un ítem en el <code>ArrayList</code><a class="headerlink" href="#buscar-un-item-en-el-arraylist" title="Permanent link">&para;</a></h3>
-<p><img alt="List" src="../../img/ud6/arraylist7.png" /></p>
-<h3 id="comprobar-si-existe-un-item-en-el-arraylist">Comprobar si existe un ítem en el <code>ArrayList</code><a class="headerlink" href="#comprobar-si-existe-un-item-en-el-arraylist" title="Permanent link">&para;</a></h3>
-<p><img alt="List" src="../../img/ud6/arraylist8.png" /></p>
+<h3 id="ordenar-un-arraylist">Ordenar un ArrayList<a class="headerlink" href="#ordenar-un-arraylist" title="Permanent link">&para;</a></h3>
+<p>Como nos ocurría con la clase Array, para ordenar una ArrayList, la clase base tiene que implementar la interface <code>Comparable</code> o pasarle un objeto de una clase que implemente <code>Comparator</code></p>
+<p>En nuestro caso, podemos indicar que las personas se comparan por su nombre</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="c1">//.....</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+Podemos ordenar fácilmente  una lista de Personas</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span><span class="c1">// Agregar algunas personas a la lista</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">));</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">));</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">));</span>
+<span class="linenos" data-linenos="5 "></span><span class="c1">//ordenamos</span>
+<span class="hll"><span class="linenos" data-linenos="6 "></span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="ejemplo-completo-con-arraylist-de-string">Ejemplo completo con ArrayList de String<a class="headerlink" href="#ejemplo-completo-con-arraylist-de-string" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ProductList</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span>
 <span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productosList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
