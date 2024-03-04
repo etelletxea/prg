@@ -1563,8 +1563,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#imprimir-los-elementos-del-arraylist" class="md-nav__link">
-    Imprimir los elementos del ArrayList
+  <a href="#recorrer-los-elementos-del-arraylist" class="md-nav__link">
+    Recorrer los elementos del ArrayList
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-iterator-iterar-por-la-lista" class="md-nav__link">
+    Interface Iterator: iterar por la lista
   </a>
   
 </li>
@@ -2557,7 +2564,7 @@ Sin embargo, desde Java 5, las primitivas se convierten automáticamente en obje
 <span class="linenos" data-linenos="7 "></span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">));</span>
 </code></pre></div>
 <p>El método <code>add</code> agrega automáticamente el elemento en la lista. <code>ArrayList</code> es el que tiene toda la funcionalidad sobre dónde guardarlo (posición) y cantidad de espacio para asignar. Eso es abstracto para nosotros y no tenemos que preocuparnos por ello.</p>
-<h3 id="imprimir-los-elementos-del-arraylist">Imprimir los elementos del <code>ArrayList</code><a class="headerlink" href="#imprimir-los-elementos-del-arraylist" title="Permanent link">&para;</a></h3>
+<h3 id="recorrer-los-elementos-del-arraylist">Recorrer los elementos del <code>ArrayList</code><a class="headerlink" href="#recorrer-los-elementos-del-arraylist" title="Permanent link">&para;</a></h3>
 <p>Como ocurre con el Array, podemos recorrer la lista de varias formas:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// Mostrar la lista mediante foreach</span>
 <span class="linenos" data-linenos=" 2 "></span>
@@ -2572,6 +2579,26 @@ Sin embargo, desde Java 5, las primitivas se convierten automáticamente en obje
 <span class="linenos" data-linenos="11 "></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
 </code></pre></div>
+<h3 id="interface-iterator-iterar-por-la-lista">Interface Iterator: iterar por la lista<a class="headerlink" href="#interface-iterator-iterar-por-la-lista" title="Permanent link">&para;</a></h3>
+<p>Si nos fijamos en la jerarquía de clases para Colletions, vemos que también tenemos en la cabeza la interface Iterator.</p>
+<p><img alt="List" src="../../img/ud6/iterable.png" /></p>
+<p>Iterator proporciona un mecanismo para iterar sobre los elementos de una colección de manera secuencial, permitiendo acceder a los elementos de la colección uno a uno sin exponer la estructura interna de la colección.</p>
+<p>La interfaz Iterator generalmente consta de tres métodos clave:</p>
+<p><code>hasNext()</code>: Este método devuelve un valor booleano que indica si hay más elementos en la colección para ser iterados. Si devuelve true, significa que hay al menos un elemento más para ser recuperado; de lo contrario, si devuelve false, se ha alcanzado el final de la iteración.</p>
+<p><code>next()</code>: Este método devuelve el próximo elemento de la colección durante la iteración. Cada llamada a este método avanza la iteración al siguiente elemento. </p>
+<p><code>remove()</code>: Algunas implementaciones de Iterator también incluyen el método remove(), que elimina el elemento actual de la colección durante la iteración.</p>
+<p>De esta forma, cualquier esctructura que implemente Iterable, puede recorrerse de la siguiente forma</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//obtenemos el iterador del ArrayList</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iterator</span><span class="o">=</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Persona</span><span class="w"> </span><span class="n">persona</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="c1">//mientras queden elementos</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">()){</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="c1">//elemento siguiente</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">persona</span><span class="o">=</span><span class="n">iterator</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona</span><span class="p">);</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Ten en cuenta que las estructuras compatibles con el bucle foreach tienen implementado Iterable</p>
 <h3 id="modificar-un-item-en-una-posicion-del-arraylist">Modificar un ítem en una posición del <code>ArrayList</code><a class="headerlink" href="#modificar-un-item-en-una-posicion-del-arraylist" title="Permanent link">&para;</a></h3>
 <p>Para modificar sustituir un elemento de la lista, tenemos <code>set</code>, al que le pasamos el indice y el objeto</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// Agregar algunas personas a la lista</span>
