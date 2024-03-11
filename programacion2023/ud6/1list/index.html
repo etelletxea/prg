@@ -3454,7 +3454,20 @@ Sin embargo, desde Java 5, las primitivas se convierten automáticamente en obje
 <p>En Java, un iterator se utiliza en lugar de un bucle foreach  en ciertos casos debido a las limitaciones de este último en términos de modificación de la colección durante el recorrido. Aquí hay algunas razones para preferir un iterator en ciertos escenarios:</p>
 <ul>
 <li>
-<p><strong>Modificación durante el recorrido</strong>:El bucle foreach no permite modificar la colección mientras se está iterando. Si intentas agregar o eliminar elementos durante un bucle foreach, se lanzará una excepción <code>ConcurrentModificationException</code>. El <code>iterator</code>, en cambio, proporciona métodos específicos (<code>remove()</code>) que permiten modificar la colección de manera segura durante el recorrido.</p>
+<p><strong>Modificación durante el recorrido</strong>:El bucle foreach no permite modificar la colección mientras se está iterando. Si intentas agregar o eliminar elementos durante un bucle foreach, se lanzará una excepción <code>ConcurrentModificationException</code>. El <code>iterator</code>, en cambio, proporciona métodos específicos (<code>remove()</code>) que permiten modificar la colección de manera segura durante el recorrido.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="c1">//obtenemos el iterador del ArrayList</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iterator</span><span class="o">=</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">Persona</span><span class="w"> </span><span class="n">persona</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="c1">//mientras queden elementos</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">()){</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="c1">//elemento siguiente</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">persona</span><span class="o">=</span><span class="n">iterator</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">persona</span><span class="p">.</span><span class="na">edad</span><span class="o">&gt;</span><span class="mi">20</span><span class="p">){</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="c1">//elimina el elemento, no usar listaPersona.remove(persona)</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">            </span><span class="n">iterator</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div></p>
 </li>
 <li>
 <p><strong>Personalización del recorrido</strong>: El <code>iterator</code> proporciona más flexibilidad en términos de personalización del recorrido. Puedes utilizar métodos como hasNext(), next(), y remove() para controlar el flujo del recorrido de manera más detallada.</p>
