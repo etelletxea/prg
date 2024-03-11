@@ -3437,6 +3437,7 @@ Sin embargo, desde Java 5, las primitivas se convierten automáticamente en obje
 <p><code>hasNext()</code>: Este método devuelve un valor booleano que indica si hay más elementos en la colección para ser iterados. Si devuelve true, significa que hay al menos un elemento más para ser recuperado; de lo contrario, si devuelve false, se ha alcanzado el final de la iteración.</p>
 <p><code>next()</code>: Este método devuelve el próximo elemento de la colección durante la iteración. Cada llamada a este método avanza la iteración al siguiente elemento. </p>
 <p><code>remove()</code>: Algunas implementaciones de Iterator también incluyen el método remove(), que elimina el elemento actual de la colección durante la iteración.</p>
+<p><img alt="List" src="../../img/ud6/iterator.png" /></p>
 <p>De esta forma, cualquier esctructura que implemente Iterable, puede recorrerse de la siguiente forma</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//obtenemos el iterador del ArrayList</span>
 <span class="linenos" data-linenos="2 "></span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iterator</span><span class="o">=</span><span class="n">listaPersonas</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
