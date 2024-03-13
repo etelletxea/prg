@@ -3433,16 +3433,16 @@ todas y las trate de forma general. Esto se conoce como captura genérica de exc
 <p>No son culpa del programador de Java. Por ejemplo, un programa que debe acceder a una imagen en una carpeta. Si esa imagen no se encuentra en la ubicación esperada porque alguien la ha movido, borrado o cambiado el nombre, dará error, no siendo responsabilidad del programador.</p>
 <p>Si algún código dentro de un método arroja una excepción verificada, entonces el método puede una de las dos posibilidades:</p>
 <ol>
-<li>manejar la excepción en un bloque <code>try-catch{}</code></li>
+<li>Manejar la excepción en un bloque <code>try-catch{}</code></li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">leerFichero</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos="3 "></span><span class="w">           </span><span class="c1">//código java manejo de ficheros</span>
-<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="5 "></span><span class="w">            </span><span class="c1">// Capturamos la excepción en caso de que ocurra y manejamos el error</span>
-<span class="linenos" data-linenos="6 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error de entrada/salida (IOException): &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
-<span class="linenos" data-linenos="7 "></span><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="linenos" data-linenos="8 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="c1">// Capturamos la excepción en caso de que ocurra y manejamos el error</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error de entrada/salida (IOException): &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos="9 "></span><span class="p">}</span>
 </code></pre></div>
 <ol start="2">
@@ -3453,16 +3453,16 @@ todas y las trate de forma general. Esto se conoce como captura genérica de exc
 <span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>En el ejemplo, <code>IOException</code> es una checked exception. Este método lanza una IOException cuando hay un problema de lectura.</p>
-<p>La palabra reservada <code>throws</code> dice que este método <strong>no</strong> captura la excepción <code>IOException</code> con un <code>catch</code>, sino que cuando ocurra una, se lanzará a la persona que llama el método <code>leerFichero</code>.</p>
+<p>La palabra reservada <code>throws</code> dice que este método <strong>no</strong> captura la excepción <code>IOException</code> con un <code>catch</code>, sino que cuando ocurra una, se lanzará al método que llama el método <code>leerFichero</code>.</p>
 <p>Si hiciéramos esto en un método <code>main</code>, podemos capturar la excepción lanzada por el método.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 3 "></span><span class="w">          </span><span class="n">leerFichero</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 5 "></span><span class="w">            </span><span class="c1">// Capturamos la excepción en caso de que ocurra y manejamos el error</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error de entrada/salida (IOException): &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="c1">// Capturamos la excepción en caso de que ocurra y manejamos el error</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error de entrada/salida (IOException): &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos=" 9 "></span>
 <span class="linenos" data-linenos="10 "></span><span class="p">}</span>
 </code></pre></div>
@@ -3471,9 +3471,9 @@ todas y las trate de forma general. Esto se conoce como captura genérica de exc
 <p>Depende de los programadores especificar o detectar las excepciones unchecked.
 Por ejemplo, imagina que tenemos el siguiente programa Java se compila sin erorres:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="2 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="linenos" data-linenos="5 "></span><span class="p">}</span>
 </code></pre></div>
 <p>El compilador nos deja compilar la aplicación porque <code>ArithmeticException</code> es una excepción no verificada, pero al ejecutar el programa se lanza la excepción, por tanto, nosotros tendremos que darnos cuenta y controlar este tipo de excepciones.</p>
