@@ -2197,9 +2197,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#el-operador-diamond" class="md-nav__link">
+    <span class="md-ellipsis">
+      El operador Diamond &lt;&gt;
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#clases-genericas" class="md-nav__link">
     <span class="md-ellipsis">
-      🦄 Clases genéricas
+      Clases genéricas
     </span>
   </a>
   
@@ -2208,7 +2217,7 @@
         <li class="md-nav__item">
   <a href="#metodos-genericos" class="md-nav__link">
     <span class="md-ellipsis">
-      🦄 Métodos genéricos
+      Métodos genéricos
     </span>
   </a>
   
@@ -3041,7 +3050,7 @@
                   
 
 
-<h1 id="genericos">🦄 Genéricos<a class="headerlink" href="#genericos" title="Permanent link">&para;</a></h1>
+<h1 id="genericos">Genéricos<a class="headerlink" href="#genericos" title="Permanent link">&para;</a></h1>
 <p>Antes de Java 5 cuando introducíamos objetos en una colección estos se guardaban como objetos de tipo <code>Object</code>, aprovechando el polimorfismo para poder introducir cualquier tipo de objeto en la colección. Esto nos obligaba a hacer un casting al tipo original al obtener los elementos de la colección.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejemplo</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
@@ -3066,8 +3075,9 @@
 </code></pre></div>
 <p>Desde Java 5 contamos con una característica llamada generics que puede solventar esta clase de problemas. Los generics son una mejora al sistema de tipos que nos permite programar abstrayéndonos de los tipos de datos.</p>
 <p><strong>Genéricos</strong> significa <strong>tipos parametrizados</strong>. La idea es permitir que <strong><em>el tipo</em></strong> (<code>Integer</code>, <code>String</code>, etc., y tipos definidos por el usuario) <strong>sea un parámetro</strong> para métodos, clases e interfaces. Utilizando Generics, es posible crear clases que trabajen con diferentes tipos de datos. Una entidad como clase, interfaz o método que opera en un tipo parametrizado es una entidad genérica.</p>
-<p>Gracias a los generics podemos especificar el tipo de objeto que introduciremos en la colección, de forma que el compilador conozca el tipo de objeto que vamos a utilizar, evitándonos así el casting. Además, gracias a esta información, el compilador podrá comprobar el tipo de los objetos que introducimos, y lanzar un error en tiempo de compilación si se intenta introducir un objeto de un tipo incompatible, en lugar de que se produzca una excepción en tiempo de ejecución.</p>
-<p>Para utilizar generics con nuestras colecciones tan solo tenemos que indicar el tipo entre <strong>el operador Diamond &lt;&gt;</strong> a la hora de crearla. A estas clases a las que podemos pasar un tipo como {++«parámetro»++} se les llama <strong>clases parametrizadas, clases genéricas o simplemente genéricas (generics)</strong>.</p>
+<p>Gracias a los genéricos podemos especificar el tipo de objeto que introduciremos en la colección, de forma que el compilador conozca el tipo de objeto que vamos a utilizar, evitándonos así el casting. Además, gracias a esta información, el compilador podrá comprobar el tipo de los objetos que introducimos, y lanzar un error en tiempo de compilación si se intenta introducir un objeto de un tipo incompatible, en lugar de que se produzca una excepción en tiempo de ejecución.</p>
+<h2 id="el-operador-diamond">El operador Diamond &lt;&gt;<a class="headerlink" href="#el-operador-diamond" title="Permanent link">&para;</a></h2>
+<p>Para utilizar <code>generics</code> con nuestras colecciones tan solo tenemos que indicar el tipo entre <strong>el operador Diamond &lt;&gt;</strong> a la hora de crearla. A estas clases a las que podemos pasar un tipo como {«parámetro»+} se les llama <strong>clases parametrizadas, clases genéricas o simplemente genéricas (generics)</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ejemplo</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">  </span>
@@ -3083,7 +3093,7 @@
 <p class="admonition-title">Note</p>
 <p><strong>Algo a tener en cuenta es que el tipo parámetro debe ser una clase; no podemos utilizar tipos primitivos.</strong></p>
 </div>
-<h2 id="clases-genericas">🦄 Clases genéricas<a class="headerlink" href="#clases-genericas" title="Permanent link">&para;</a></h2>
+<h2 id="clases-genericas">Clases genéricas<a class="headerlink" href="#clases-genericas" title="Permanent link">&para;</a></h2>
 <p>Al crear una clase que utiliza o contiene algún atributo genérico, me obliga a añadir este tipo de genérico en la definición de clase. <strong>Por convención se suele utilizar una sola letra mayúscula para el tipo genérico</strong>.</p>
 <p>Es decir, si mi clase tiene un atributo <code>T elemento</code> genérico que no sé qué tipo de dato va a ser, entero, double, float.... le pongo una letra y con esto le digo que ese atributo es de tipo genérico, puede ser cualquier tipo de dato.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -3108,15 +3118,24 @@
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//Las dos formas son válidas:</span>
 <span class="linenos" data-linenos="2 "></span><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integerBox1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="linenos" data-linenos="3 "></span><span class="n">Box</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integerBox2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="linenos" data-linenos="4 "></span>
-<span class="linenos" data-linenos="5 "></span><span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">textoBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">integerBox2</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">integerBox1</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="o">=</span><span class="n">integerBox1</span><span class="p">.</span><span class="na">get</span><span class="p">()</span><span class="o">+</span><span class="n">integerBox2</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span><span class="n">Box</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">textoBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos="9 "></span><span class="n">textoBox</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="s">&quot;Hola mundo&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>Estamos creando objetos de la clase <code>Box</code>, tanto de tipo Integer como String.</p>
-<p>A veces querremos limitar los tipos que pueden ser usados empleando lo que se denomina <strong>bounded type</strong>. Con \&lt;T extends Number&gt; el tipo T debe extender la clase Number.
-Java permite múltiples límites o bounded type: <code>&lt;T extends B1 &amp; B2 &amp; B3&gt;</code>.
-<code>Box</code> es una clase y <code>B1</code> y <code>B2</code> son interfaces. Primero siempre debe ir la clase y luego las interfaces.
-Recuerda que Java NO permite la herencia múltiple, por tanto, SOLO se puede extender de una clase, pero puede implementar varias interfaces en la declaración del bounded type.</p>
-<h2 id="metodos-genericos">🦄 Métodos genéricos<a class="headerlink" href="#metodos-genericos" title="Permanent link">&para;</a></h2>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>La programación genérica permite:</p>
+<ul>
+<li>Reutilizar código, evitando tener que crear una clase diferente para cada de tipo de objeto que se quiera manejar, aunque el comportamiento vaya a ser el mismo.</li>
+<li>Reducir errores en tiempo de ejecución, eludiendo la generación de excepciones del tipo <code>ClassCastException</code>.</li>
+<li>Disminuir la necesidad de hacer conversiones de tipos primitivos, pues cuando el código es extenso se vuelve engorroso.</li>
+</ul>
+</div>
+<h2 id="metodos-genericos">Métodos genéricos<a class="headerlink" href="#metodos-genericos" title="Permanent link">&para;</a></h2>
 <p>Al igual que ocurre con las clases, si me creo un método genérico, es decir, que recibe tipos de datos genéricos <strong><em>únicos que no están definidos en la clase</em></strong>, tengo que especificar en la signatura del método esos genéricos:</p>
 <blockquote>
 <p>Ejemplo</p>
