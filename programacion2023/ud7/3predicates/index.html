@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#predicate" class="md-skip">
+        <a href="#entidades-de-javautilfunctional" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -2239,6 +2239,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#predicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#metodos-predicate" class="md-nav__link">
     <span class="md-ellipsis">
       Métodos Predicate
@@ -3050,7 +3059,19 @@
                   
 
 
-<h1 id="predicate">Predicate<a class="headerlink" href="#predicate" title="Permanent link">&para;</a></h1>
+<h1 id="entidades-de-javautilfunctional">Entidades de java.util.functional<a class="headerlink" href="#entidades-de-javautilfunctional" title="Permanent link">&para;</a></h1>
+<p>Antes de crear una función de tipo lambda, conviene conocer las entidades básicas que componen esta manera de programar. Las principales entidades son interfaces con un único método que debe implementar el programador y que estas implementaciones pueden hacerse llegar como argumentos de métodos de otras muchas clases del API de Java</p>
+<p>Las implementaciones de estas interfaces son del tipo, consume un valor y retorna otro tipo de valor, o produce un valor sin argumentos o produce un valor dados dos argumentos. A éstas se les llama unidades funcionales porque componen una lógica interna que a priori el consumidor de esta lógica no conoce, pero de la que sí se conoce su interfaz y por tanto la manera de relacionarse con el resto de los objetos, o lo que es lo mismo la manera de ser invocada</p>
+<p>Las interfaces funcionales más importantes contenidas en java.util.functional son:</p>
+<ul>
+<li><strong>Predicate</strong>: Se utiliza en expresiones lambda para comprobar si una condición dada es verdadera o falsa</li>
+<li><strong>Supplier</strong>: esta función se debe utilizar cuando se necesiten generar objetos sin requerir argumentos. Por ejemplo para realizar una inicialización perezosa.</li>
+<li><strong>Consumer</strong> esta en cambio es el opuesto de Supplier ya que consume, acepta como argumento el tipo T sin devolver ningún valor de retorno.</li>
+<li><strong><code>Function&lt;T,R&gt;</code></strong> esta interfaz permite definir una función que acepta un parámetro de tipo T y devuelve un resultado del tipo R pudiendo aplicarle alguna transformación u operación.</li>
+<li><strong><code>BiFunction&lt;T,R,S&gt;</code></strong> esta interfaz permite definir una función que acepta dos parámetros de tipo T y R, devolviendo un resultado del tipo S. Normalmente serán operaciones de agregación u operadores binarios como la suma, resta, etc..</li>
+</ul>
+<h2 id="predicate">Predicate<a class="headerlink" href="#predicate" title="Permanent link">&para;</a></h2>
+<p>Predicate la interfaz predicado debe devolver forzosamente un boolean dado un objeto de tipo T, normalmente utilizado para filtrar elementos de una colección.</p>
 <p><strong>Predicate</strong> es una interfaz funcional que se encuentra en el paquete <code>java.util.function</code>. Mejora la capacidad de administración del código, ayuda a realizar pruebas unitarias por separado.</p>
 <p>Se utiliza en expresiones lambda para comprobar si una condición dada es verdadera o falsa.</p>
 <p>En lugar de pasar un booleano con valor true or false,  pasas una referencia de tipo Predicate para determinar de manera dinámica si una condición dada es verdadera, o falsa.</p>
