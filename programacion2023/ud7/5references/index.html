@@ -2317,13 +2317,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#expresiones-switch" class="md-nav__link">
+  <a href="#expresiones-switch-y-lambdas" class="md-nav__link">
     <span class="md-ellipsis">
-      Expresiones switch
+      Expresiones switch y lambdas
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Expresiones switch">
+    <nav class="md-nav" aria-label="Expresiones switch y lambdas">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3094,7 +3094,7 @@
 
 <h1 id="referencia-a-metodos-en-expresiones-lambda-y-switch">Referencia a métodos en expresiones lambda y switch<a class="headerlink" href="#referencia-a-metodos-en-expresiones-lambda-y-switch" title="Permanent link">&para;</a></h1>
 <p><strong>Una referencia a métodos</strong> o <em>métodos referenciados</em> proporciona una forma de referirse a un método sin ejecutarlo. Se relaciona con expresiones lambda porque también requiere un contexto de tipo de objetivo que consiste en una interfaz funcional compatible.</p>
-<p>En el caso de que todo lo que haga la expresión lambda sea <strong>llamar a otro método con los parámetros pasados ​​a la expresión lambda</strong>, la implementación de Java lambda proporciona una forma más corta de expresar la llamada al método, que es usando <strong>::</strong>.</p>
+<p>En el caso de que todo lo que haga la expresión lambda sea <strong>llamar a otro método con los parámetros pasados ​​a la expresión lambda</strong>, la implementación de Java lambda proporciona una forma más corta de expresar la llamada al método, que es usando <code>::</code></p>
 <p>Veamos un ejemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Impresora</span><span class="p">{</span>
 <span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimir</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
@@ -3103,18 +3103,21 @@
 <p>Si usáramos lambda sin referencias a métodos, lo haríamos de la siguiente forma:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Impresora</span><span class="w"> </span><span class="n">impresora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
 </code></pre></div>
-<p>Dado que todo lo que hace el cuerpo lambda es reenviar el parámetro String al método System.out.println(), podemos reemplazar la declaración lambda anterior con una referencia de método utilizando {++::++}. De forma que quedaría:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Impresora</span><span class="w"> </span><span class="n">impresora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">;</span>
+<p>Dado que todo lo que hace el cuerpo lambda es reenviar el parámetro String al método <code>System.out.println()</code>, podemos reemplazar la declaración lambda anterior con una referencia de método utilizando</p>
+<p><strong>{Clase::Metodo}</strong></p>
+<p>De forma que quedaría:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Impresora</span><span class="w"> </span><span class="n">impresora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">;</span>
 </code></pre></div>
+Otro ejemplo mediante <code>foreach</code> para que imprima los elementos de la lista</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="p">();</span>
 <span class="linenos" data-linenos="2 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Andrea&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="3 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Luisa&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="4 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Diego&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="5 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Paúl&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="6 "></span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Dario&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="7 "></span><span class="n">names</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
-</code></pre></div>
-<p>Observa los dos puntos dobles <strong>::</strong> . Estos le indican al compilador de Java que se trata de <strong>una referencia de método</strong>. El método al que se hace referencia es lo que viene después de los dos puntos dobles. Cualquier clase u objeto que posea el método al que se hace referencia viene antes de los dos puntos dobles.</p>
+<span class="hll"><span class="linenos" data-linenos="7 "></span><span class="n">names</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Observa los dos puntos dobles <code>::</code> . Estos le indican al compilador de Java que se trata de <strong>una referencia de método</strong>. El método al que se hace referencia es lo que viene después de los dos puntos dobles. Cualquier clase u objeto que posea el método al que se hace referencia viene antes de los dos puntos dobles.</p>
 <p>Podemos hacer referencia a los siguientes tipos de métodos:</p>
 <ul>
 <li>Método estático</li>
@@ -3208,7 +3211,7 @@
 <span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos="15 "></span><span class="p">}</span>
 </code></pre></div>
-<h2 id="expresiones-switch">Expresiones switch<a class="headerlink" href="#expresiones-switch" title="Permanent link">&para;</a></h2>
+<h2 id="expresiones-switch-y-lambdas">Expresiones switch y lambdas<a class="headerlink" href="#expresiones-switch-y-lambdas" title="Permanent link">&para;</a></h2>
 <p>Desde Java 12, se ha incluido las expresiones switch que junto las lambdas, nos permite crear código más compacto. En estos momentos <code>switch</code>, nos permite devolver un valor y asignarlo. Para ello, por cada <code>case</code> va seguido de una expresión lambda que devuelve un valor. Por otro lado, es  obligada la sentencia <code>default</code></p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">enum</span><span class="w"> </span><span class="n">Mes</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">ENERO</span><span class="p">,</span><span class="w"> </span><span class="n">FEBRERO</span><span class="p">,</span><span class="w">  </span><span class="n">MARZO</span><span class="p">,</span><span class="w"> </span><span class="n">ABRIL</span><span class="p">,</span><span class="w"> </span><span class="n">MAYO</span><span class="p">,</span><span class="w"> </span><span class="n">JUNIO</span><span class="p">,</span><span class="w"> </span><span class="n">JULIO</span><span class="p">,</span><span class="w"> </span><span class="n">AGOSTO</span><span class="p">,</span><span class="w"> </span><span class="n">SEPTIEMBRE</span><span class="p">,</span><span class="n">OCTUBRE</span><span class="p">,</span><span class="w"> </span><span class="n">NOVIEMBRE</span><span class="p">,</span><span class="n">DICIEMBRE</span><span class="p">;</span>
