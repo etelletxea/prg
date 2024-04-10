@@ -2330,15 +2330,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#peek" class="md-nav__link">
-    <span class="md-ellipsis">
-      Peek()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#filter" class="md-nav__link">
     <span class="md-ellipsis">
       Filter()
@@ -2351,6 +2342,15 @@
   <a href="#sorted" class="md-nav__link">
     <span class="md-ellipsis">
       Sorted()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peek()
     </span>
   </a>
   
@@ -2452,8 +2452,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      count()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otras-funciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otras funciones
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-vs-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream vs SQL
+    </span>
+  </a>
   
 </li>
       
@@ -3216,37 +3243,141 @@
 <p>La fuente proporciona los elementos a la tubería.</p>
 <h2 id="funciones-de-stream">Funciones de Stream<a class="headerlink" href="#funciones-de-stream" title="Permanent link">&para;</a></h2>
 <p><img alt="Streams" src="../../img/ud7/streams31.png" /></p>
+<p>Como ejemplo, vamos a trabajar sobre una lista de objetos de tipo Persona</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">pais</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">genero</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">Integer</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">pais</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">genero</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">apellido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apellido</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">pais</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pais</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">genero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genero</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="c1">//getter y setter</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="k">return</span><span class="w">  </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="w"> </span><span class="n">apellido</span><span class="w"> </span><span class="p">;</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+</code></pre></div>
+<p>creamos una lista</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="c1">// Crear un ArrayList para almacenar objetos Persona</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="c1">// Agregar 5 personas al ArrayList</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Perez&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;España&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Masculino&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;María&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;González&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;México&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Femenino&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;López&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Argentina&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Masculino&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Laura&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Martínez&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;España&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Femenino&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">));</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">personas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">&quot;Pedro&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sánchez&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Chile&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Masculino&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">));</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
 <h2 id="operaciones-intermedias">Operaciones intermedias<a class="headerlink" href="#operaciones-intermedias" title="Permanent link">&para;</a></h2>
 <p>Las operaciones intermedias obtienen elementos uno por uno y los procesan. Todas las operaciones intermedias son perezosas (lazy) y, como resultado, ninguna operación tendrá ningún efecto hasta que la tubería comience a funcionar.</p>
+<h3 id="filter"><code>Filter()</code><a class="headerlink" href="#filter" title="Permanent link">&para;</a></h3>
+<p>Como su nombre indica lo que hacemos es filtrar de todos los elementos del <em>stream</em> solo aquellos que cumplan una determinada condición.
+Recibe como parámetro una expresión lambda <code>Predicate</code> la cual debe devolver <code>true</code> solo en aquellos elementos que se quedarán en el <em>stream</em> y <code>false</code> para aquellos elementos que se deben eliminar.</p>
+<p>Obtener las personas de España e imprimir el nombre por pantalla</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">          </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">persona</span><span class="o">-&gt;</span><span class="n">persona</span><span class="p">.</span><span class="na">pais</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;España&quot;</span><span class="p">))</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">          </span><span class="c1">//operación terminal</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">          </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">persona</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona</span><span class="p">.</span><span class="na">nombre</span><span class="p">));</span>
+</code></pre></div>
+<p>Obtener las personas menores de 30 años y guardarlas en una lista</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">menores30</span><span class="o">=</span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">                                  </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">persona</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">edad</span><span class="o">&lt;</span><span class="mi">30</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                                  </span><span class="c1">//operación terminar que convierte los elemento en una lista</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">                                  </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">menores30</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="sorted"><code>Sorted()</code><a class="headerlink" href="#sorted" title="Permanent link">&para;</a></h3>
+<p>Se utiliza para ordenar los elementos del <em>stream</em>. Recibe como parámetro una expresión lambda de tipo <code>Comparator</code> para que podamos indicar la lógica de la ordenación.</p>
+<p>Ordenar por apellido y mostrar por pantalla</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">            </span><span class="p">.</span><span class="na">sorted</span><span class="p">((</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">p1</span><span class="p">.</span><span class="na">apellido</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">p2</span><span class="p">.</span><span class="na">apellido</span><span class="p">))</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">            </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">            </span><span class="c1">//también : forEach(p-&gt;System.out.println(p))</span>
+</code></pre></div>
+<div class="admonition nota">
+<p class="admonition-title">Comparator.comparing()</p>
+<p>Podemos utilizar <code>Comparator.comparing()</code> que  es un método estático de la interfaz <code>Comparator</code> en Java que permite crear un comparador basado en una función de extracción de claves. Esta función extrae una clave de los elementos que se van a comparar, y el comparador se construye utilizando estas claves para determinar el orden.</p>
+<p>Para nuestro ejemplo</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getApellido</span><span class="p">))</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
+<code>Comparator.comparing()</code> espera una función de referencia (o método de referencia) que devuelve la clave que se utilizará para comparar los elementos. En este caso, <code>Persona::getApellido</code> es una referencia al método <code>getApellido</code> de la clase <code>Persona</code>, que devuelve el apellido de una persona.</p>
+<p><code>Comparator.comparing(Persona::getApellido)</code> crea un comparador que compara objetos Persona basándose en sus apellidos.</p>
+<p>Si necesitas ordenar en orden descendente, puedes usar Comparator.comparing() junto con el método reversed()</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getApellido</span><span class="p">).</span><span class="na">reversed</span><span class="p">())</span>
+</code></pre></div>
+Por otro lado, nos permite anidar condiciones de orden. Si queremos ordenar primero por pais y después por apellido</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">            </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getPais</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                    </span><span class="p">.</span><span class="na">thenComparing</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getApellido</span><span class="p">))</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">            </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">persona</span><span class="o">-&gt;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">persona</span><span class="p">.</span><span class="na">getPais</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">persona</span><span class="p">));</span>
+</code></pre></div>
+</div>
 <h3 id="peek"><code>Peek()</code><a class="headerlink" href="#peek" title="Permanent link">&para;</a></h3>
 <p>El método <code>peek</code> recibe como parámetro una expresión lambda de tipo <code>Consumer</code> para poder utilizar cada elemento del stream. Normalmente se utilizar para mostrar por consola el contenido del <em>stream</em>.</p>
 <p>Este método existe principalmente para la depuración del programa, donde se desea ver los elementos a medida que pasan por un punto determinado en el pipeline.</p>
 <p><code>peek()</code> también se utiliza cuando queremos <strong>alterar el estado interno de un elemento</strong> (aunque esto no es muy común).</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;three&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;four&quot;</span><span class="p">)</span>
-<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
-<span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="p">.</span><span class="na">peek</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Filtered value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">))</span>
-<span class="linenos" data-linenos="4 "></span><span class="w">  </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toUpperCase</span><span class="p">)</span>
-<span class="linenos" data-linenos="5 "></span><span class="w">  </span><span class="p">.</span><span class="na">peek</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mapped value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">))</span>
-<span class="linenos" data-linenos="6 "></span><span class="w">  </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
-</code></pre></div>
-<h3 id="filter"><code>Filter()</code><a class="headerlink" href="#filter" title="Permanent link">&para;</a></h3>
-<p>Como su nombre indica lo que hacemos es filtrar de todos los elementos del <em>stream</em> solo aquellos que cumplan una determinada condición.
-Recibe como parámetro una expresión lambda <code>Predicate</code> la cual debe devolver <code>true</code> solo en aquellos elementos que se quedarán en el <em>stream</em> y <code>false</code> para aquellos elementos que se deben eliminar.</p>
-<h3 id="sorted"><code>Sorted()</code><a class="headerlink" href="#sorted" title="Permanent link">&para;</a></h3>
-<p>Se utiliza para ordenar los elementos del <em>stream</em>. Recibe como parámetro una expresión lambda de tipo <code>Comparator</code> para que podamos indicar la lógica de la ordenación.</p>
+<p>Obtener una lista con las personas menores de 40 ordenados por Pais
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">menores40</span><span class="o">=</span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">          </span><span class="c1">//antes de filtrar</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">          </span><span class="p">.</span><span class="na">peek</span><span class="p">(</span><span class="n">persona</span><span class="o">-&gt;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sin filtro: &quot;</span><span class="o">+</span><span class="n">persona</span><span class="p">))</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">          </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">persona</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">edad</span><span class="o">&lt;</span><span class="mi">40</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">          </span><span class="p">.</span><span class="na">peek</span><span class="p">(</span><span class="n">persona</span><span class="o">-&gt;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Despues de filtro: &quot;</span><span class="o">+</span><span class="n">persona</span><span class="p">))</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">          </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getPais</span><span class="p">))</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">          </span><span class="p">.</span><span class="na">peek</span><span class="p">(</span><span class="n">persona</span><span class="o">-&gt;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ordenado: &quot;</span><span class="o">+</span><span class="n">persona</span><span class="p">))</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">          </span><span class="c1">//operación terminar que convierte los elemento en una lista</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">          </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+<span class="linenos" data-linenos="10 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">menores40</span><span class="p">);</span>
+</code></pre></div></p>
 <h3 id="distinct"><code>Distinct()</code><a class="headerlink" href="#distinct" title="Permanent link">&para;</a></h3>
 <p>Con <code>distinct</code> se seleccionan los elementos distintos dentro del <em>stream</em> eliminando los duplicados.
-Los elementos se comparan utilizando el método equals().</p>
+Los elementos se comparan utilizando el método <code>equals()</code>.</p>
 <h3 id="map"><code>Map()</code><a class="headerlink" href="#map" title="Permanent link">&para;</a></h3>
 <p>El método <code>map</code> recibe como parámetro una expresión lambda de tipo <code>Function</code>, por lo que debemos especificar una función que recibe como parámetro de entrada cada elemento del <em>stream</em>, y devuelve un objeto que puede ser un tipo de dato distinto o el mismo.</p>
 <p>La función se aplica a cada uno de los elementos del <em>stream</em> para realizar alguna transformación sobre cada elemento y devuelve <strong>otro Stream</strong> sobre el cual puedes seguir trabajando.
 Se utiliza para modificar el contenido del <em>stream</em>.
 <code>map()</code> devuelve un stream nuevo que consta de los resultados de aplicar la función dada a los elementos del <em>stream</em>.</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span>
-<span class="linenos" data-linenos="2 "></span>
-<span class="linenos" data-linenos="3 "></span><span class="c1">//Mostramos el nuevo stream devuelto por map</span>
-<span class="linenos" data-linenos="4 "></span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">map</span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
-<span class="linenos" data-linenos="5 "></span><span class="c1">//[9 18 27 36 45]</span>
+<p>Obtener una lista de los paises ordenados </p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">List</span><span class="w"> </span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">paises</span><span class="o">=</span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">                </span><span class="c1">//obtenemos los paises</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">persona</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">getPais</span><span class="p">())</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">                </span><span class="c1">//tambien .map(Persona::getPais)</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">                </span><span class="c1">//quitamos repeticiones</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">                </span><span class="p">.</span><span class="na">distinct</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">                </span><span class="c1">//ordenamos</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">                </span><span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">                </span><span class="c1">//creamos la lista</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">                </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">paises</span><span class="p">);</span>
+</code></pre></div>
+Tenemos la siguiente clase</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">country</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Crear una lista de <code>Person</code> a partir de la de <code>Personas</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">people</span><span class="o">=</span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">persona</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="n">persona</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="n">persona</span><span class="p">.</span><span class="na">getApellido</span><span class="p">(),</span><span class="n">persona</span><span class="p">.</span><span class="na">getPais</span><span class="p">()))</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
 </code></pre></div>
 <h3 id="flatmap"><code>FlatMap</code><a class="headerlink" href="#flatmap" title="Permanent link">&para;</a></h3>
 <p>Cuando nos encontramos con estructuras más complejas, como por ejemplo una lista con otra lista, trabajar con <code>map()</code> no es suficiente, por ello, utilizamos <code>flatMap()</code> que lo que hace es "aplanar" listas anidadas y quedarnos con un <em>stream</em> plano.</p>
@@ -3271,7 +3402,7 @@ La función de mapeo utilizada para la transformación en <code>flatMap()</code>
 <h2 id="operaciones-terminales">Operaciones terminales<a class="headerlink" href="#operaciones-terminales" title="Permanent link">&para;</a></h2>
 <p>Las operaciones terminales significan el final del ciclo de vida del steam. Lo más importante para nuestro escenario es que inician el trabajo en la tubería.</p>
 <h3 id="foreach"><code>ForEach()</code><a class="headerlink" href="#foreach" title="Permanent link">&para;</a></h3>
-<p>Recorremos cada elemento del <em>stream</em> para realizar alguna acción con él. Como bien sabemos recibe como parámetro una exprsión lambda de tipo <code>Consumer</code>.</p>
+<p>Recorremos cada elemento del <em>stream</em> para realizar alguna acción con él. Como bien sabemos recibe como parámetro una expresión lambda de tipo <code>Consumer</code>.</p>
 <h3 id="collect"><code>Collect()</code><a class="headerlink" href="#collect" title="Permanent link">&para;</a></h3>
 <p>Es una operación terminal, se utiliza para indicar el tipo de colección en la que se devolverá el resultado final de todas las operaciones realizadas en el <em>stream</em>.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Texto1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Texto2&quot;</span><span class="p">);</span>
@@ -3288,6 +3419,44 @@ La función de mapeo utilizada para la transformación en <code>flatMap()</code>
 <h3 id="max"><code>Max()</code><a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
 <p>Con <code>max</code> se obtiene el elemento del <em>stream</em> con el valor máximo calculado a partir de una expresión lambda de tipo <code>Comparator</code> que indicamos como parámetro de la expresión.</p>
 <p><code>max</code> devuelve un objeto de tipo <code>Optional</code> para poder indicar un valor por defecto en caso de que no se pueda devolver ningún elemento del <em>stream</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// Encontrar la persona de mayor edad utilizando max()</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personaMayorEdad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getEdad</span><span class="p">));</span>
+<span class="linenos" data-linenos="4 "></span><span class="c1">// Verificar si se encontró alguna persona y mostrar su informació</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">personaMayorEdad</span><span class="p">.</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">//Carlos López</span>
+</code></pre></div>
+<h3 id="count"><code>count()</code><a class="headerlink" href="#count" title="Permanent link">&para;</a></h3>
+<p>Permite obtener el total de elementos</p>
+<p>Obtener el total de personas en "España"</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">// Contar el total de personas de España</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="n">totalPersonasEspaña</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">          </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">persona</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;España&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">persona</span><span class="p">.</span><span class="na">getPais</span><span class="p">()))</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">          </span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Total de personas de España: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">totalPersonasEspaña</span><span class="p">);</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">  </span><span class="c1">//Total de personas de España: 2</span>
+</code></pre></div>
+<h3 id="otras-funciones">Otras funciones<a class="headerlink" href="#otras-funciones" title="Permanent link">&para;</a></h3>
+<p>Podemos consultar otras funciones de la clase Stream en la Api de Java</p>
+<p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html</a></p>
+<h2 id="stream-vs-sql">Stream vs SQL<a class="headerlink" href="#stream-vs-sql" title="Permanent link">&para;</a></h2>
+<p>La mayor similitud o manera de imaginarse los streams con otro término de la informática es con el lenguaje estructurado más utilizado en base de datos relacionales, el Structured Query Language (SQL)</p>
+<p>Suponiendo una tabla de Personas</p>
+<blockquote>
+<p>"Obtener los nombres de Personas con edad menor de 32 y que sean de España ordenado por nombre"</p>
+</blockquote>
+<p>En SQL</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">SELECT</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Personas</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">edad</span><span class="o">&lt;</span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">pais</span><span class="o">=</span><span class="ss">&quot;España&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">nombre</span>
+</code></pre></div>
+<p>mediante Stream
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">                </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">persona</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">getEdad</span><span class="p">()</span><span class="o">&lt;</span><span class="mi">32</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">persona</span><span class="p">.</span><span class="na">getPais</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;España&quot;</span><span class="p">))</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getNombre</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">                </span><span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">                </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">//Juan</span>
+</code></pre></div></p>
 <h2 id="ventajas-de-streams">Ventajas de Streams<a class="headerlink" href="#ventajas-de-streams" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Código conciso y más limpio.</li>
