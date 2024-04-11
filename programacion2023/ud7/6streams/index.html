@@ -1960,27 +1960,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ud6/3innerclass/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    🧆 Clases Anidadas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../ud6/4map/" class="md-nav__link">
         
   
@@ -2134,7 +2113,7 @@
         
   
   <span class="md-ellipsis">
-    Recursividad
+    🦄 Recursividad
   </span>
   
 
@@ -2523,6 +2502,48 @@
   
   <span class="md-ellipsis">
     🦄 Expresiones regulares
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud6/3innerclass/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🦄 Clases Anidadas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8fechas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🦄 Fechas
   </span>
   
 
@@ -3386,7 +3407,7 @@ Tenemos la siguiente clase</p>
 Devuelve un Stream que consiste en los resultados de reemplazar cada elemento del <em>stream</em> dado con el contenido de un <em>stream</em> mapeado producido al aplicar la función de mapeo provista a cada elemento.
 La función de mapeo utilizada para la transformación en <code>flatMap()</code> es una función sin estado y solo devuelve una secuencia de nuevos valores.</p>
 <p>En el siguiente ejemplo el programa usa la operación <code>flatMap()</code> para convertir una lista de una lista <code>List&lt;List&lt;Integer&gt;&gt;</code> a una lista <code>List&lt;Integer&gt;</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 3 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 4 "></span>
@@ -3398,6 +3419,20 @@ La función de mapeo utilizada para la transformación en <code>flatMap()</code>
 <span class="linenos" data-linenos="10 "></span>
 <span class="linenos" data-linenos="11 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">listOfAllIntegers</span><span class="p">);</span>
 <span class="linenos" data-linenos="12 "></span><span class="c1">//[1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</code></pre></div>
+Obtener una lista con los caracteres que aparecen en los nombres sin repeticiones</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaCaracteres</span><span class="o">=</span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="c1">//obtenemos un stream con los nombres</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getNombre</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="c1">//convierte cada string en un IntStream de int y los conviente en char</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="p">.</span><span class="na">flatMap</span><span class="p">(</span><span class="n">nombre</span><span class="o">-&gt;</span><span class="n">nombre</span><span class="p">.</span><span class="na">chars</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">                </span><span class="c1">//operación de stream que permite cambiar el tipo</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">                                </span><span class="p">.</span><span class="na">mapToObj</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="n">c</span><span class="p">))</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="c1">//obtenemos todos los caracteres sin repetición</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">.</span><span class="na">distinct</span><span class="p">()</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">listaCaracteres</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="c1">//[J, u, a, n, M, r, í, C, l, o, s, L, P, e, d]</span>
 </code></pre></div>
 <h2 id="operaciones-terminales">Operaciones terminales<a class="headerlink" href="#operaciones-terminales" title="Permanent link">&para;</a></h2>
 <p>Las operaciones terminales significan el final del ciclo de vida del steam. Lo más importante para nuestro escenario es que inician el trabajo en la tubería.</p>
