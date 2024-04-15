@@ -2410,6 +2410,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#stringmatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      String.matches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stringreplaceall" class="md-nav__link">
+    <span class="md-ellipsis">
+      String.replaceAll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#operadores-logicos" class="md-nav__link">
     <span class="md-ellipsis">
       Operadores lógicos
@@ -3471,6 +3489,31 @@ Reemplazar todas las ocurrencias de una expresión regular en una cadena</p>
 <span class="linenos" data-linenos="19 "></span><span class="cm">Teléfono: 345678989</span>
 <span class="linenos" data-linenos="20 "></span><span class="cm">         */</span>
 <span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<h2 id="stringmatches">String.matches<a class="headerlink" href="#stringmatches" title="Permanent link">&para;</a></h2>
+<p>El método matches() de String se utiliza para determinar si una cadena coincide con una expresión regular completa. Devuelve true si la cadena coincide completamente con la expresión regular y false en caso contrario</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hola Mundo&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">texto</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;Hola.*&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La cadena comienza con &#39;Hola&#39;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La cadena no comienza con &#39;Hola&#39;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="stringreplaceall">String.replaceAll<a class="headerlink" href="#stringreplaceall" title="Permanent link">&para;</a></h2>
+<p>Permite sustituir en un String las coincidencias de una expresión regular</p>
+<p>Sustituir el Dni por asteriscos</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">String</span><span class="w"> </span><span class="n">emails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Pepe con DNI 12345678F y María con DNI 87654321G&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// Expresión regular para coincidir con el DNI</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">String</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;\\b\\d{8}[A-HJ-NP-TV-Z]\\b&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">String</span><span class="w"> </span><span class="n">reemplazo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;*********&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="c1">// Reemplazar los DNI</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">String</span><span class="w"> </span><span class="n">dniOcultos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emails</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span><span class="w"> </span><span class="n">reemplazo</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Resultado:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dniOcultos</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="c1">//Pepe con DNI ********* y María con DNI *********</span>
 </code></pre></div>
 <h2 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h2>
 <p>La API de Java Regex admite un conjunto de operadores lógicos que se pueden usar para combinar múltiples subpatrones dentro de una sola expresión regular.</p>
