@@ -2419,9 +2419,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejemplo-expresion-regular-telefono-movil" class="md-nav__link">
+  <a href="#ejemplos-expresion-regular" class="md-nav__link">
     <span class="md-ellipsis">
-      Ejemplo expresión regular teléfono móvil
+      Ejemplos expresión regular
     </span>
   </a>
   
@@ -3175,7 +3175,7 @@
 <p>Se puede usar una expresión regular para buscar, editar y manipular texto.</p>
 <p>La expresión regular se aplica en el texto de izquierda a derecha.</p>
 <p>Se usa ampliamente para definir la restricción en cadenas como contraseña y validación de correo electrónico.</p>
-<p>Java Regex API proporciona 1 interfaz y 3 clases en el paquete java.util.regex:</p>
+<p>Java Regex API proporciona 1 interfaz y 3 clases en el paquete  <code>java.util.regex</code>:</p>
 <ul>
 <li>MatchResult interface</li>
 <li>Matcher class</li>
@@ -3185,7 +3185,7 @@
 <h2 id="clases-de-caracteres-y-limites-de-coincidencia">Clases de caracteres y límites de coincidencia<a class="headerlink" href="#clases-de-caracteres-y-limites-de-coincidencia" title="Permanent link">&para;</a></h2>
 <p>La forma más simple de una expresión regular (regex) es una cadena, un literal, un String. Por ejemplo, "Hola" es una regex que coincide (matches) con la palabra "Hola".</p>
 <p>Si solo usáramos literales como patrón para buscar en un String, las regex no serían muy interesantes. Por eso, se crearon las <strong>Character classes &amp; boundary matches</strong>.</p>
-<p>Los boundary matches o límites de coincidencia son: ^ (al principio del String), $ (final del String), \b (principio y final palabra).</p>
+<p>Los boundary matches o límites de coincidencia son: <code>^</code> (al principio del String), <code>$</code> (final del String), <code>\b</code> (principio y final palabra).</p>
 <p>Una clase caracter es como un comodín y representa un conjunto o clase de caracteres.</p>
 <table>
 <thead>
@@ -3201,19 +3201,19 @@
 </tr>
 <tr>
 <td>^pattern</td>
-<td>El símbolo ^ indica al inicio del String. Encuentra la regex que coincide con el patrón dado al comienzo del String.</td>
+<td>El símbolo ^ indica al inicio del String. Encuentra la regex que coincide con el patrón dado al comienzo del String.  Por ejemplo, /^start/ coincidirá con "start" solo si está al principio de una línea.</td>
 </tr>
 <tr>
 <td>pattern$</td>
-<td>El símbolo $ indica el final del String. Encuentra la regex que coincide con el patrón dado al final del String.</td>
+<td>El símbolo $ indica el final del String. Encuentra la regex que coincide con el patrón dado al final del String.  Por ejemplo, /end$/ coincidirá con "end" solo si está al final de una línea</td>
 </tr>
 <tr>
 <td>[abc]</td>
-<td>Los corchetes representan un conjunto. El String debe coincidir con la/s letra/s dentro del corchete.</td>
+<td>Los corchetes representan un conjunto. El String debe coincidir con la/s letra/s dentro del corchete.   Por ejemplo, /gr[ae]y/ coincidirá con "gray" y "grey".</td>
 </tr>
 <tr>
 <td>[abc][12]</td>
-<td>El String debe coincidir con las letras a, b ó c, seguidas de 1 ó 2.</td>
+<td>El String debe coincidir con las letras a, b ó c, seguidas de 1 ó 2.  Por ejemplo, "a1", "b2"</td>
 </tr>
 <tr>
 <td>[^abc]</td>
@@ -3221,18 +3221,22 @@
 </tr>
 <tr>
 <td>[a-z1-9]</td>
-<td>Rango. Busca coincidir las letras minúsculas de la a a la z (ambas incluidas) y los dígitos del 1 al 9 (ambos incluidos).</td>
+<td>Rango. Busca coincidir las letras minúsculas de la a a la z (ambas incluidas) y los dígitos del 1 al 9 (ambos incluidos). Por ejemplo, "a3", "e4"</td>
 </tr>
 <tr>
 <td>a|b</td>
-<td>Encuentra en el String las ocurrencias de a ó b.</td>
+<td>Encuentra en el String las ocurrencias de a ó b.  Por ejemplo, "casa"</td>
 </tr>
 <tr>
 <td>ab</td>
-<td>Encuentra en el String todas las ocurrencias de 'a' seguido de una 'b'.</td>
+<td>Encuentra en el String todas las ocurrencias de 'a' seguido de una 'b'. Por ejemplo, "abuelo",</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition nota">
+<p class="admonition-title">Nota</p>
+<p>Puedes sacar el simbolo <code>^</code> con la combinación ALT+94 en el teclado numérico</p>
+</div>
 <h2 id="meta-caracteres">Meta caracteres<a class="headerlink" href="#meta-caracteres" title="Permanent link">&para;</a></h2>
 <p>Los siguientes metacaracteres tienen un significado predefinido y hacen que ciertos patrones comunes sean más fáciles de usar. Por ejemplo, puede usar \d como definición simplificada para [0..9].</p>
 <table>
@@ -3273,16 +3277,16 @@
 </tr>
 <tr>
 <td>\b</td>
-<td>Límite de una palabra</td>
+<td>Límite de una palabra. Por ejemplo <code>\b\d[a-z]\b</code>. Coincide con "2a", "4c" pero no con "2c3" "</td>
 </tr>
 </tbody>
 </table>
 <h3 id="especificacion-de-modos-dentro-de-la-expresion-regular">Especificación de modos dentro de la expresión regular<a class="headerlink" href="#especificacion-de-modos-dentro-de-la-expresion-regular" title="Permanent link">&para;</a></h3>
-<p>Puede agregar los siguientes modificadores de modo al comienzo de la expresión regular. Para especificar múltiples modos, simplemente se juntan: (?ismx).</p>
+<p>Puede agregar los siguientes modificadores de modo al comienzo de la expresión regular. Para especificar múltiples modos, simplemente se juntan: <code>(?ismx)</code>.</p>
 <ul>
-<li>(?i) hace que la expresión regular sea insensible a mayúsculas y minúsculas.</li>
-<li>(?s) para "modo de una sola línea" hace que el punto coincida con todos los caracteres, incluidos los saltos de línea.</li>
-<li>(?m) para "modo multilínea" hace que el símbolo de intercalación y el dólar coincidan al principio y al final de cada línea en la cadena de asunto.</li>
+<li><code>(?i)</code>  hace que la expresión regular sea insensible a mayúsculas y minúsculas. Ejemplo <code>(?i)hola</code>, coincide con "HoLa","hoLA", "HOLa"....</li>
+<li><code>(?s)</code>  para "modo de una sola línea" hace que el punto coincida con todos los caracteres, incluidos los saltos de línea. Por ejemplo, si deseas realizar una búsqueda en un texto que incluya múltiples líneas y deseas que el punto . coincida con cualquier carácter</li>
+<li><code>(?m)</code>  para "modo multilínea" hace que el símbolo de intercalación y el dólar coincidan al principio y al final de cada línea en la cadena de asunto.</li>
 </ul>
 <h2 id="cuantificadores-regex">Cuantificadores Regex<a class="headerlink" href="#cuantificadores-regex" title="Permanent link">&para;</a></h2>
 <p>Los cuantificadores especifican el número de ocurrencias de un carácter.</p>
@@ -3297,23 +3301,23 @@
 <tbody>
 <tr>
 <td>*</td>
-<td>Indica que ocurre 0 ó más veces. Equivale a {0,}.</td>
+<td>Indica que ocurre 0 ó más veces. Equivale a {0,}. Por ejemplo, <code>go*d</code>  coincidirá con "gd", "god", "good", "gooood", etc</td>
 </tr>
 <tr>
 <td>+</td>
-<td>Indica que ocurre 1 ó más veces. Equivale a {1,}.</td>
+<td>Indica que ocurre 1 ó más veces. Equivale a {1,}.  Por ejemplo, <code>go+d</code> coincidirá con "god", "good", "gooood", pero no con "gd"</td>
 </tr>
 <tr>
 <td>?</td>
-<td>Indica que ocurre 0 ó 1 veces. Equivale a {0,1}.</td>
+<td>Indica que ocurre 0 ó 1 veces. Equivale a {0,1}.  Por ejemplo, <code>go?d</code> coincidirá con "gd", "god" . Pero no con "good"</td>
 </tr>
 <tr>
 <td>{X}</td>
-<td>Indica que lo que va justo antes de las llaves {} se repite X número de veces.</td>
+<td>Indica que lo que va justo antes de las llaves {} se repite X número de veces. Por ejemplo <code>A\d{3}B</code>, "A231B", "A365B". Pero no coincide con "As23B" ó "A1234B"</td>
 </tr>
 <tr>
 <td>{X, Y}</td>
-<td>Indica que lo que va justo antes de las llaves {} se repite mínimo X número de veces y máximo Y.</td>
+<td>Indica que lo que va justo antes de las llaves {} se repite mínimo X número de veces y máximo Y. Por ejemplo <code>\b\w{4,6}\b</code> coincide "apple", "123456" pero no "abc", "1234567", "biblioteca"</td>
 </tr>
 <tr>
 <td>*?</td>
@@ -3325,6 +3329,7 @@
 <p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html</a></p>
 <h3 id="entrena-tus-regex">Entrena tus Regex<a class="headerlink" href="#entrena-tus-regex" title="Permanent link">&para;</a></h3>
 <p><a href="https://regexcrossword.com/">https://regexcrossword.com/</a></p>
+<p><a href="https://www.freeformatter.com/java-regex-tester.html">https://www.freeformatter.com/java-regex-tester.html</a></p>
 <h2 id="java-regex-core-classes">Java Regex Core Classes<a class="headerlink" href="#java-regex-core-classes" title="Permanent link">&para;</a></h2>
 <p>La API de expresiones regulares de Java consta de dos clases principales. Estos son:</p>
 <p><code>Pattern</code> (java.util.regex.Pattern)
@@ -3349,59 +3354,160 @@
 <li><strong>int groupCount():</strong> devuelve el número total de la subsecuencia coincidente.</li>
 </ul>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">(</span><span class="s">&quot;&lt;h1&gt;Head&lt;/h1&gt;&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="2 "></span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;&lt;h2&gt;Etiqueta h2 de encabezado&lt;/h2&gt;&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="3 "></span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;Esto es un párrafo en html&lt;/p&gt;&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="4 "></span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;&lt;h2&gt;Resumen&lt;/h2&gt;&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="5 "></span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;Fin del html&lt;/p&gt;&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="6 "></span>
-<span class="linenos" data-linenos="7 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;&lt;h2&gt;&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="8 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">html</span><span class="p">);</span>
-<span class="linenos" data-linenos="9 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="na">matches</span><span class="p">());</span>
+<p>Coincidencia de una cadena con la expresión regular</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ab+c&quot;</span><span class="p">;</span><span class="c1">//&#39;palabras que empicen por &#39;a&#39; y terminen por &#39;c&#39;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abbc&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="n">regex</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="kt">boolean</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">matches</span><span class="p">();</span><span class="w"> </span><span class="c1">// Devuelve true si toda la cadena coincide con la expresión regular</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">matches</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime: true</span>
+</code></pre></div>
+Búsqueda de ocurrencias de una expresión regular en una cadena:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">String</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ab\\w*o&quot;</span><span class="p">;</span><span class="c1">// palabras que empiecen por &#39;ab&#39; y terminen e &#39;o&#39;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; hola que tal abuelo, donde vamos&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="n">regex</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Devuelve true si encuentra al menos una ocurrencia de la expresión regular</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kt">boolean</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">();</span><span class="w"> </span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">find</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime: true</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="n">String</span><span class="w"> </span><span class="n">input2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; hola que tal abuela, donde vamos&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">input2</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="n">find</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">();</span><span class="w"> </span>
+<span class="linenos" data-linenos="12 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">find</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime: false</span>
+</code></pre></div>
+Obtener todas las coincidencias de una expresión regular en una cadena
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;\\b\\w{4,6}\\b&quot;</span><span class="p">;</span><span class="c1">//palabras entre 4 y 6 letras</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ver banana casa 1234567&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="n">regex</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">  </span><span class="c1">//extrae el elemento que coincide con el patrón</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">group</span><span class="p">());</span><span class="w"> </span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="c1">// Imprime: banana casa</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div></p>
+<p>Encontrar las posiciones de la coincidencia
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">(</span><span class="s">&quot;&lt;h1&gt;Head&lt;/h1&gt;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;&lt;h2&gt;Etiqueta h2 de encabezado&lt;/h2&gt;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;Esto es un párrafo en html&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;&lt;h2&gt;Resumen&lt;/h2&gt;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;Fin del html&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;&lt;h2&gt;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">html</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">//buscamos la posición de las coincidencias</span>
+<span class="linenos" data-linenos="10 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Coincidencia encontrada en la posición &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="na">start</span><span class="p">());</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="cm">/*Coincidencia encontrada en la posición 13</span>
+<span class="linenos" data-linenos="14 "></span><span class="cm">Coincidencia encontrada en la posición 80*/</span>
+</code></pre></div>
+Reemplazar todas las ocurrencias de una expresión regular en una cadena</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;\\d&quot;</span><span class="p">;</span><span class="c1">//números</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc123xyz&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="n">regex</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">String</span><span class="w"> </span><span class="n">replaced</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">replaced</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime: abc***xyz</span>
 </code></pre></div>
 <h3 id="reset">reset()<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h3>
 <p>El método de la clase Matcher <code>reset()</code> restablece el estado de coincidencia internamente en el Matcher. En caso de que haya comenzado a hacer coincidir las ocurrencias en una cadena a través del método <code>find()</code>, el Matcher mantendrá internamente un estado sobre qué tan lejos ha buscado a través del texto de entrada. Al llamar a <code>reset()</code>, la coincidencia comenzará nuevamente desde el principio del texto.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;La casa está en el lago y el gato está en la casa.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// Patrón para encontrar palabras que contienen la letra &#39;a&#39;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\b\\w*a\\w*\\b&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="c1">// Encontrar y reemplazar las letras &#39;a&#39; con &#39;X&#39;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="kt">int</span><span class="w"> </span><span class="n">replacementCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">replacement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">group</span><span class="p">().</span><span class="na">replace</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;X&#39;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">start</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">replacement</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">end</span><span class="p">());</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">replacementCount</span><span class="o">++</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Texto con &#39;a&#39; reemplazado por &#39;X&#39;:&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w"> </span><span class="c1">//LX cXsX está en el lXgo y el gXto está en lX cXsX.</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="c1">// Reiniciar el objeto Matcher para usarlo nuevamente</span>
+<span class="linenos" data-linenos="19 "></span><span class="n">matcher</span><span class="p">.</span><span class="na">reset</span><span class="p">();</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span><span class="c1">// Encontrar la cantidad total de palabras que contienen &#39;a&#39;</span>
+<span class="linenos" data-linenos="22 "></span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="23 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="linenos" data-linenos="25 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="26 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Total de palabras que contienen &#39;a&#39;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+<span class="linenos" data-linenos="27 "></span><span class="c1">//Total de palabras que contienen &#39;a&#39;: 6</span>
+</code></pre></div>
 <h3 id="group">group()<a class="headerlink" href="#group" title="Permanent link">&para;</a></h3>
 <p>Los grupos están marcados con paréntesis en la expresión regular. Por ejemplo:</p>
 <blockquote>
 <p>(Hola)</p>
 </blockquote>
 <p>Esta expresión regular coincide con el texto Hola. <strong>Los paréntesis no son parte del texto que se compara</strong>. Los paréntesis marcan un grupo. Cuando se encuentra una coincidencia en un texto, puede obtener acceso a la parte de la expresión regular dentro del grupo.</p>
-<p>Para acceder a un grupo se utliza el método <code>group(int groupNo)</code>. Una expresión regular puede tener más de un grupo. Por lo tanto, cada grupo está marcado con un conjunto separado de paréntesis. Para obtener acceso al texto que coincidió con la subparte de la expresión en un grupo específico, se pasa el número del grupo al método <code>group(int groupNo)</code>.</p>
+<p>Para acceder a un grupo se utiliza el método <code>group(int groupNo)</code>. Una expresión regular puede tener más de un grupo. Por lo tanto, cada grupo está marcado con un conjunto separado de paréntesis. Para obtener acceso al texto que coincidió con la subparte de la expresión en un grupo específico, se pasa el número del grupo al método <code>group(int groupNo)</code>.</p>
 <p>El grupo con el número 0 es siempre la expresión regular completa. Para obtener acceso a un grupo marcado entre paréntesis, debe comenzar con los números de grupo 1.</p>
 <p>Ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w">    </span><span class="o">=</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="s">&quot;John writes about this, and John writes about that,&quot;</span><span class="w"> </span><span class="o">+</span>
-<span class="linenos" data-linenos=" 3 "></span><span class="w">          </span><span class="s">&quot; and John writes about everything. &quot;</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="p">;</span>
-<span class="linenos" data-linenos=" 5 "></span>
-<span class="linenos" data-linenos=" 6 "></span><span class="n">String</span><span class="w"> </span><span class="n">patternString1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;(John)&quot;</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 7 "></span>
-<span class="linenos" data-linenos=" 8 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="n">patternString1</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
-<span class="linenos" data-linenos="10 "></span>
-<span class="linenos" data-linenos="11 "></span><span class="k">while</span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="12 "></span><span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;found: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">group</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c1">//el primer grupo de paréntesis</span>
-<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;&quot;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="s">Name: Juan, Phone: 123456789</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="s">Name: Pepe, Phone: 345678989</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="s">&quot;&quot;&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Patrón para extraer el nombre y el teléfono</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;Name: (.*), Phone: (\\d+)&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">group</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Obtiene el grupo de captura 1 (el nombre)</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">telefono</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">group</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Obtiene el grupo de captura 2 (el teléfono)</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Teléfono: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">telefono</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="cm">/*</span>
+<span class="linenos" data-linenos="16 "></span><span class="cm">Nombre: Juan</span>
+<span class="linenos" data-linenos="17 "></span><span class="cm">Teléfono: 123456789</span>
+<span class="linenos" data-linenos="18 "></span><span class="cm">Nombre: Pepe</span>
+<span class="linenos" data-linenos="19 "></span><span class="cm">Teléfono: 345678989</span>
+<span class="linenos" data-linenos="20 "></span><span class="cm">         */</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>OUTPUT</p>
-<blockquote>
-<p>found: John</p>
-<p>found: John</p>
-<p>found: John</p>
-</blockquote>
 <h2 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h2>
 <p>La API de Java Regex admite un conjunto de operadores lógicos que se pueden usar para combinar múltiples subpatrones dentro de una sola expresión regular.</p>
 <p>Los operadores lógicos son: el operador and, el operador or y el operador not.</p>
 <p>El operador <strong>and</strong> es implícito. Si dos caracteres (u otros subpatrones) se suceden en una expresión regular, eso significa que tanto el primer como el segundo subpatrón coinciden en gran medida con la cadena de destino.</p>
-<p>El operador <strong>or</strong> es explícito y está representado por el carácter vertical <strong>|</strong>.</p>
-<p>El operador <strong>not</strong> es explícito, está representado por el símbolo <strong>!</strong>, brinda la posibilidad de excluir un patrón. Con esto se puede decir que una cadena no debe ir seguida de otra cadena.</p>
-<p>In regex, there is positive lookahead (?=) and negative lookahead (?!):</p>
-<p>Positive lookahead (?=) ensures something followed by something else.
-Negative lookahead (?!) ensures something NOT followed by something else.</p>
-<p>For example, b(?=c) matches a b that is followed by a c. (positive lookahead)
-For example, b(?!c) matches a b that is NOT followed by a c. (negative lookahead)</p>
-<h2 id="ejemplo-expresion-regular-telefono-movil">Ejemplo expresión regular teléfono móvil<a class="headerlink" href="#ejemplo-expresion-regular-telefono-movil" title="Permanent link">&para;</a></h2>
+<p>El operador <strong>or</strong> es explícito y está representado por el carácter vertical <code>|</code>.</p>
+<p>El operador <strong>not</strong> es explícito, está representado por el símbolo <code>!</code>, brinda la posibilidad de excluir un patrón. Con esto se puede decir que una cadena no debe ir seguida de otra cadena.</p>
+<p>En expresión regular, hay anticipación positiva <code>(? =)</code> y anticipación negativa <code>(?!)</code>:</p>
+<ul>
+<li><code>(?=)</code> garantiza que algo siga a algo más.<code>b(?=c)</code> coincide con una b seguida de una c</li>
+</ul>
+<p>Por ejemplo, si queremos encontrar palabras que contengan "apple" seguidas de "pie"  </p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;apple juice, apple pie, apple juice, apple cake, apple pie&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\bapple(?=\\spie)\\b&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">start</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="c1">//13 49</span>
+</code></pre></div>
++ <code>(?!)</code> garantiza que algo NO sea seguido por otra cosa. <code>b(?!c)</code> coincide con una b que NO va seguida de una c</p>
+<p>Por ejemplo, si queremos encontrar palabras que contengan "apple" <strong>no</strong> seguidas de "pie"  </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;apple juice, apple pie, apple juice, apple cake, apple pie&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\bapple(?=\\spie)\\b&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">start</span><span class="p">());</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span>
+<span class="linenos" data-linenos="9 "></span><span class="c1">//0 24 37</span>
+</code></pre></div>
+<h2 id="ejemplos-expresion-regular">Ejemplos expresión regular<a class="headerlink" href="#ejemplos-expresion-regular" title="Permanent link">&para;</a></h2>
+<p>teléfono móvil de España</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">//(+34) 655-555-555</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="n">String</span><span class="w"> </span><span class="n">regexTelefono</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^([\\(]{1}[\\+]{1}34[\\)]{1}[ ]{1}[0-9]{3}[\\-]{1}[0-9]{3}[\\-]{1}[0-9]{3})$&quot;</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 3 "></span>
@@ -3415,6 +3521,63 @@ For example, b(?!c) matches a b that is NOT followed by a c. (negative lookahead
 <span class="linenos" data-linenos="11 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">t3</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="n">regexTelefono</span><span class="p">));</span><span class="c1">//true</span>
 <span class="linenos" data-linenos="12 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">t4</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="n">regexTelefono</span><span class="p">));</span><span class="c1">//false</span>
 </code></pre></div>
+<p>Buscar un patrón numérico en una cadena
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;El precio es $50.00&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\$\\d+\\.\\d{2}&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">texto</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Precio encontrado: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">group</span><span class="p">());</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+Validar una dirección de correo electrónico</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;usuario@example.com&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">email</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">matches</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La dirección de correo electrónico es válida.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+Buscar todas las apariciones de una palabra específica en una cadena</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;La lluvia en Sevilla es una maravilla. Sevilla tiene un color especial.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\bSevilla\\b&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">texto</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">contador</span><span class="o">++</span><span class="p">;</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La palabra &#39;Sevilla&#39; aparece &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; veces.&quot;</span><span class="p">);</span>
+</code></pre></div>
+Extraer el contenido entre paréntesis:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;La temperatura es (25°C) y la humedad es (50%)&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\((.*?)\\)&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">texto</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Contenido entre paréntesis: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">group</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+Buscar y reemplazar todas las ocurrencias de una palabra en una cadena:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;La casa es pequeña, pero la casa es acogedora.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\bcasa\\b&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">texto</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">String</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot;vivienda&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">resultado</span><span class="p">);</span>
+</code></pre></div>
+Validar una fecha en formato MM/DD/AAAA</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">fecha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;12/31/2023&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;(0[1-9]|1[0-2])/([0-2][0-9]|3[0-1])/\\d{4}&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">fecha</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">matches</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La fecha es válida.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+Extraer los nombres de usuario de direcciones de correo electrónico:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">emails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;usuario1@example.com, usuario2@example.com, usuario3@example.com&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Pattern</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\b([a-zA-Z0-9._%+-]+)@&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">Matcher</span><span class="w"> </span><span class="n">matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">emails</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">matcher</span><span class="p">.</span><span class="na">find</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre de usuario: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matcher</span><span class="p">.</span><span class="na">group</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div></p>
 
 
 
