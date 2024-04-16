@@ -3229,15 +3229,15 @@
 </tr>
 <tr>
 <td>[^abc]</td>
-<td>El símbolo ^ dentro de los corchetes indica negación. El String debe coincidir con cualquier carácter excepto a ó b ó c.</td>
+<td>El símbolo ^ dentro de los corchetes indica negación. El String debe coincidir con cualquier carácter excepto "a" ó "b" ó "c". Ejemplo <code>cod[^abc]</code> "cod3" y "codv" pero no "coda" o "codb"</td>
 </tr>
 <tr>
 <td>[a-z1-9]</td>
 <td>Rango. Busca coincidir las letras minúsculas de la a a la z (ambas incluidas) y los dígitos del 1 al 9 (ambos incluidos). Por ejemplo,<code>cod[a-z1-9]</code> "cod3", "code" pero no "codE" ni cod$ ni "coda2"</td>
 </tr>
 <tr>
-<td>a|b</td>
-<td>Encuentra en el String las ocurrencias de a ó b.  Por ejemplo, "casa"</td>
+<td>a|o</td>
+<td>Encuentra en el String las ocurrencias de "a" ó "o".  Por ejemplo, <code>casa|caso</code>  "casa" y "caso" pero no "casi"</td>
 </tr>
 <tr>
 <td>ab</td>
@@ -3245,10 +3245,6 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition nota">
-<p class="admonition-title">Nota</p>
-<p>Puedes sacar el simbolo <code>^</code> con la combinación ALT+94 en el teclado numérico</p>
-</div>
 <h2 id="meta-caracteres">Meta caracteres<a class="headerlink" href="#meta-caracteres" title="Permanent link">&para;</a></h2>
 <p>Los siguientes metacaracteres tienen un significado predefinido y hacen que ciertos patrones comunes sean más fáciles de usar. Por ejemplo, puede usar \d como definición simplificada para [0..9].</p>
 <table>
