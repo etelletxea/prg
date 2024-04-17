@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../12binaryfiles/">
+        <link rel="prev" href="../14fileclass/">
       
       
-        <link rel="next" href="../14fileclass/">
+        <link rel="next" href="../16randomaccessfile/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>📝 Ficheros de caracteres - Programación</title>
+        <title>📝 java.nio - Programación</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ficheros-de-caracteres" class="md-skip">
+        <a href="#javanio" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              📝 Ficheros de caracteres
+              📝 java.nio
             
           </span>
         </div>
@@ -2589,30 +2589,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    📝 Ficheros de caracteres
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../13characterfiles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2621,44 +2601,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#escritura-de-caracteres" class="md-nav__link">
-    <span class="md-ellipsis">
-      Escritura de caracteres
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lectura-de-datos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lectura de datos
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2689,10 +2631,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../15javanio/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📝 java.nio
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2701,6 +2663,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesystems-cargar-un-fichero-con-filesystems" class="md-nav__link">
+    <span class="md-ellipsis">
+      FileSystems. Cargar un fichero con FileSystems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escritura-en-un-fichero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escritura en un fichero
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lectura-de-un-fichero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lectura de un fichero
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listar-todos-los-directorios-con-fileswalk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listar todos los directorios con Files.walk
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3062,48 +3089,64 @@
                   
 
 
-<h1 id="ficheros-de-caracteres">Ficheros de caracteres<a class="headerlink" href="#ficheros-de-caracteres" title="Permanent link">&para;</a></h1>
-<p>Las  clases Java <code>FileWriter</code> y <code>FileReader</code> se utilizan para escribir y leer datos de archivos de texto (son clases de flujo de caracteres, <strong>character stream</strong>). Se recomienda no utilizar las clases <code>FileInputStream</code> y <code>FileOutputStream</code> si vamos a leer o escribir información de texto.</p>
-<p><img alt="JavaIO" src="../../img/ud9/8extensioncharfiles.png" /></p>
-<h2 id="escritura-de-caracteres">Escritura de caracteres<a class="headerlink" href="#escritura-de-caracteres" title="Permanent link">&para;</a></h2>
-<p>La clase Java <code>FileWriter</code> del paquete java.io se utiliza para escribir datos en forma de caracteres en un archivo.</p>
+<h1 id="javanio">java.nio<a class="headerlink" href="#javanio" title="Permanent link">&para;</a></h1>
 <ul>
-<li>Esta clase hereda de la clase <code>OutputStream</code>.</li>
-<li>Los constructores de esta clase asumen que la codificación de caracteres predeterminada y el tamaño de búfer de bytes predeterminado son aceptables.</li>
-<li><code>FileWriter</code> está diseñado para escribir secuencias de caracteres. Si queremos escribir flujos de bytes sin procesar, tendríamos que usar la clase <code>FileOutputStream</code>.</li>
+<li><code>java.nio.file.Path</code>: Es una interfaz que localiza un fichero o directorio mediante una ruta dependiente del sistema.</li>
+<li><code>java.nio.file.Files</code>: En combinación con <code>Path</code>, realiza operaciones en ficheros o directorios.</li>
+<li><code>java.nio.file.FileSystem</code>: Proporciona una interfaz para el sistema de ficheros y una fábrica para crear <code>Path</code> y otros objetos que acceden al sistema de ficheros.</li>
+<li>Todos los métodos que acceden  al sistema de ficheros lanzan una excepción de tipo <code>IOException</code>.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Este es un ejemplo de escritura usando FileWriter.&quot;</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 3 "></span>
-<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">FileWriter</span><span class="w"> </span><span class="n">fw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">fw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">fw</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error E/S: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
-<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+<h2 id="path"><code>Path</code><a class="headerlink" href="#path" title="Permanent link">&para;</a></h2>
+<p>Ofrece una API completamente nueva para trabajar con E/S. Además, al igual que la clase <code>File</code>, <code>Path</code> también crea un objeto que se puede usar para ubicar un archivo en un sistema de archivos.</p>
+<p><code>Path</code> puede realizar todas las operaciones que se pueden realizar con la clase <code>File</code>.</p>
+<p>Muchos ficheros utilizan la notación "." para denotar el directorio actual y ".." para denotar el directorio del padre.</p>
+<h2 id="filesystems-cargar-un-fichero-con-filesystems"><code>FileSystems</code>. Cargar un fichero con FileSystems<a class="headerlink" href="#filesystems-cargar-un-fichero-con-filesystems" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Path</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileSystems</span><span class="p">.</span><span class="na">getDefault</span><span class="p">().</span><span class="na">getPath</span><span class="p">(</span><span class="s">&quot;fichero.txt&quot;</span><span class="p">);</span>
 </code></pre></div>
-<p>Cuando se cierra el stream <code>close()</code> se escribe en el fichero. Si quisiéramos grabar en el fichero en algún momento antes de cerrar, podemos usar el método <code>flush()</code>.</p>
-<h2 id="lectura-de-datos">Lectura de datos<a class="headerlink" href="#lectura-de-datos" title="Permanent link">&para;</a></h2>
-<p><code>FileReader</code> es una clase en el paquete java.io que se usa para leer una secuencia de caracteres de los ficheros. Esta clase se hereda de la clase <code>InputStreamReader</code>.</p>
-<ul>
-<li><code>FileReader</code> está diseñada para leer flujos de caracteres. Para leer flujos de bytes sin procesar, usaremos <code>FileInputStream</code>.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">FileReader</span><span class="w"> </span><span class="n">fr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fr</span><span class="p">.</span><span class="na">read</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//fin de fichero</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="n">ch</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fr</span><span class="p">.</span><span class="na">read</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">}</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">fr</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">fe</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error de E/S&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<h2 id="escritura-en-un-fichero">Escritura en un fichero<a class="headerlink" href="#escritura-en-un-fichero" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Path</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileSystems</span><span class="p">.</span><span class="na">getDefault</span><span class="p">().</span><span class="na">getPath</span><span class="p">(</span><span class="s">&quot;ficPrueba.txt&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">try</span><span class="p">(</span><span class="n">BufferedWriter</span><span class="w"> </span><span class="n">bw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">newBufferedWriter</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="n">bw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
 </code></pre></div>
-<p>Al igual que ocurría con los ficheros binarios, disponemos de las clases <code>BufferedReader</code> y <code>BufferedWriter</code> para leer y escribir usando el búfer y así acceder a los datos más rápidamente.</p>
+<h2 id="lectura-de-un-fichero">Lectura de un fichero<a class="headerlink" href="#lectura-de-un-fichero" title="Permanent link">&para;</a></h2>
+<p>Con buffer:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">Path</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileSystems</span><span class="p">.</span><span class="na">getDefault</span><span class="p">().</span><span class="na">getPath</span><span class="p">(</span><span class="s">&quot;ficPrueba.txt&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">newBufferedReader</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="n">Path</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileSystems</span><span class="p">.</span><span class="na">getDefault</span><span class="p">().</span><span class="na">getPath</span><span class="p">(</span><span class="s">&quot;ficPrueba.txt&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">readAllLines</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">line</span><span class="p">:</span><span class="w"> </span><span class="n">lines</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="linenos" data-linenos="19 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="listar-todos-los-directorios-con-fileswalk">Listar todos los directorios con Files.walk<a class="headerlink" href="#listar-todos-los-directorios-con-fileswalk" title="Permanent link">&para;</a></h2>
+<p>Es importante utilizar el try with resources para cerrar el stream. Viene especificado en la documentación oficial</p>
+<div class="admonition note nota">
+<p class="admonition-title">Note</p>
+<p>This method must be used within a try-with-resources statement or similar control structure to ensure that the stream's open directories are closed promptly after the stream's operations have completed.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">walk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">walk</span><span class="p">(</span><span class="n">path</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">walk</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">Files</span><span class="p">::</span><span class="n">isDirectory</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">            </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div>
 
 
 

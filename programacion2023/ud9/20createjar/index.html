@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../12binaryfiles/">
+        <link rel="prev" href="../19jsonfiles/">
       
       
-        <link rel="next" href="../14fileclass/">
+        <link rel="next" href="../21tryresources/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>📝 Ficheros de caracteres - Programación</title>
+        <title>📝 Crear un .jar - Programación</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ficheros-de-caracteres" class="md-skip">
+        <a href="#como-crear-un-jar-en-intellij" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              📝 Ficheros de caracteres
+              📝 Crear un .jar
             
           </span>
         </div>
@@ -2589,30 +2589,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    📝 Ficheros de caracteres
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../13characterfiles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2621,44 +2601,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#escritura-de-caracteres" class="md-nav__link">
-    <span class="md-ellipsis">
-      Escritura de caracteres
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lectura-de-datos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lectura de datos
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2794,10 +2736,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../20createjar/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2806,6 +2757,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -3062,48 +3014,28 @@
                   
 
 
-<h1 id="ficheros-de-caracteres">Ficheros de caracteres<a class="headerlink" href="#ficheros-de-caracteres" title="Permanent link">&para;</a></h1>
-<p>Las  clases Java <code>FileWriter</code> y <code>FileReader</code> se utilizan para escribir y leer datos de archivos de texto (son clases de flujo de caracteres, <strong>character stream</strong>). Se recomienda no utilizar las clases <code>FileInputStream</code> y <code>FileOutputStream</code> si vamos a leer o escribir información de texto.</p>
-<p><img alt="JavaIO" src="../../img/ud9/8extensioncharfiles.png" /></p>
-<h2 id="escritura-de-caracteres">Escritura de caracteres<a class="headerlink" href="#escritura-de-caracteres" title="Permanent link">&para;</a></h2>
-<p>La clase Java <code>FileWriter</code> del paquete java.io se utiliza para escribir datos en forma de caracteres en un archivo.</p>
-<ul>
-<li>Esta clase hereda de la clase <code>OutputStream</code>.</li>
-<li>Los constructores de esta clase asumen que la codificación de caracteres predeterminada y el tamaño de búfer de bytes predeterminado son aceptables.</li>
-<li><code>FileWriter</code> está diseñado para escribir secuencias de caracteres. Si queremos escribir flujos de bytes sin procesar, tendríamos que usar la clase <code>FileOutputStream</code>.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Este es un ejemplo de escritura usando FileWriter.&quot;</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 3 "></span>
-<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">FileWriter</span><span class="w"> </span><span class="n">fw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">fw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">fw</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error E/S: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
-<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
-</code></pre></div>
-<p>Cuando se cierra el stream <code>close()</code> se escribe en el fichero. Si quisiéramos grabar en el fichero en algún momento antes de cerrar, podemos usar el método <code>flush()</code>.</p>
-<h2 id="lectura-de-datos">Lectura de datos<a class="headerlink" href="#lectura-de-datos" title="Permanent link">&para;</a></h2>
-<p><code>FileReader</code> es una clase en el paquete java.io que se usa para leer una secuencia de caracteres de los ficheros. Esta clase se hereda de la clase <code>InputStreamReader</code>.</p>
-<ul>
-<li><code>FileReader</code> está diseñada para leer flujos de caracteres. Para leer flujos de bytes sin procesar, usaremos <code>FileInputStream</code>.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">FileReader</span><span class="w"> </span><span class="n">fr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fr</span><span class="p">.</span><span class="na">read</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//fin de fichero</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="n">ch</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fr</span><span class="p">.</span><span class="na">read</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">}</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">fr</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">fe</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error de E/S&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
-</code></pre></div>
-<p>Al igual que ocurría con los ficheros binarios, disponemos de las clases <code>BufferedReader</code> y <code>BufferedWriter</code> para leer y escribir usando el búfer y así acceder a los datos más rápidamente.</p>
+<h1 id="como-crear-un-jar-en-intellij">Cómo crear un jar en IntelliJ<a class="headerlink" href="#como-crear-un-jar-en-intellij" title="Permanent link">&para;</a></h1>
+<ol>
+<li>Vamos a File &rarr; Project Structure</li>
+</ol>
+<p><img alt="artifact" src="../../img/ud9/13artifact.png" /></p>
+<ol start="2">
+<li>En la sección Artifacts, seleccionamos el símbolo "+" y seleccionamos el formato .jar &rarr; "From modules with dependencies"</li>
+</ol>
+<p><img alt="artifact" src="../../img/ud9/14artifact.png" /></p>
+<ol start="4">
+<li>Le decimos cuál es la clase main y aceptamos.</li>
+</ol>
+<p><img alt="artifact" src="../../img/ud9/15artifact.png" /></p>
+<ol start="5">
+<li>Todavía no hemos construido el .jar. Para crearlo vamos al menú "Build" &rarr; "Build Artifact".</li>
+</ol>
+<p><img alt="artifact" src="../../img/ud9/16artifact.png" /></p>
+<ol start="6">
+<li>Seleccionamos "Build".</li>
+</ol>
+<p><img alt="artifact" src="../../img/ud9/17artifact.png" /></p>
+<p>El .jar estará en la carpeta del proyecto dentro de /out/artifacts/...</p>
 
 
 
