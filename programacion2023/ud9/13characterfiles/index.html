@@ -2458,6 +2458,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#escritura-de-string-como-systemout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escritura de String como System.out
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lectura-de-datos" class="md-nav__link">
     <span class="md-ellipsis">
       Lectura de datos
@@ -3134,6 +3143,30 @@
 <span class="linenos" data-linenos="20 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Cuando se cierra el stream <code>close()</code> se escribe en el fichero. Si quisiéramos grabar en el fichero en algún momento antes de cerrar, podemos usar el método <code>flush()</code>.</p>
+<h2 id="escritura-de-string-como-systemout">Escritura de String como System.out<a class="headerlink" href="#escritura-de-string-como-systemout" title="Permanent link">&para;</a></h2>
+<p>Podemos utilizar la clase <code>PrintWriter</code> para la escritura de String en el archivo. Proporciona métodos parececidos a <code>System.out</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">try</span><span class="p">(</span><span class="w"> </span><span class="n">FileWriter</span><span class="w"> </span><span class="n">fileWriter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">PrintWriter</span><span class="w"> </span><span class="n">printWriter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrintWriter</span><span class="p">(</span><span class="n">fileWriter</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="c1">// Datos a escribir</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Juan&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.75</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="c1">// Escribir los datos en el archivo con formato</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">printWriter</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre: &quot;</span><span class="o">+</span><span class="n">nombre</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">printWriter</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Edad: &quot;</span><span class="o">+</span><span class="n">edad</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="c1">//con formato</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">printWriter</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Altura: %.2f\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">altura</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Se ha escrito en el archivo exitosamente.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+</code></pre></div>
 <h2 id="lectura-de-datos">Lectura de datos<a class="headerlink" href="#lectura-de-datos" title="Permanent link">&para;</a></h2>
 <p><code>FileReader</code> es una clase en el paquete java.io que se usa para leer una secuencia de caracteres de los ficheros. Esta clase se hereda de la clase <code>InputStreamReader</code>.</p>
 <ul>
