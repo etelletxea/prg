@@ -2568,6 +2568,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejemplo-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo completo
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3117,7 +3126,43 @@
 </code></pre></div>
 <p>El método <code>store()</code> admite un segundo parámetro que es un comentario que se añadirá como una línea de cabecera en el fichero. El resultado de esta llamada es un fichero con un contenido como el siguiente:</p>
 <p><img alt="JavaIO" src="../../img/ud9/10propertiesfile2.png" /></p>
-<p>Contiene el comentario que pusimos en la llamada a <code>store()</code> y la fecha, que la inserta de regalo.</p>
+<p>Contiene el comentario que pusimos en la llamada a <code>store()</code> y la fecha.</p>
+<h2 id="ejemplo-completo">Ejemplo completo<a class="headerlink" href="#ejemplo-completo" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;config.properties&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="c1">// Escribir datos en el archivo de propiedades</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">FileOutputStream</span><span class="w"> </span><span class="n">fileOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="n">filePath</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">Properties</span><span class="w"> </span><span class="n">properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Properties</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">properties</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="s">&quot;database.url&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jdbc:mysql://localhost:3306/mydatabase&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">properties</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="s">&quot;database.user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;admin&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">properties</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="s">&quot;database.password&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;123456&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="c1">//información sobre el fichero</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">properties</span><span class="p">.</span><span class="na">store</span><span class="p">(</span><span class="n">fileOut</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Configuración de la base de datos&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Datos escritos correctamente en el archivo de propiedades.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error al escribir en el archivo de propiedades.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="c1">// Leer datos del archivo de propiedades</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">FileInputStream</span><span class="w"> </span><span class="n">fileIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="n">filePath</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="n">Properties</span><span class="w"> </span><span class="n">properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Properties</span><span class="p">();</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">properties</span><span class="p">.</span><span class="na">load</span><span class="p">(</span><span class="n">fileIn</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">&quot;database.url&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">&quot;database.user&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">&quot;database.password&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="26 "></span>
+<span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;URL de la base de datos: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">url</span><span class="p">);</span>
+<span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Usuario de la base de datos: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="p">);</span>
+<span class="linenos" data-linenos="29 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Contraseña de la base de datos: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="linenos" data-linenos="30 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="31 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error al leer el archivo de propiedades.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="32 "></span><span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="34 "></span><span class="p">}</span>
+</code></pre></div>
 
 
 
