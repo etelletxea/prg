@@ -2584,15 +2584,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#formato-json" class="md-nav__link">
-    <span class="md-ellipsis">
-      Formato JSON
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#ejemplo-de-fichero-json" class="md-nav__link">
     <span class="md-ellipsis">
       Ejemplo de fichero JSON
@@ -2632,13 +2623,31 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Java JSON">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libreria-jackson-databind" class="md-nav__link">
+    <span class="md-ellipsis">
+      Librería jackson-databind
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Librería jackson-databind">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#leer-un-json-a-partir-de-una-api" class="md-nav__link">
+  <a href="#agregar-libreria-al-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
-      Leer un JSON a partir de una API
+      Agregar librería al proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crea-los-pojo-que-correspondan-al-fichero-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crea los POJO que correspondan al fichero json
     </span>
   </a>
   
@@ -2646,6 +2655,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugin-de-intellij-para-crear-las-clases-desde-un-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugin de IntelliJ para crear las clases desde un json
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lectura-de-un-servicio-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lectura de un servicio Rest
+    </span>
+  </a>
   
 </li>
       
@@ -3130,75 +3157,69 @@ JSON es un formato de texto que es completamente independiente del lenguaje pero
 </ul>
 <h2 id="tipos-de-datos-disponibles">Tipos de datos disponibles<a class="headerlink" href="#tipos-de-datos-disponibles" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Números: Se permiten números negativos y opcionalmente pueden contener parte fraccional separada por puntos. Ejemplo: 123.456</li>
-<li>Cadenas: Representan secuencias de cero o más caracteres. Se ponen entre doble comilla y se permiten cadenas de escape. Ejemplo: "Hola"</li>
-<li>Booleanos: Representan valores booleanos y pueden tener dos valores: true y false</li>
-<li>null: Representan el valor nulo.</li>
-<li>Array: Representa una lista ordenada de cero o más valores los cuales pueden ser de cualquier tipo. Los valores se separan por comas y el vector se mete entre corchetes.</li>
-<li>Objetos: Son colecciones no ordenadas de pares de la forma <code>nombre:valor</code> separados por comas y puestas entre llaves. El nombre tiene que ser una cadena entre comillas dobles. El valor puede ser de cualquier tipo.</li>
+<li><strong>Números</strong>: Se permiten números negativos y opcionalmente pueden contener parte fraccional separada por puntos. Ejemplo: 123.456</li>
+<li><strong>Cadenas</strong>: Representan secuencias de cero o más caracteres. Se ponen entre doble comilla y se permiten cadenas de escape. Ejemplo: "Hola"</li>
+<li><strong>Booleanos</strong>: Representan valores booleanos y pueden tener dos valores: true y false</li>
+<li><strong>null</strong>: Representan el valor nulo.</li>
+<li><strong>Array</strong>: Representa una lista ordenada de cero o más valores los cuales pueden ser de cualquier tipo. Los valores se separan por comas y el vector se mete entre corchetes.</li>
+<li><strong>Objetos</strong>: Son colecciones no ordenadas de pares de la forma <code>nombre:valor</code> separados por comas y puestas entre llaves. El nombre tiene que ser una cadena entre comillas dobles. El valor puede ser de cualquier tipo.</li>
 </ol>
-<h2 id="formato-json">Formato JSON<a class="headerlink" href="#formato-json" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Un objeto es un conjunto desordenado de pares de name/value. Un objeto comienza con {(llave izquierda) y termina con} (llave derecha). Cada nombre va seguido de: (dos puntos) y los pares de name/value están separados por, (coma).</li>
-</ul>
-<p><img alt="JavaIO" src="../../img/ud9/11json1.png" /></p>
-<ul>
-<li>Un array es una colección ordenada de valores. Una matriz comienza con [(corchete izquierdo) y termina con] (corchete derecho). Los valores están separados por (coma).</li>
-</ul>
-<p><img alt="JavaIO" src="../../img/ud9/11json2.png" /></p>
-<ul>
-<li>Un value puede ser una cadena entre comillas dobles, un número, verdadero, falso, nulo, un objeto o una matriz. Estas estructuras se pueden anidar.</li>
-</ul>
-<p><img alt="JavaIO" src="../../img/ud9/11json3.png" /></p>
 <h2 id="ejemplo-de-fichero-json">Ejemplo de fichero JSON<a class="headerlink" href="#ejemplo-de-fichero-json" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="err">#</span><span class="w"> </span><span class="err">Fichero</span><span class="w"> </span><span class="err">JSON</span><span class="w"> </span>
-<span class="linenos" data-linenos=" 2 "></span>
-<span class="linenos" data-linenos=" 3 "></span><span class="p">{</span><span class="nt">&quot;web-app&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="w">  </span><span class="nt">&quot;servlet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">   </span>
-<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="w">      </span><span class="nt">&quot;servlet-name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cofaxCDS&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">      </span><span class="nt">&quot;servlet-class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;org.cofax.cds.CDSServlet&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 8 "></span><span class="w">      </span><span class="nt">&quot;init-param&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="nt">&quot;configGlossary:installationAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Philadelphia, PA&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="nt">&quot;configGlossary:adminEmail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;p.marti2@edu.gva.es&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="nt">&quot;configGlossary:poweredBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patricia Marti&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="nt">&quot;configGlossary:poweredByIcon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/images/cofax.gif&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="nt">&quot;configGlossary:staticPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/content/static&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="nt">&quot;templateProcessorClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;org.cofax.WysiwygTemplate&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="nt">&quot;templateLoaderClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;org.cofax.FilesTemplateLoader&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="nt">&quot;templatePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;templates&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="nt">&quot;templateOverridePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="nt">&quot;defaultListTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;listTemplate.htm&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="nt">&quot;defaultFileTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;articleTemplate.htm&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="nt">&quot;useJSP&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="nt">&quot;dataStoreMaxConns&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
-<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="p">}</span>
-<span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="p">},</span>
-<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="kc">null</span><span class="p">,</span>
-<span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="p">{</span>
-<span class="linenos" data-linenos="26 "></span><span class="w">      </span><span class="nt">&quot;servlet-name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cofaxEmail&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="27 "></span><span class="w">      </span><span class="nt">&quot;servlet-class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;org.cofax.cds.EmailServlet&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="28 "></span><span class="w">      </span><span class="nt">&quot;init-param&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="29 "></span><span class="w">        </span><span class="nt">&quot;mailHost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mail1&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="nt">&quot;mailHostOverride&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mail2&quot;</span>
-<span class="linenos" data-linenos="31 "></span><span class="w">      </span><span class="p">}</span>
-<span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="p">}],</span>
-<span class="linenos" data-linenos="33 "></span><span class="w">  </span><span class="nt">&quot;servlet-mapping&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="34 "></span><span class="w">    </span><span class="nt">&quot;cofaxCDS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="35 "></span><span class="w">    </span><span class="nt">&quot;cofaxEmail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/cofaxutil/aemail/*&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="36 "></span><span class="w">    </span><span class="nt">&quot;cofaxAdmin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/admin/*&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="37 "></span><span class="w">    </span><span class="nt">&quot;fileServlet&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/static/*&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="38 "></span><span class="w">    </span><span class="nt">&quot;cofaxTools&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/tools/*&quot;</span>
-<span class="linenos" data-linenos="39 "></span><span class="w">    </span><span class="p">},</span>
-<span class="linenos" data-linenos="40 "></span><span class="w">  </span><span class="nt">&quot;taglib&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="41 "></span><span class="w">    </span><span class="nt">&quot;taglib-uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cofax.tld&quot;</span><span class="p">,</span>
-<span class="linenos" data-linenos="42 "></span><span class="w">    </span><span class="nt">&quot;taglib-location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/WEB-INF/tlds/cofax.tld&quot;</span>
-<span class="linenos" data-linenos="43 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="44 "></span><span class="p">}</span>
-<span class="linenos" data-linenos="45 "></span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="nt">&quot;departamentos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">      </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ventas&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">      </span><span class="nt">&quot;director&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Juan Rodríguez&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">      </span><span class="nt">&quot;empleados&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">          </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">          </span><span class="nt">&quot;apellido&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fernández&quot;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="p">},</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">          </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jacinto&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">          </span><span class="nt">&quot;apellido&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Benavente&quot;</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">      </span><span class="p">]</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="p">},</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">      </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Recursos Humanos&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">      </span><span class="nt">&quot;director&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;María Pérez&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">      </span><span class="nt">&quot;empleados&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">          </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Laura&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">          </span><span class="nt">&quot;apellido&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;González&quot;</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">        </span><span class="p">},</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="p">{</span>
+<span class="linenos" data-linenos="28 "></span><span class="w">          </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roberto&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="29 "></span><span class="w">          </span><span class="nt">&quot;apellido&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Martínez&quot;</span>
+<span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="31 "></span><span class="w">      </span><span class="p">]</span>
+<span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="p">},</span>
+<span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="p">{</span>
+<span class="linenos" data-linenos="34 "></span><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="linenos" data-linenos="35 "></span><span class="w">      </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Desarrollo&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="36 "></span><span class="w">      </span><span class="nt">&quot;director&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ana García&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="37 "></span><span class="w">      </span><span class="nt">&quot;empleados&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos" data-linenos="38 "></span><span class="w">        </span><span class="p">{</span>
+<span class="linenos" data-linenos="39 "></span><span class="w">          </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Luis&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="40 "></span><span class="w">          </span><span class="nt">&quot;apellido&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;López&quot;</span>
+<span class="linenos" data-linenos="41 "></span><span class="w">        </span><span class="p">},</span>
+<span class="linenos" data-linenos="42 "></span><span class="w">        </span><span class="p">{</span>
+<span class="linenos" data-linenos="43 "></span><span class="w">          </span><span class="nt">&quot;nombre&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Elena&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="44 "></span><span class="w">          </span><span class="nt">&quot;apellido&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sánchez&quot;</span>
+<span class="linenos" data-linenos="45 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="46 "></span><span class="w">      </span><span class="p">]</span>
+<span class="linenos" data-linenos="47 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="48 "></span><span class="w">  </span><span class="p">]</span>
+<span class="linenos" data-linenos="49 "></span><span class="p">}</span>
 </code></pre></div>
-<p>El fichero anterior se puede traducir como un array de objetos, por ejemplo de la clase <code>Servlet</code>, donde la clase <code>Servlet</code> estará compuesta por atributos como: servlet-name, servlet-class, etc.</p>
-<p>Existen varias librerías en Java para parsear ficheros JSON. Entre las más comunes están: Gson, Jackson, JSON.simple, org.json, JsonPATH, etc.</p>
+<p>El fichero anterior se puede traducir como un array Departamentos donde cada Departamento:</p>
+<ul>
+<li>Campos: id, director, empleados</li>
+<li>empleados: Array de Empleado con campos: nombre, apellido</li>
+</ul>
 <h3 id="url-oficial">URL oficial<a class="headerlink" href="#url-oficial" title="Permanent link">&para;</a></h3>
 <p><a href="http://www.json.org/json-es.html">The JSON Specification</a></p>
 <h2 id="json-vs-xml">JSON vs XML<a class="headerlink" href="#json-vs-xml" title="Permanent link">&para;</a></h2>
@@ -3207,37 +3228,181 @@ JSON es un formato de texto que es completamente independiente del lenguaje pero
 <p>Java por defecto no ofrece ninguna funcionalidad integrada para analizar o crear JSON, en lugar de eso, tendremos que confiar en una biblioteca/paquete de terceros.</p>
 <p>En la actualidad existen varias librerías para pasar transformar un objeto Java en una cadena JSON (serialización) o viceversa (deserialización).</p>
 <p>Desde la página en donde se encuentra la especificación de JSON se indican las librerías más conocidas para tratar/generar información relativa al formato JSON en los diferentes lenguajes de programación.</p>
-<p>Vamos a ver cómo parsear un JSON utilizando el paquete <a href="https://mvnrepository.com/artifact/org.json/json/20220924">org.json</a>.
-Los archivos en este paquete implementan codificadores/decodificadores JSON en Java.</p>
-<h3 id="leer-un-json-a-partir-de-una-api">Leer un JSON a partir de una API<a class="headerlink" href="#leer-un-json-a-partir-de-una-api" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Este método accede a una URL y se descarga el contenido en forma de String</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">stream</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">InputStream</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">url</span><span class="p">).</span><span class="na">openStream</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">InputStreamReader</span><span class="w"> </span><span class="n">isr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InputStreamReader</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="n">isr</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="na">read</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos=" 9 "></span><span class="w">            </span><span class="n">json</span><span class="p">.</span><span class="na">append</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
-<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="p">}</span>
-<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">json</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
-<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
-<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
-<span class="linenos" data-linenos="16 "></span>
-<span class="linenos" data-linenos="17 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">caturl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://catfact.ninja/facts&quot;</span><span class="p">;</span>
-<span class="linenos" data-linenos="19 "></span>
-<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="c1">//parseamos un string a un JSONObject</span>
-<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="n">JSONObject</span><span class="w"> </span><span class="n">jsonObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JSONObject</span><span class="p">(</span><span class="n">stream</span><span class="p">(</span><span class="n">caturl</span><span class="p">));</span>
-<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">JSONArray</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jsonObject</span><span class="p">.</span><span class="na">getJSONArray</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="n">JSONObject</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">JSONObject</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="linenos" data-linenos="24 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;fact&quot;</span><span class="p">));</span>
-<span class="linenos" data-linenos="25 "></span>
-<span class="linenos" data-linenos="26 "></span><span class="p">}</span>
+<h2 id="libreria-jackson-databind">Librería jackson-databind<a class="headerlink" href="#libreria-jackson-databind" title="Permanent link">&para;</a></h2>
+<p>Jackson Databind es una biblioteca de Java que forma parte del proyecto Jackson, una de las bibliotecas de código abierto más populares para el procesamiento de JSON en Java. Jackson Databind proporciona funcionalidades para mapear objetos Java a JSON (serialización) y viceversa (deserialización).</p>
+<p><a href="https://github.com/FasterXML/jackson-databind">Jackson Databind </a></p>
+<h3 id="agregar-libreria-al-proyecto">Agregar librería al proyecto<a class="headerlink" href="#agregar-libreria-al-proyecto" title="Permanent link">&para;</a></h3>
+<p>Para utilizar la librería hay que añadirla al proyecto en intelliJ</p>
+<p><img alt="json" src="../../img/ud9/json10.png" />
+<img alt="json" src="../../img/ud9/json11.png" /></p>
+<p><img alt="json" src="../../img/ud9/json12.png" /></p>
+<p>Nos habrá agregado la librería al proyecto</p>
+<p><img alt="json" src="../../img/ud9/json13.png" /></p>
+<h3 id="crea-los-pojo-que-correspondan-al-fichero-json">Crea los POJO que correspondan al fichero json<a class="headerlink" href="#crea-los-pojo-que-correspondan-al-fichero-json" title="Permanent link">&para;</a></h3>
+<p>Tenemos que identificar las clases Java que corresponden al json. Por ejemplo, 
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="nt">&quot;noticias&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">      </span><span class="nt">&quot;fecha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-04-26&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">      </span><span class="nt">&quot;titulo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Descubrimiento de nueva especie de planta en la selva amazónica&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">      </span><span class="nt">&quot;descripcion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Investigadores han anunciado el descubrimiento de una nueva especie de planta en la selva amazónica. La planta, que ha sido bautizada como &#39;Amazoniaensis flore&#39;, se caracteriza por sus grandes hojas y flores de vivos colores.&quot;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="p">},</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">      </span><span class="nt">&quot;fecha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-04-25&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">      </span><span class="nt">&quot;titulo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Avances en la lucha contra el cambio climático&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">      </span><span class="nt">&quot;descripcion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Científicos han publicado un nuevo estudio que revela avances prometedores en la lucha contra el cambio climático. Según el estudio, las medidas de reducción de emisiones implementadas en varios países están comenzando a dar resultados tangibles en la disminución de la concentración de gases de efecto invernadero en la atmósfera.&quot;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">  </span><span class="p">]</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+</code></pre></div></p>
+<p>Tendríamos que crear la clase con la lista de noticias. </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Noticias</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Noticia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">noticias</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Noticia</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getNoticias</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">noticias</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNoticias</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Noticia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">noticias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">     </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Noticias{&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">                </span><span class="s">&quot;noticias=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">noticias</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">                </span><span class="sc">&#39;}&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
 </code></pre></div>
-<p>Un <code>JSONObject</code> es una colección desordenada de pares clave y valor, que se asemeja a las implementaciones Map nativas de Java.</p>
+<div class="admonition importante">
+<p class="admonition-title">Importante</p>
+<p>La clase puede tener varios constructores, pero siempre tiene que tener el constructor por defecto sin parámetros</p>
+</div>
+<p>Una clase para las Noticias</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Noticia</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">LocalDate</span><span class="w"> </span><span class="n">fecha</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">descripcion</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="c1">//es obligatorio este constructor</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Noticia</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Noticia</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">fecha</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titulo</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">descripcion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">setFecha</span><span class="p">(</span><span class="n">fecha</span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">titulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">descripcion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">descripcion</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDescripcion</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">descripcion</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDescripcion</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">descripcion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getFecha</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">fecha</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFecha</span><span class="p">(</span><span class="n">LocalDate</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">fecha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="c1">//no existe el tipo fecha en json</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFecha</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">){</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">fecha</span><span class="o">=</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitulo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitulo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">titulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="30 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="31 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Noticia{&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="32 "></span><span class="w">                </span><span class="n">fecha</span><span class="w"> </span><span class="o">+</span><span class="s">&quot;\n&quot;</span><span class="o">+</span>
+<span class="linenos" data-linenos="33 "></span><span class="w">                </span><span class="n">titulo</span><span class="o">+</span><span class="s">&quot;\n&quot;</span><span class="o">+</span>
+<span class="linenos" data-linenos="34 "></span><span class="w">                </span><span class="n">descripcion</span><span class="o">+</span>
+<span class="linenos" data-linenos="35 "></span><span class="w">                </span><span class="s">&quot;}\n&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="36 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="37 "></span><span class="p">}</span>
+</code></pre></div>
+Para leer el Json y transformarlos a objetos Java, la clase principal es <code>ObjectMapper</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="c1">// Lee los datos de un archivo json</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="c1">//Lectura del fichero</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">objectMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="c1">// Convierte el json  en un objeto de tipo Noticias</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">Noticias</span><span class="w"> </span><span class="n">noticias</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">objectMapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;noticias.json&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Noticias</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">noticias</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="c1">//Escritura fichero</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="c1">//añadimos una nueva noticia</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="n">noticias</span><span class="p">.</span><span class="na">getNoticias</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Noticia</span><span class="p">(</span><span class="s">&quot;2024-04-24&quot;</span><span class="p">,</span><span class="s">&quot;Lanzamiento exitoso de la misión espacial a Marte&quot;</span><span class="p">,</span><span class="s">&quot;La agencia espacial internacional ha anunciado el exitoso lanzamiento de una misión espacial con destino a Marte. Esta misión, denominada &#39;Explorador Rojo&#39;, tiene como objetivo buscar signos de vida pasada o presente en el planeta rojo y recopilar datos sobre su geología y atmósfera.&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="c1">//Para que muestre el JSON tabulado</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="n">objectMapper</span><span class="p">.</span><span class="na">configure</span><span class="p">(</span><span class="n">SerializationFeature</span><span class="p">.</span><span class="na">INDENT_OUTPUT</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="c1">// Convertir objeto a un string json</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">jsonString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">objectMapper</span><span class="p">.</span><span class="na">writeValueAsString</span><span class="p">(</span><span class="n">noticias</span><span class="p">);</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">jsonString</span><span class="p">);</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="c1">//Guardar el JSON en un fichero</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="n">objectMapper</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;noticias2.json&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">noticias</span><span class="p">);</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error E/S: &quot;</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error parser json: &quot;</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="29 "></span>
+<span class="linenos" data-linenos="30 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="plugin-de-intellij-para-crear-las-clases-desde-un-json">Plugin de IntelliJ para crear las clases desde un json<a class="headerlink" href="#plugin-de-intellij-para-crear-las-clases-desde-un-json" title="Permanent link">&para;</a></h2>
+<p>IntelliJ tiene varios plugin que permiten crear las clases a partir del Json. Uno de ellos es JsonToJava</p>
+<p>Podemos añadir el plugin</p>
+<p><img alt="json" src="../../img/ud9/json14.png" /></p>
+<p>Una vez añadido(tendrás que reiniciar IntelliJ), podemos crear una primera aproximación a las clases necesarias mediante</p>
+<p><img alt="json" src="../../img/ud9/json15.png" /></p>
+<p>Insertamos el json de muestra y le damos nombre a la clase superior, en nuestro caso Noticias</p>
+<p><img alt="json" src="../../img/ud9/json16.png" /></p>
+<p>Nos genera las clases Java necesarias para parsear en Json.</p>
+<p>La librería Jackson, tiene muchas utilidades. Debéis consultar la documentación técnica.</p>
+<h2 id="lectura-de-un-servicio-rest">Lectura de un servicio Rest<a class="headerlink" href="#lectura-de-un-servicio-rest" title="Permanent link">&para;</a></h2>
+<p>Con esta librería tenemos fácil leer un servicio Web y convertirlo en objetos Java. Por ejemplo, vamos a leer un servicio de ejemplo disponible en la web</p>
+<p><a href="https://jsonplaceholder.typicode.com/">jsonplaceholder</a></p>
+<p>Vamos a leer todos los posts disponibles y crear un ArrayList de Posts del servicio Web</p>
+<p><a href="https://jsonplaceholder.typicode.com/posts">https://jsonplaceholder.typicode.com/posts</a></p>
+<p>Primero definimos el POJO para el Post que define la información</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Post</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">body</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">userId</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">getid</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setid</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">title</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getBody</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">body</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setBody</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">getUserId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">userId</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setUserId</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">userId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Post{&quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">                </span><span class="s">&quot;id=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">                </span><span class="s">&quot;, title=&#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;\&#39;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">                </span><span class="s">&quot;, body=&#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;\&#39;&#39;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">                </span><span class="s">&quot;, userId=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userId</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">                </span><span class="s">&quot;}\n&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Para solicitar al Web Service todos los Posts es necesario saber que información contiene el JSON, en nuestro caso es una lista de Posts. Creamos un objeto URL con el endpoint y le indicamos a Jackson que queremos una Lista de Posts</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="s">&quot;https://jsonplaceholder.typicode.com/posts&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Post</span><span class="o">&gt;</span><span class="w"> </span><span class="n">posts</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">objectMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">objectMapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">url</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TypeReference</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Post</span><span class="o">&gt;&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{});</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">posts</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</code></pre></div>
 
 
 
