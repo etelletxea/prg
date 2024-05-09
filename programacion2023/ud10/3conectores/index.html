@@ -3443,8 +3443,8 @@ Es por ello que se recomienda proceder siempre a cerrarlo manualmente utilizando
 <span class="linenos" data-linenos=" 9 "></span>
 <span class="linenos" data-linenos="10 "></span><span class="p">}</span>
 </code></pre></div>
-<p>Ejemplos de su uso sobre la tabla Alumno</p>
-<p>Mostrar todos los alumnos</p>
+<h4 id="ejemplos-de-su-uso-sobre-la-tabla-alumno">Ejemplos de su uso sobre la tabla Alumno<a class="headerlink" href="#ejemplos-de-su-uso-sobre-la-tabla-alumno" title="Permanent link">&para;</a></h4>
+<p><strong>Mostrar todos los alumnos</strong> </p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">consultarAlumnos</span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Statement</span><span class="w"> </span><span class="n">statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
 <span class="linenos" data-linenos=" 3 "></span><span class="w">            </span><span class="n">ResultSet</span><span class="w"> </span><span class="n">resultSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">statement</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Alumno&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
@@ -3457,7 +3457,7 @@ Es por ello que se recomienda proceder siempre a cerrarlo manualmente utilizando
 <span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos="11 "></span><span class="p">}</span>
 </code></pre></div>
-Mostrar aquellos alumnos que su nombre contenga el parámetro indicado</p>
+ <strong>Mostrar aquellos alumnos que su nombre contenga el parámetro indicado</strong> </p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">consultarAlumnosPorNombre</span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">parteNombre</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="c1">//sentencia parametrizada</span>
 <span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">String</span><span class="w">  </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM Alumno WHERE nombre LIKE ?&quot;</span><span class="p">;</span>
@@ -3475,7 +3475,7 @@ Mostrar aquellos alumnos que su nombre contenga el parámetro indicado</p>
 <span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">}</span>
 <span class="linenos" data-linenos="16 "></span><span class="p">}</span>
 </code></pre></div>
-<p>Devolver un ArrayList de Alumnos</p>
+<p><strong>Devolver un ArrayList de Alumnos</strong></p>
 <p>Suponiendo que tenemos la clase Alumno</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
@@ -3512,7 +3512,7 @@ Mostrar aquellos alumnos que su nombre contenga el parámetro indicado</p>
 <span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">listaAlumnos</span><span class="p">;</span>
 <span class="linenos" data-linenos="18 "></span><span class="p">}</span>
 </code></pre></div>
-<p>Un ejemplo de uso de los métodos anteriores</p>
+<p><strong>Un ejemplo de uso de los métodos anteriores</strong></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 3 "></span>
